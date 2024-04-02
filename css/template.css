@@ -1,0 +1,920 @@
+@charset "utf-8";
+
+/*
+    IBK 신전자문서 시스템 관리자 
+
+    template.css
+*/
+
+/* 23.01.20 */
+/* 24.04.00 */
+body {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.cont_header,
+.cont_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+/* flex-end; */
+.flex_right {
+  justify-content: flex-end;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border: solid 2px #005199 !important;
+  box-sizing: border-box;
+}
+input:disabled,
+textarea:disabled {
+  background-color: #F6FAFC !important;
+}
+.text_center{
+  text-align: center;
+}
+.title_head {
+  color: #1378ca;
+  font-size: 20px;
+  font-weight: 600;
+}
+.title_head span,
+h2.login_box_title span {
+  color: #005199;
+}
+
+/* .login */
+.login_cont {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  background: linear-gradient(to top, #006cd0 55%, white 45%);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  overflow: hidden;
+}
+.login_cont::after {
+  content: url(../img/login_bg.png);
+  position: absolute;
+  bottom: -3px;
+  right: 250px;
+}
+.login_cont p {
+  margin-top: 20px;
+  color: #8c8c8c;
+  text-align: center;
+}
+.login_cont_inner {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 600px;
+  height: 320px;
+  background-color: white;
+  box-sizing: border-box;
+  border-top: solid 5px #005199;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+.login_title {
+  margin-top: 48px;
+}
+.login_title img {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 12px;
+}
+h2.login_box_title {
+  margin: 0 auto;
+  color: #1378ca;
+  font-size: 32px;
+  text-align: center;
+}
+.login_input {
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 370px;
+  height: 35px;
+}
+.login_input input {
+  width: calc(285px - 16px);
+  height: 35px;
+  padding-left: 10px;
+  border-radius: 6px;
+  border: solid 2px #b3cbe0;
+}
+/* 23.01.31 */
+.login_input .fido_chek {
+  float: right;
+  height: 40px;
+  font-weight: bold;
+  color: #1378ca;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #1378ca;
+  cursor: pointer;
+}
+.login_input input:focus {
+  height: 35px;
+  box-sizing: inherit;
+}
+
+.login_btn {
+  margin: 0 auto;
+  padding-top: 40px;
+  width: 370px;
+  height: 55px;
+}
+
+.login_btn a {
+  display: block;
+  height: inherit;
+  color: white;
+  background-color: #1378ca;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 55px;
+  box-sizing: border-box;
+}
+.login_btn.crtf {
+  padding-top: 10px;
+}
+.login_btn.crtf a {
+  color: #1378ca;
+  background-color: #ffffff;
+  border: 2px solid #1378ca;
+  cursor: pointer;
+}
+.login_btn.crtf.disabled a {
+  color: #c7d8e6;
+  background-color: #f6fafc;
+  border: 2px solid #e1ebf3;
+  cursor: auto;
+}
+
+/* cont_header */
+.cont_header {
+  border-bottom: 2px solid rgba(220, 229, 237, 0.8);
+}
+/* .cont_header::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: calc(100% - 40px);
+  border-bottom: 2px solid rgba(220, 229, 237, 0.8);
+} */
+.cont_header .path {
+  display: flex;
+  color: #8c8c8c;
+  /* font-size: 16px; */
+}
+.cont_header .path span {
+  padding-right: 4px;
+}
+.cont_header .path a {
+  color: #1378ca;
+  padding: 4px 6px;
+  background-color: white;
+  border: 1px solid #1378ca;
+  border-radius: 5px;
+  /* text-decoration-line: underline; */
+}
+.cont_header h2 {
+  padding-top: 26px;
+  font-size: 32px;
+  padding-bottom: 16px;
+}
+.cont_header h2 > span {
+  font-weight: 400;
+}
+.title_tag {
+  margin-right: auto;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  padding: 5px 18px;
+  font-size: 20px;
+  border: solid 2px #ff0000;
+  border-radius: 6px;
+  color: #ff0000;
+}
+
+
+/* cont_btn */
+.cont_btn,
+.board_btn {
+  display: flex;
+  align-items: center;
+}
+.cont_btn {
+  margin-bottom: 8px;
+}
+.btn_center {
+  justify-content: center;
+}
+.cont_btn a,
+.cont_btn button,
+.board_btn button,
+.file_label {
+  display: block;
+  width: 100px;
+  height: 30px;
+  /* line-height: 28px; */
+  margin-left: 8px;
+  color: white;
+  background-color: transparent;
+  text-align: center;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+}
+.cont_btn button.xl {
+  width: 100%;
+}
+.cont_btn a:first-child,
+.cont_btn button:first-child,
+.board_btn button:first-child,
+.file_label {
+  margin: 0;
+}
+.cont_btn a,
+.file_label {
+  line-height: 30px;
+}
+.cont_btn .main {
+  background-color: #005199;
+  color: white;
+}
+.cont_btn .sub {
+  line-height: 26px;
+  border: 2px solid #B3CBE0;
+  background-color: white;
+  color: #005199;
+}
+.cont_btn .btn1,
+.board_btn .btn1 {
+  color: #b3cbe0;
+  background-color: #f6fafc;
+  border: 1px solid #b3cbe0;
+  cursor: auto;
+}
+.cont_btn .btn2,
+.board_btn .btn2,
+.accordion_srch .btn2 {
+  /* line-height: 30px; */
+  color: white;
+  background-color: #1378ca;
+}
+.cont_btn .btn3,
+.board_btn .btn3 {
+  color: #1378ca;
+  background-color: white;
+  border: 1px solid #1378ca;
+}
+.cont_btn .btn4,
+.board_btn .btn4 {
+  color: #1378ca;
+  background-color: #f6fafc;
+  border: 1px solid #1378ca;
+}
+.cont_btn .views_btn {
+  width: 75px; 
+  margin-top: 8px !important;
+}
+.board_btn span,
+.radio_box .check,
+.radio_box .attn {
+  padding-left: 8px;
+}
+.board_btn .file_name_st {
+  padding-left: 0;
+}
+.radio_box .hide {
+  display: none;
+}
+.board_btn .btn_half {
+  width: 75px;
+}
+/* content */
+.content {
+  margin-top: 18px;
+}
+.content .title {
+  color: #005199;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* board_box */
+.board_box {
+  position: relative;
+  background-color: #f6fafc;
+  border: solid 1px #b3cbe0;
+  border-radius: 8px;
+}
+.board_box table {
+  width: calc(1200px - 48px);
+  margin: 0 auto;
+  padding: 8px 0;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+/* .board_box tbody {
+  text-align: left;
+} */
+/* .board_box tr {
+  height: 38px;
+} */
+.board_box tr:last-child {
+  height: 30px;
+}
+.board_box th {
+  color: #005199;
+  font-size: 15px;
+  text-align: left;
+}
+select,
+.input_ty,
+.board_box .search_int,
+.accordion_pop .search_int {
+  width: 170px;
+  height: 30px;
+  margin-right: 8px;
+  padding-left: 8px;
+  background-color: #fff !important;
+  border: solid 1px #b3cbe0;
+  box-sizing: border-box;
+}
+.board_box .date .input_ty{
+  width: 170px;
+}
+.board_box .date .select_time{
+  width: 120px;
+}
+input.second,
+input.select_time:last-child {
+  margin-left: 8px;
+}
+
+.board_box .search_int {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+}
+.board_box .search_int input {
+  width: 100%;
+  border: none;
+  padding-left: 8px;
+}
+.board_box .search_int button {
+  display: none;
+  width: 15%;
+  background: url(../img/search.png) no-repeat;
+  background-position: center center;
+  font-size: 0;
+  border: none;
+  cursor: pointer;
+}
+select.text_center option{
+  text-align: center;
+}
+.hours_txt {
+  padding-right: 20px;
+}
+
+/* board_ty */
+.board_ty table {
+  position: relative;
+  width: 100%;
+}
+.board_ty table::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #005199;
+}
+.colgroup tr > td:not(.emp) {
+  cursor: pointer;
+}
+.colgroup tr:not(.tr_case):hover > td:not(.emp) {
+  background-color: #E1F5FE;
+}
+.colgroup tr.not_intrc:hover > td {
+  cursor: auto;
+  background-color: #fff !important;
+  /* pointer-events: none; */
+}
+
+
+.board_ty th,
+.board_ty td {
+  height: 45px;
+  padding: 4px 8px;
+  background-color: white;
+  border-right: 1px solid #B3CBE0;
+  border-bottom: 1px solid #B3CBE0;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+  word-break: break-all;
+  box-sizing: border-box;
+}
+.board_ty th:last-child,
+.board_ty td:last-child {
+  border-right: none;
+}
+.board_ty th {
+  background-color: #F6FAFC;
+}
+.board_ty table.table_col td {
+  text-align: left;
+}
+.board_ty table.table_col td.left {
+  text-align: left;
+}
+
+.board_ty span > a {
+  color: #1378ca;
+  text-decoration: underline;
+}
+.flex_box {
+  display: flex;
+  align-items: center;
+}
+.radio_btn + .attn,
+.board_ty .attn {
+  color: #ff0000;
+}
+.board_ty .check {
+  color: #1378ca;
+}
+.radio_btn {
+  display: inline-block;
+  width: 200px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid #b3cbe0;
+  background-color: #f6fafc;
+}
+.radio_thr {
+  width: 300px;
+}
+.radio_btn input[type=radio],
+input[type=file] {
+  display: none;
+}
+.radio_btn label {
+  display: inline-block;
+  width: calc(50% - 1.6px);
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #b3cbe0;
+}
+.radio_thr label {
+  width: 32.6%;
+}
+.radio_btn input:checked + label {
+  color: white;
+  background-color: #1378ca;
+  border-radius: 5px;
+}
+.board_ty .select_date,
+.board_ty .input_ty,
+.board_ty select,
+textarea {
+  width: 200px;
+  height: 30px;
+  margin-right: 8px;
+  padding-left: 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: solid 1px #b3cbe0;
+  box-sizing: border-box;
+}
+.board_ty .input_full,
+.board_box .search_full {
+  width: 100%;
+}
+.search_full input {
+  width: 90% !important;
+}
+.search_full button {
+  width: 10% !important;
+}
+
+.board_ty .input_half {
+  width: 100px;
+}
+input::Placeholder,
+textarea::Placeholder {
+  color: #b3cbe0;
+}
+.board_ty .td_cont {
+  margin-right: 16px;
+}
+.board_ty .emp {
+  padding: 24px 0;
+  font-size: 18px;
+  color: #1378ca;
+}
+.cont_box {
+  align-items: center;
+}
+.cont_box .board_search,
+.cont_box .board_nav,
+.board_filter {
+  padding-bottom: 8px;
+}
+.board_filter select,
+.views_filter select {
+  width: 95px;
+}
+.cont_box .board_search {
+  margin-right: auto;
+}
+.cont_box .board_nav {
+  color: #8c8c8c;
+}
+.cont_box .board_nav .active {
+  color: #005199;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.file_name {
+  text-decoration: underline;
+}
+.file_name img {
+  vertical-align: text-bottom;
+}
+textarea {
+  height: auto;
+  padding: 4px 8px;
+  resize: vertical;
+}
+.textarea_txt p {
+  padding-bottom: 10px;
+}
+.textarea_txt p:first-child {
+  padding-top: 10px;
+}
+
+.th_mrgn {
+  background-color: #ebeff3;
+}
+.th_mrgn table {
+  width: auto;
+}
+
+/* paginate */
+.paginate {
+  height: 31px;
+  margin-top: 24px;
+  text-align: center;
+  /* overflow: hidden; */
+}
+.paginate .prev,
+.paginate .next {
+  font-size: 0;
+  color: #8c8c8c;
+}
+.paginate img {
+  font-size: 14px;
+  vertical-align: middle;
+}
+.paginate a {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+.paginate a.on {
+  color: white;
+  background-color: #1378ca;
+  border-radius: 50%;
+}
+
+/* media */
+@media screen and (max-width: 1680px) {
+  .login_cont::after {
+    right: 0px;
+  }
+}
+
+/* kps 추가 */
+.main_title .sub_txt {
+  margin-bottom:8px
+}
+
+.cont_btn .inp_sel {
+  margin-top:8px;
+}
+
+.board_fixed .bg1 {
+  background-color: #F6FAFC;
+} 
+.board_fixed {
+  display:flex;
+  border-top:3px solid #005199;
+}
+
+
+.board_fixed .board_ty table {
+  table-layout: fixed;
+  width:fit-content;
+}
+
+.board_fixed .board_ty table::after {
+  display:none;
+}
+
+.board_fixed .fixed {
+  border-right:1px solid #B3CBE0;
+}
+
+.board_fixed .scroll_body {
+  overflow:auto;
+  -ms-overflow-style: auto;
+}
+
+.cont_btn.ty_new {
+  display: block;
+  overflow: hidden;
+  margin-top:8px;
+}
+
+.cont_btn.ty_new .left {
+ float: left;
+}
+
+.cont_btn.ty_new .right {
+  float: right;
+ }
+.cont_btn.ty_new .btn3,
+.cont_btn.ty_new .btn2 {
+  display:inline-block;
+  width:75px;
+  margin-left:0;
+}
+
+.board_scroll {
+  overflow: auto;
+  border-top:3px solid #005199;
+  -ms-overflow-style: auto;
+}
+
+.board_scroll .board_ty table::after {
+  display:none
+}
+
+.board_ty table tr.total td {
+  background-color: #F6FAFC;
+}
+.board_ty table tr td.bg {
+  background-color: #F2F6F8;
+}
+
+.board_ty table .count {
+  text-align: right;
+}
+
+.board_scroll.row4  {height:calc(16px + 45px * 4);} /* 4줄노출 */
+.board_scroll.row5  {height:calc(16px + 45px * 5);} /* 5줄노출 */
+.board_scroll.row7  {height:calc(16px + 45px * 7);} /* 7줄노출 */
+.board_scroll.row10 {height:calc(16px + 45px * 10);} /* 10줄노출 */
+.board_scroll.row15 {height:calc(16px + 45px * 15);} /* 15줄노출 */
+.board_scroll.row20 { height:calc(16px + 45px * 20);} /* 20줄노출 */
+
+.tooltip {
+  position: relative;
+}
+.tooltip_ttl {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: default;
+}
+.tooltip_text {
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  /* transform: translate(-50%); */
+  width: 160px;
+  margin-top: 5%;
+  margin-left: -86px;
+  padding: 5px;
+  background-color: #ffffff;
+  color: #005199;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: left;
+  border: 1px solid #005199;
+  border-radius: 6px;
+  z-index: 10;
+}
+.scroll_body .tooltip_text {
+  margin-top: 4%;
+}
+/* IE 10+ */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .scroll_body .tooltip_text {
+    margin-top: 8.5%;
+  }
+  .tooltex_hght {
+    margin-top: 38px !important;
+  }
+ }
+.tooltip:hover .tooltip_text {
+  visibility: visible;
+}
+.tooltip .tooltip_text::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 7px;
+  bottom: 100%;
+  left: 45%;
+  /* margin-left: -5px; */
+  border-color: transparent transparent #005199 transparent;
+}
+/* .tooltip:last-child .tooltip_text{
+  margin-left: -150px;
+}
+.tooltip:last-child .tooltip_text::after {
+  left: 65%;
+} */
+
+/* datepicker */
+input.select_date {
+  background: url(../img/clndr.png) no-repeat;
+  background-position: 95%;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  width: 55px !important;
+  padding-right: 0;
+  background: none;
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+/* 달력 IE 기본 아이콘 숨김 */
+.select_date::-ms-clear,
+.ui-datepicker select.ui-datepicker-month::-ms-expand,
+.ui-datepicker select.ui-datepicker-year::-ms-expand {
+  display:none;
+  /* appearance: none; */
+}
+.ui-datepicker select.ui-datepicker-month:focus, 
+.ui-datepicker select.ui-datepicker-year:focus {
+  border: none !important;
+}
+
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight {
+  color: #333;
+  background: #e3eef3 !important;
+}
+.ui-state-active, 
+.ui-widget-content .ui-state-active {
+  background: #1378ca !important;
+}
+
+.board_ty .input_ty {
+  margin-right: 0;
+}
+.btn_half {
+  margin-left: 8px !important;
+}
+.inp_text {
+  margin-left: 8px
+}
+
+/* 22.12.29 버튼 hover 효과 */
+.btn_hover:hover {
+  color: #002d8f;
+  background-color: #c4def4;
+  border: 1px solid #002d8f;
+}
+/* 22.12.29 버튼 click 효과 */
+.btn_click:focus {
+  color: #ffffff;
+  background-color: #005199;
+  border: 1px solid #005199;
+}
+
+/* 23.01.05 추가*/
+.sel_inp {
+  display: flex;
+}
+.sel_inp select {
+  width: 70px;
+  margin-right: 3px;
+}
+.first_margin {
+  margin-right: 8px;
+}
+.tit_subtex h3.title {
+  display: inline-block;
+}
+.tit_subtex span {
+  margin-left: 8px;
+}
+
+/* 23.01.16 추가 */
+.modal_board.scroll {
+  height: 450px;
+  padding-top: 4px;
+  overflow: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: auto;
+}
+
+
+/* 23.01.30 추가 */
+
+/* Perfect/Like  */
+.tooltip.PFLK_guide {
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 97.8%;
+}
+.PFLK_guide .tooltip_ttl {
+  width: 10px;
+  height: 16px;
+  line-height: 1.3;
+  padding-left: 6px;
+  font-size: 12px;
+  background-color: #ffffff;
+  border: 1px solid #005199;
+  border-radius: 50%;
+}
+.PFLK_guide .tooltip_text {
+  /* visibility: visible; */
+  top: -5px;
+  left: -295px;
+  width: 270px;
+  margin-top: 0;
+  margin-left: 0; 
+}
+.PFLK_guide .tooltip_text::after {
+  bottom: 70%;
+  left: 100%;
+  border-color: transparent transparent transparent #005199;
+}
+.tip_Perfect {
+  color: red;
+}
+.tip_like {
+  color: #00d5a4;
+}
+
+/* 자동완성 배경처리 */
+input:-webkit-autofill { 
+	-webkit-box-shadow: 0 0 0 30px #fff inset !important;
+	/* -webkit-text-fill-color: #000;  */
+}
+input:-webkit-autofill, 
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active { 
+	transition: background-color 5000s ease-in-out 0s;
+}
+.board_ty .guide {
+  color: #8c8c8c;
+}
+
+
+/* 23.02.01 추가 */
+select {
+  -webkit-appearance:none; /* for chrome */
+  -moz-appearance:none; /*for firefox*/
+  appearance:none;
+}
+select::-ms-expand{
+  display:none;/*for IE10,11*/
+}
+select {
+  background:url('../img/select_arrow.png') no-repeat 94% 52%/14px auto;
+}
+.sel_inp > select {
+  background:url('../img/select_arrow.png') no-repeat 89% 52%/14px auto;
+}

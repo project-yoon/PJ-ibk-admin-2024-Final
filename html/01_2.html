@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-1.12.4.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+  
+  <div class="wrap">
+    <header class="header">
+      <div class="header_inner max_width">
+        <div class="ad_info">
+          <img src="../img/user.png" alt="">
+          <span>
+            <b>한기획(여신기획부)</b>
+            님이 로그인 중입니다. (최근 로그인 : 2022-09-01 09:08:51)
+          </span>
+        </div>
+        <button class="guide_btn">가이드</button>
+      </div>
+    </header><!-- header -->
+    <nav class="nav">
+      <div class="nav_inner max_width">
+        <div class="logo_nav">
+          <h1>
+            <a href="#">
+              <img src="../img/logo.png" alt="IBK기업은행" />
+            </a>
+          </h1>
+        </div>
+        <div class="gnb">
+          <ul class="menu">
+            <li class="active">
+              <a href="#">약정</a>
+              <ul class="sub">
+                <li><a href="#">약정모니터링</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">서식</a>
+              <ul class="sub">
+                <li><a href="#">서식관리</a></li>
+                <li><a href="#">작업의뢰</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">상품</a>
+              <ul class="sub">
+                <li><a href="#">상품관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">통계</a>
+              <ul class="sub">
+                <li><a href="#">단계별 오류발생</a></li>
+                <li><a href="#">분야별 이용통계</a></li>
+                <li><a href="#">부서별 서식의뢰</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">관리</a>
+              <ul class="sub">
+                <li><a href="#">사용자권한</a></li>
+                <li><a href="#">라이선스/인증서</a></li>
+                <li><a href="#">관리자처리이력</a></li>
+                <li><a href="#">공통코드</a></li>
+                <li><a href="#">그룹코드</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="menu_bg"></div>
+        </div>
+      </div>
+    </nav>
+    <!-- nav -->
+    <section class="container max_width min_width">
+      <div class="cont_header">
+        <div class="main_title">
+          <div class="path">
+            <span>홈 ></span>
+            <a href="#">모니터링</a>
+          </div>
+          <h2>모니터링</h2>
+        </div>
+        <div class="cont_btn">
+          <a href="#" class="sub">보조버튼</a>
+          <a href="#" class="main">메인버튼</a>
+        </div>
+      </div><!-- cont_header -->
+      <div class="content">
+        <div class="board_box">
+          <table>
+            <caption>모니터링 검색</caption>
+            <colgroup>
+              <col span="1" style="width:9%;">
+              <col span="1" style="width:16%;">
+              <col span="1" style="width:9%;">
+              <col span="1" style="width:16%;">
+              <col span="1" style="width:9%;">
+              <col span="1" style="width:16%;">
+              <col span="1" style="width:9%;">
+              <col span="1" style="width:16%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="inp1_01">검색범위</label>
+                </th>
+                <td colspan="3">
+                  <span class="date">
+                    <input type="date" class="select_date input_ty" id="inp1_01">
+                    <input type="time" class="select_time input_ty" id="inp1_01">
+                    ~
+                    <input type="time" class="select_time input_ty" id="inp1_01" style="margin-left: 8px;">
+                  </span>
+                </td>
+                <th scope="row">
+                  <label for="inp1_02">검색일자</label>
+                </th>
+                <td colspan="3">
+                  <span class="date">
+                    <input type="date" class="select_date input_ty" id="inp1_02">
+                    ~
+                    <input type="date" class="select_date input_ty" id="inp1_02" style="margin-left: 8px;">
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="inp_01">채널구분</label>
+                </th>
+                <td>
+                  <select id="inp_01">
+                    <option>전체</option>
+                  </select>
+                </td>
+                <th scope="row">
+                  <label for="inp_02">업무구분</label>
+                </th>
+                <td>
+                  <select id="inp_02">
+                    <option>전체</option>
+                  </select>
+                </td>
+                <th scope="row">
+                  <label for="inp_03">기능구분</label>
+                </th>
+                <td>
+                  <select id="inp_03">
+                    <option>전체</option>
+                  </select>
+                </td>
+                <th scope="row">
+                  <label for="inp_04">상태구분</label>
+                </th>
+                <td>
+                  <select id="inp_04">
+                    <option>전체</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <label for="inp_05">전산고객번호</label>
+                </th>
+                <td>
+                  <span class="search_int">
+                    <input type="search" id="inp_05">
+                    <button>검색</button>
+                  </span>
+                </td>
+                <th scope="row">
+                  <label for="inp_06">계좌번호</label>
+                </th>
+                <td>
+                  <span class="search_int">
+                    <input type="search" id="inp_06">
+                    <button>검색</button>
+                  </span>
+                </td>
+                <th scope="row">
+                  <label for="inp_07">약정서관리번호</label>
+                </th>
+                <td class="search_td">
+                  <span class="search_int">
+                    <input type="search" id="inp_07">
+                    <button>검색</button>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cont_box" style="justify-content: flex-end;">
+          <div class="views_filter">
+            <select id="filter_select">
+              <option>월단위</option>
+              <option>일단위</option>
+              <option>주단위</option>
+              <option>연단위</option>
+            </select>
+          </div><!-- views_filter 필터 월단위 -->
+          <div class="cont_btn" style="justify-content: flex-end;">
+            <div style="width: 75px; margin-top: 8px;">
+              <button class="btn2" style="width: 75px; margin-right: 0;">조회</button>
+            </div>
+          </div><!-- cont_btn 조회 -->
+        </div>
+      </div><!-- content 검색영역 -->
+      <div class="content">
+        <div class="cont_box">
+          <div class="board_filter">
+            <select id="filter_select">
+              <option>10건씩</option>
+              <option>50건씩</option>
+              <option>100건씩</option>
+            </select>
+          </div>
+          <div class="board_search">총 99 건</div>
+          <div class="board_nav">
+            <a href="#" class="active">전체</a> | 
+            <a href="#">정렬순</a> | 
+            <a href="#">정렬순</a> | 
+            <a href="#">정렬순</a>
+          </div>
+        </div>
+        <div class="board_ty colgroup">
+          <table>
+            <caption>모니터링 검색결과</caption>
+            <colgroup>
+              <col span="1" style="width:60px;">
+              <col span="1" style="width:105px;">
+              <col span="1" style="width:90px;">
+              <col span="1" style="width:90px;">
+              <col span="1" style="width:90px;">
+              <col span="1" style="width:90px;">
+              <col span="1">
+              <col span="1">
+              <col span="1" style="width:120px;">
+              <col span="1" style="width:105px;">
+              <col span="1" style="width:90px;">
+              <col span="1" style="width:90px;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">작업일자</th>
+                <th scope="col">작업시간</th>
+                <th scope="col">개인/기업</th>
+                <th scope="col">채널</th>
+                <th scope="col">업무</th>
+                <th scope="col">고객계좌번호</th>
+                <th scope="col">약정서관리번호</th>
+                <th scope="col">기능구분</th>
+                <th scope="col">기능</th>
+                <th scope="col">처리시간</th>
+                <th scope="col">상태구분</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>HASH요청</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn1">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>PDF생성</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn4">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>sig전송파일생성</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn2">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>sig파일전송</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn3">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>HASH요청</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn1">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>PDF생성</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn4">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>sig전송파일생성</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn2">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>sig파일전송</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn3">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>HASH요청</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn1">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>2022-08-29</td>
+                <td>11:54:04</td>
+                <td>개인</td>
+                <td>인터넷</td>
+                <td>여신</td>
+                <td>0000000000</td>
+                <td>202208290000003</td>
+                <td>PDF생성</td>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn4">다운로드</button>
+                  </span>
+                </td>
+                <td>0.15</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td colspan="12" class="emp">검색결과가 없습니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div><!-- content 결과영역 -->
+      <div class="paginate">
+        <a href="#" class="prev"><img src="../img/prev.png" alt="">이전</a>
+        <a href="#" class="on">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">9</a>
+        <a href="#">10</a>
+        <a href="#" class="next"><img src="../img/next.png" alt="">다음</a>
+      </div>
+    </section><!-- container  -->
+    <footer class="footer">
+      <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+    </footer><!-- footer -->
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1500" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>[IBK] IBK 신전자문서 시스템 Admin 구축 리스트</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Malgun Gothic", "맑은 고딕", Verdana, Tahoma, "돋움", Dotum, "굴림", Gulim, Geneva, sans-serif, Apple Gothic, AppleGothic;
+      }
+      body {
+        font-size: 13px;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        color: #444;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #444;
+      }
+      a:visited,
+      a:focus,
+      a:active {
+        color: #444;
+      }
+      #wrap {
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 80px 20px 50px 20px;
+      }
+      header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 80px;
+        background: #fff;
+      }
+      header .cont_area {
+        position: relative;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+        margin: 20px 0;
+        line-height: 34px;
+        letter-spacing: -1px;
+        vertical-align: top;
+      }
+      h1 img {
+        vertical-align: top;
+      }
+      .info {
+        position: absolute;
+        right: 25px;
+        bottom: 5px;
+      }
+      .guide {
+        margin: 10px 0 5px 0;
+        text-align: right;
+      }
+      h2 {
+        padding: 8px 15px;
+        font-size: 13px;
+        border: 1px solid #444;
+        border-bottom: none;
+        background: #595959;
+        color: #fff;
+      }
+      h3 {
+        position: relative;
+        margin: -1px 0;
+        padding: 6px 15px;
+        border: 1px solid;
+        border-color: #999 #ccc;
+        background: #ccc;
+        font-size: 13px;
+      }
+      caption {
+        display: none;
+      }
+      div.cont {
+        border-top: 1px solid #444;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        border-spacing: 0;
+      }
+      table thead th {
+        padding: 6px 3px;
+        border: 1px solid #ccc;
+        background: #eee;
+        font-size: 13px;
+      }
+      table tbody td {
+        padding: 5px 3px;
+        border: 1px solid #ccc;
+        background: #e4e4e4;
+        text-align: center;
+        color: #898989;
+        font-size: 11px;
+        text-decoration: line-through;
+      }
+      table tbody td.left {
+        padding: 5px 10px;
+        text-align: left;
+      }
+      table tbody td.url {
+        padding: 5px 10px;
+        text-align: left;
+      }
+      table tbody td.url a {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      table tbody tr.hidden td {
+        background: #e4e4e4;
+        color: #898989;
+        text-decoration: inherit;
+      }
+      table tbody tr.mod td {
+        background: #fce9dc;
+        color: #444;
+        text-decoration: inherit;
+      }
+      table tbody tr.add td {
+        background: #e1f5fe;
+        color: #444;
+        text-decoration: inherit;
+      }
+      table tbody tr.end td {
+        background: #fff;
+        color: #666;
+        text-decoration: inherit;
+      }
+      table tbody tr.none td.url a {
+        color: #bbb;
+        text-decoration: none;
+        cursor: default;
+        pointer-events: none;
+      }
+      table tbody tr:hover td {
+        background: #e2e6f4 !important;
+      }
+      table tbody tr td:last-child {
+        text-align: left;
+        vertical-align: top;
+      }
+      .red {
+        color: #c00 !important;
+        font-weight: bold;
+      }
+      .tab_nav {
+        margin-bottom: 5px;
+      }
+      .tab_nav li {
+        float: left;
+        margin-right: 5px;
+      }
+      .tab_nav li a {
+        display: block;
+        padding: 4px 10px 5px 10px;
+        border: 1px solid #444;
+        border-radius: 4px;
+        background: #595959;
+        color: #fff;
+        font-size: 14px;
+        transition: all 0.4s;
+      }
+      .tab_nav li a:hover {
+        background: #009dff;
+        border-color: #006fb5;
+      }
+      .tab_nav:after {
+        display: block;
+        clear: both;
+        height: 0;
+        content: "";
+        overflow: hidden;
+      }
+    </style>
+    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $(".tab_nav a").click(function () {
+          var activeTab = $(this).attr("href");
+          $("html, body")
+            .stop()
+            .animate({ scrollTop: $(activeTab).offset().top - 110 }, 800);
+          return false;
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <!-- wrap -->
+    <div id="wrap">
+      <header>
+        <div class="cont_area">
+          <h1>[IBK] IBK 신전자문서 시스템 Admin 구축 리스트</h1>
+          <p class="info"><strong></strong> Last updata</p>
+          <p class="guide"></p>
+        </div>
+      </header>
+
+      <!-- Html -->
+      <h2>Html</h2>
+      <div class="cont">
+        <table class='count'>
+          <caption></caption>
+          <colgroup>
+            <col span="1" style="width: 5%" />
+            <col span="1" style="width: 10%" />
+            <col span="1" style="width: 10%" />
+            <col span="1" style="width: 10%" />
+            <col span="1" style="width: 30%" />
+            <col span="1" style="width: 10%" />
+            <col span="1" style="width: 10%" />
+            <col span="1" style="width: 20%" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">NO.</th>
+              <th scope="col">세부업무명</th>
+              <th scope="col">화면명</th>
+              <th scope="col"></th>
+              <th scope="col">화면ID & URL</th>
+              <th scope="col">화면유형</th>
+              <th scope="col">월별</th>
+              <th scope="col">비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="mod">
+              <td></td>
+              <td>공통</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="url"></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td></td>
+              <td></td>
+              <td>
+                로딩페이지 <br>
+                공통heder <br>
+                공통nav
+              </td>
+              <td></td>
+              <td class="url">
+                <a href="./html/loading.html" target="_blank">loading</a> <br>
+                <a href="./html/heder_include.html" target="_blank">heder_include</a> <br>
+                <a href="./html/nav_include.html" target="_blank">nav_include</a>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            
+            <!-------------------- 랜딩 -------------------->
+            <tr class="end none">
+              <td rowspan="3"></td>
+              <td rowspan="3">랜딩</td>
+              <td>랜딩화면</td>
+              <td></td>
+              <td class="url"><a href="./html/SC-COM_000.html" target="_blank">SC-COM_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>[팝업] 타입1</td>
+              <td></td>
+              <td class="url">
+                <a href="./html/SC-COM_000_팝업_타입1.html" target="_blank">SC-COM_000_팝업_타입1</a>
+              </td>
+              <td>팝업</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>[팝업] 타입2</td>
+              <td></td>
+              <td class="url">
+                <a href="./html/SC-COM_000_팝업_타입1.html" target="_blank">SC-COM_000_팝업_타입2</a>
+              </td>
+              <td>팝업</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+
+            <!-------------------- 로그인 -------------------->
+            <tr class="end none">
+              <td></td>
+              <td>로그인</td>
+              <td>
+                로그인
+              </td>
+              <td></td>
+              <td class="url">
+                <a href="./html/SC-COM_000.html" target="_blank">SC-COM_000</a>
+              </td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+
+            <!-------------------- 404 -------------------->
+            <tr class="end none">
+              <td></td>
+              <td>404</td>
+              <td>에러페이지</td>
+              <td></td>
+              <td class="url"><a href="./html/SC-COM_000.html" target="_blank">SC-COM_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            
+            <!-- <tr class="end none">
+              <td></td>
+              <td></td>
+              <td><del>공통페이지(로그아웃/알림)</del></td>
+              <td></td>
+              <td class="url"><a href="./html/공통.html" target="_blank"><del>공통페이지</del></a></td>
+              <td></td>
+              <td>2022-11-30<br>2022-12-01 </td>
+              <td></td>
+            </tr> -->
+
+            <tr class="mod">
+              <td></td>
+              <td>전자문서결재</td>
+              <td></td>
+              <td></td>
+              <td class="url"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-------------------- 전자문서결재 -------------------->
+            <tr class="end none">
+              <td></td>
+              <td>전자문서결재</td>
+              <td>전자문서결재</td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+
+            <tr class="mod">
+              <td></td>
+              <td>전자문서현황</td>
+              <td></td>
+              <td></td>
+              <td class="url"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-------------------- 전자문서현황 -------------------->
+            <tr class="end none">
+              <td rowspan="4"></td>
+              <td rowspan="4">전자문서현황</td>
+              <td>전자문서처리현황</td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서경영평가
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서사용률
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서미전송건
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+
+            <tr class="mod">
+              <td></td>
+              <td>전자문서점검</td>
+              <td></td>
+              <td></td>
+              <td class="url"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-------------------- 전자문서점검 -------------------->
+            <tr class="end none">
+              <td></td>
+              <td>전자문서점검</td>
+              <td>수신신규이미지조회</td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+
+            <tr class="mod">
+              <td></td>
+              <td>공지사항</td>
+              <td></td>
+              <td></td>
+              <td class="url"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-------------------- 공지사항 -------------------->
+            <tr class="end none">
+              <td rowspan="2"></td>
+              <td rowspan="2">공지사항</td>
+              <td>공지사항</td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                자료실
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+
+            <tr class="mod">
+              <td></td>
+              <td>전자문서관리</td>
+              <td></td>
+              <td></td>
+              <td class="url"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-------------------- 전자문서관리 -------------------->
+            <tr class="end none">
+              <td rowspan="7"></td>
+              <td rowspan="7">전자문서관리</td>
+              <td>전자문서원본복록(PDF)</td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서전결권관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                임시저장담당자초기화
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서메인화면관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서리플릿관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서결재제어관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서 등록관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+
+
+            <tr class="mod">
+              <td></td>
+              <td>전자문서시스템관리</td>
+              <td></td>
+              <td></td>
+              <td class="url"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-------------------- 전자문서시스템관리 -------------------->
+            <tr class="end none">
+              <td rowspan="13"></td>
+              <td rowspan="13">전자문서시스템관리</td>
+              <td>거래제어</td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                제어알림
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                프로그램배포설치내역
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                프로그램배포결재목록
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                간편입력화면등록
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                미존재/미매칭관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서업무기본내역
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서수신업무내역
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서카드업무내역
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전자문서여신외환업무내역
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                태블릿기기관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                PUSH전송서비스
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                전산원장수정
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+
+
+            <tr class="mod">
+              <td></td>
+              <td>시스템관리</td>
+              <td></td>
+              <td></td>
+              <td class="url"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <!-------------------- 시스템관리 -------------------->
+            <tr class="end none">
+              <td rowspan="7"></td>
+              <td rowspan="2">시스템관리</td>
+              <td>메뉴관리</td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                그룹별 메뉴관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                부점정보조회
+              </td>
+              <td>
+                부점정보조회
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                사용자정보관리
+              </td>
+              <td>
+                사용자정보관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                프로그램차단관리
+              </td>
+              <td>
+                프로그램차단관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                배치수행정보조회
+              </td>
+              <td>
+                배치수행정보조회
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end none">
+              <td>
+                공통코드관리
+              </td>
+              <td>
+                공통코드관리
+              </td>
+              <td></td>
+              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td>마스터</td>
+              <td>
+                2024-04-00
+              </td>
+              <td></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <!-- //Html -->
+    </div>
+    <!-- //wrap -->
+    <!-- <script type="text/javascript">
+jQuery(function($){
+	$.each($("td.url > a"), function(i,v){
+		$(v).text($(v).attr("href"));
+	});
+});
+</script> -->
+  </body>
+</html>

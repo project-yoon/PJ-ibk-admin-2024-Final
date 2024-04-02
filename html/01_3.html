@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+  
+  <div class="wrap">
+    <header class="header">
+      <div class="header_inner max_width">
+        <div class="ad_info">
+          <img src="../img/user.png" alt="">
+          <span>
+            <b>한기획(여신기획부)</b>
+            님이 로그인 중입니다. (최근 로그인 : 2022-09-01 09:08:51)
+          </span>
+        </div>
+        <button class="guide_btn">가이드</button>
+      </div>
+    </header><!-- header -->
+    <nav class="nav">
+      <div class="nav_inner max_width">
+        <div class="logo_nav">
+          <h1>
+            <a href="#">
+              <img src="../img/logo.png" alt="IBK기업은행">
+            </a>
+          </h1>
+        </div>
+        <div class="gnb">
+          <ul class="menu">
+            <li><a href="#">모니터링</a></li>
+            <li><a href="#">약정서</a></li>
+            <li><a href="#">서식/상품</a>
+              <ul class="sub">
+                <li><a href="#">서식관리</a></li>
+                <li><a href="#">상품관리</a></li>
+                <li><a href="#">작업의뢰</a></li>
+              </ul>
+            </li>
+            <li><a href="#">통계</a>
+              <ul class="sub">
+                <li><a href="#">처리단계별 오류발생</a></li>
+                <li><a href="#">업무별 전자약정 이용</a></li>
+                <li><a href="#">채널별 전자약정 이용</a></li>
+                <li><a href="#">상품별 전자약정 이용</a></li>
+                <li><a href="#">서식별 PDF생성</a></li>
+                <li><a href="#">작업의뢰 이용</a></li>
+              </ul>
+            </li>
+            <li><a href="#">설정</a>
+              <ul class="sub">
+                <li><a href="#">사용자권한</a></li>
+                <li><a href="#">라이선스/인증서</a></li>
+                <li><a href="#">관리자처리이력</a></li>
+                <li><a href="#">오류코드</a></li>
+                <li><a href="#">공통코드</a></li>
+                <li><a href="#">코드그룹</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="menu_bg"></div>
+        </div>
+      </div>
+    </nav><!-- nav -->
+    <section class="container max_width min_width">
+      <div class="cont_header">
+        <div class="main_title">
+          <div class="path">
+            <a href="#">&#60;	돌아가기</a>
+          </div>
+          <h2>샘플 상세화면명</h2>
+        </div>
+        <div class="cont_btn">
+          <a href="#" class="sub">보조버튼</a>
+          <a href="#" class="main">메인버튼</a>
+        </div>
+      </div><!-- cont_header -->
+      <div class="content">
+        <h3 class="title">영역타이틀</h3>
+        <div class="board_ty colgroup">
+          <table>
+            <caption>테이블헤더</caption>
+            <colgroup>
+              <col span="1" style="width:20%;">
+              <col span="1" style="width:20%;">
+              <col span="1" style="width:20%;">
+              <col span="1" style="width:20%;">
+              <col span="1" style="width:20%;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">테이블헤더</th>
+                <th scope="col">테이블헤더</th>
+                <th scope="col">테이블헤더</th>
+                <th scope="col">테이블헤더</th>
+                <th scope="col">테이블헤더</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="content">
+        <div class="cont_box">
+          <h3 class="title">영역타이틀</h3>
+          <div class="cont_btn">
+            <button class="btn1">다운로드</button>
+            <button class="btn2">다운로드</button>
+            <button class="btn3">다운로드</button>
+          </div>
+        </div>
+        <div class="board_ty">
+          <table class="table_col">
+            <caption>영역타이틀</caption>
+            <colgroup>
+              <col span="1" style="width:150px;">
+              <col span="1" style="width:calc(100% - 150px);">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="row">타이틀</th>
+                <td>
+                  <span class="flex_box radio_box">
+                    <span class="radio_btn">
+                      <input type="radio" id="radio_on" name="radio_btn" value="" checked>
+                      <label for="radio_on">해당</label>
+                      <input type="radio" id="radio_off" name="radio_btn" value="">
+                      <label for="radio_off">해당하지 않음</label>
+                    </span>
+                    <span class="attn">해당 서식이 존재하지 않습니다.</span>
+                  </span><!-- radio_btn -->
+                </td>
+              </tr>
+              <tr>
+                <th class="row">타이틀</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th class="row">
+                  <label for="">타이틀</label>
+                </th>
+                <td>
+                  <input type="text" class="select_date input_ty" id="now_date">
+                  <input type="text" class="input_ty" Placeholder="사번을 입력해주세요">
+                  <select>
+                    <option>전체</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th class="row">
+                  <label for="">타이틀</label>
+                </th>
+                <td>
+                  <input type="text" class="input_ty input_full" value="여신거래약정서(기업용)">
+                </td>
+              </tr>
+              <tr>
+                <th class="row">타이틀</th>
+                <td>
+                  <span class="board_btn">
+                    <button class="btn1">해당</button>
+                    <button class="btn2">해당</button>
+                    <button class="btn3">해당</button>
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <th class="row">
+                  <label for="">타이틀</label>
+                </th>
+                <td>
+                  <span class="td_cont">
+                    <input type="text" class="input_ty" style="text-align: center;">일
+                  </span>
+                  <span class="td_cont">
+                    <input type="text" class="input_ty input_half" style="text-align: center;">일
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section><!-- container -->
+    <footer class="footer">
+      <address>copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+    </footer><!-- footer -->
+  </div>
+
+</body>
+</html>
