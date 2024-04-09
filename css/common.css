@@ -94,10 +94,10 @@ input + label {
 
 
 /* common style */
-body {/*min-width:1200px;*/ color:#333;font-family:'Spoqa Han Sans Neo','Malgun Gothic','맑은 고딕',Apple Gothic,arial,helvetica,sans-serif;font-size:14px;font-weight:400;line-height:20px;-webkit-text-size-adjust:none;-webkit-overflow-scrolling:touch;word-wrap:break-word;word-break:keep-all;white-space:normal;/*overflow-y:scroll;*/}
+body {/*min-width:1200px;*/ color:#333;font-family:'Pretendard','Malgun Gothic','맑은 고딕',Apple Gothic,arial,helvetica,sans-serif;font-size:14px;font-weight:400;line-height:20px;-webkit-text-size-adjust:none;-webkit-overflow-scrolling:touch;word-wrap:break-word;word-break:keep-all;white-space:normal;/*overflow-y:scroll;*/}
 
 input, select, textarea {
-    font-family:'Spoqa Han Sans Neo','Malgun Gothic','맑은 고딕',Apple Gothic,arial,helvetica,sans-serif;font-size:14px;
+    font-family:'Pretendard','Malgun Gothic','맑은 고딕',Apple Gothic,arial,helvetica,sans-serif;font-size:14px;
 }
 input:disabled,
 input:read-only,

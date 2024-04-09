@@ -34,6 +34,9 @@ textarea:focus {
   border: solid 2px #005199 !important;
   box-sizing: border-box;
 }
+textarea:focus {
+  margin: -1px;
+}
 input:disabled,
 textarea:disabled {
   background-color: #F6FAFC !important;
@@ -243,6 +246,10 @@ h2.login_box_title {
 .cont_btn button.xl {
   width: 100%;
 }
+.cont_btn .auto {
+  width: auto;
+  padding: 0 4px;
+}
 .cont_btn a:first-child,
 .cont_btn button:first-child,
 .board_btn button:first-child,
@@ -297,6 +304,9 @@ h2.login_box_title {
 .radio_box .check,
 .radio_box .attn {
   padding-left: 8px;
+}
+.board_btn a.file_name {
+  color: initial !important;
 }
 .board_btn .file_name_st {
   padding-left: 0;
@@ -567,6 +577,9 @@ textarea {
   height: auto;
   padding: 4px 8px;
   resize: vertical;
+}
+.textarea_fixed{
+	resize: none;
 }
 .textarea_txt p {
   padding-bottom: 10px;
@@ -917,4 +930,52 @@ select {
 }
 .sel_inp > select {
   background:url('../img/select_arrow.png') no-repeat 89% 52%/14px auto;
+}
+
+/* cp-20240400 */
+.cp-gd .content .tit_subtex span{
+  background: rgba(0, 81, 153, 0.08);
+  font-weight: 500;
+}
+.contextmenu {
+  z-index: 999;
+  display: none;
+  position: absolute;
+}
+.contextmenu::before {
+  display: table;
+  content: " ";
+}
+.contextmenu::after {
+content: " ";
+clear: both;
+display: table;
+}
+.menulist {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  padding: 6px 0;
+  margin: 6px 0 0;
+  border-radius: 10px;
+  background-color: #fff;
+  background-clip: padding-box;
+  box-shadow: 0 4px 12px rgba(0,0,0,.125);
+
+  display:block;position:static;margin-bottom:5px;
+}
+.menulist>li>a {
+  display: block;
+  padding: 8px 20px;
+  clear: both;
+  color: #333;
+  white-space: nowrap;
+}
+.menulist .hr {
+  height: 1px;
+  margin: 4px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
 }

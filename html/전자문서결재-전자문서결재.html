@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.timepicker.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서결재 &gt;</span>
+              <span>전자문서결재</span>
+              <!-- 22.11.28 경로 수정 -->
+            </div>
+            <h2>조회</h2>
+          </div>
+        </div>
+        <!-- cont_header -->
+        <div class="content">
+          <div class="board_box">
+            <!-- 23.01.30 Perfet, like 가이드 툴팁 -->
+            <div class="tooltip PFLK_guide">
+              <span class="tooltip_ttl">!</span>
+              <span class="tooltip_text">
+                [입력조건에 대한 항목명 표시 구분 가이드] <br>
+                1) prerfect 입력 : {항목명} <span class="tip_Perfect">。</span> → 조건 입력 모두 일치 <br>
+                2) like 입력: {항목명} <span class="tip_like">。</span> → 1글자 이상 입력
+              </span>
+            </div>
+            <table>
+              <caption>
+                전자문서결재
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 7%" />
+                <col span="1" style="width: 19%" />
+                <col span="1" style="width: 9.5%" />
+                <col span="1" style="width: 18.2%" />
+                <col span="1" style="width: 9.5%" />
+                <col span="1" style="width: 18.3%" />
+                <col span="1" style="width: 9.5%" />
+                <col span="1" style="width: 17%" />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp1_01">업무 구분</label>
+                    <span class="tip_Perfect">。</span>
+                  </th>
+                  <td colspan="7">
+                    <span class="date">
+                      <!-- 22.10.21 datepicker 수정 추가 -->
+                      <input type="text" class="select_date input_ty" id="inp1_01" autocomplete="off" />
+                      ~
+                      <input type="text" class="select_date input_ty second" id="inp1_02" autocomplete="off" />
+                    </span>
+                    <span style="color: #8c8c8c">(최대 3일 내역만 조회 가능)</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_04">부점코드</label>
+                    <span class="tip_Perfect">。</span>
+                  </th>
+                  <td>
+                    <select id="inp_04">
+                      <option>전체</option>
+                      <option>정상</option>
+                      <option>오류</option>
+                    </select>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_01">거래일자</label>
+                    <span class="tip_Perfect">。</span>
+                  </th>
+                  <td>
+                    <select id="inp_01">
+                      <option>전체</option>
+                      <option>개인</option>
+                      <option>기업</option>
+                    </select>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_02">거래화면번호</label>
+                  </th>
+                  <td>
+                    <select id="inp_02">
+                      <option>전체</option>
+                      <option>인터넷</option>
+                      <option>스마트</option>
+                      <option>BOX</option>
+                      <option>소상공인</option>
+                    </select>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_03">진행상태</label>
+                    <span class="tip_Perfect">。</span>
+                  </th>
+                  <td>
+                    <select id="inp_03">
+                      <option>전체</option>
+                      <option>여신</option>
+                      <option>외환</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_08">취급자</label>
+                  </th>
+                  <td>
+                    <select id="inp_08">
+                      <option>전체</option>
+                      <option>DATA</option>
+                      <option>HASH</option>
+                      <option>POST</option>
+                      <option>CONVERT</option>
+                      <option>SAVE</option>
+                    </select>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_05">X</label>
+                    <!-- 23.01.30 Perfect 표시 추가 -->
+                    <span class="tip_Perfect">。</span>
+                  </th>
+                  <td>
+                    <span class="search_int">
+                      <input type="search" id="inp_05" placeholder="숫자만 입력" />
+                      <button>검색</button>
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_06">X</label>
+                    <!-- 23.01.30 Perfect 표시 추가 -->
+                    <span class="tip_Perfect">。</span>
+                  </th>
+                  <td>
+                    <span class="search_int">
+                      <input type="search" id="inp_06" placeholder="숫자만 입력" />
+                      <button>검색</button>
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_07">X</label>
+                    <!-- 23.01.30 Perfect 표시 추가 -->
+                    <span class="tip_Perfect">。</span>
+                  </th>
+                  <td class="search_td">
+                    <span class="search_int">
+                      <input type="search" id="inp_07" />
+                      <button>검색</button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cont_btn ty_new">
+            <div class="right">
+              <select title="보기선택">
+                <option>10건씩 보기</option>
+              </select>
+              <button class="btn3 ">초기화</button>
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+          <!-- <div class="cont_btn flex_right">
+            <button class="btn3 views_btn">초기화</button>
+            <button class="btn2 views_btn">조회</button>
+          </div> -->
+          <!-- cont_btn 조회 -->
+          
+        </div>
+        <!-- content 검색영역 -->
+        <div class="content">
+          <div class="cont_box">
+            <div class="board_search">총 99 건</div>
+          </div>
+          <div class="board_ty colgroup">
+            <table>
+              <caption>
+                모니터링 검색결과
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 105px" />
+                <col span="1" style="width: 90px" />
+                <col span="1" style="width: 90px" />
+                <col span="1" style="width: 90px" />
+                <col span="1" style="width: 90px" />
+                <col span="1" />
+                <col span="1" />
+                <col span="1" />
+                <col span="1" style="width: 105px" />
+                <col span="1" style="width: 90px" />
+                <col span="1" style="width: 90px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">처리일자</th>
+                  <th scope="col">처리시간</th>
+                  <th scope="col">상품대상</th>
+                  <th scope="col">채널</th>
+                  <th scope="col">업무</th>
+                  <th scope="col">전산고객번호</th>
+                  <th scope="col">고객계좌번호</th>
+                  <th scope="col">약정관리번호</th>
+                  <th scope="col">BPR IDX</th>
+                  <th scope="col">현재단계</th>
+                  <th scope="col">상태구분</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="12" class="emp">조회결과가 없습니다.</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>개인</td>
+                  <td>인터넷</td>
+                  <td>여신</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>DATA</td>
+                  <td>
+                    <span class="attn">오류</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>기업</td>
+                  <td>스마트</td>
+                  <td>외환</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>HASH</td>
+                  <td>정상</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>개인</td>
+                  <td>인터넷</td>
+                  <td>여신</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>POST</td>
+                  <td>정상</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>기업</td>
+                  <td>스마트</td>
+                  <td>외환</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>CONVERT</td>
+                  <td>정상</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>개인</td>
+                  <td>인터넷</td>
+                  <td>여신</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>SAVE</td>
+                  <td>정상</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>기업</td>
+                  <td>스마트</td>
+                  <td>외환</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>HASH</td>
+                  <td>정상</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>개인</td>
+                  <td>인터넷</td>
+                  <td>여신</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>POST</td>
+                  <td>정상</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>기업</td>
+                  <td>스마트</td>
+                  <td>외환</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>HASH</td>
+                  <td>정상</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>개인</td>
+                  <td>인터넷</td>
+                  <td>여신</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>POST</td>
+                  <td>정상</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>2022-08-29</td>
+                  <td>11:54:04</td>
+                  <td>기업</td>
+                  <td>스마트</td>
+                  <td>외환</td>
+                  <td>9999999999</td>
+                  <td>0000000000</td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">202208290000008202208290000008</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td class="tooltip">
+                    <span class="tooltip_ttl">000000000000000000000000000</span>
+                    <span class="tooltip_text">
+                      202208290000008202208290000008202208290000008202208290000008
+                    </span>
+                  </td>
+                  <td>HASH</td>
+                  <td>정상</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- content 결과영역 -->
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+      </section>
+      <!-- container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- footer -->
+    </div>
+  </body>
+</html>

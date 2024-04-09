@@ -45,7 +45,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function () {
-  /*** gnb ***/
+  /* gnb */
   const lnbMain = $(".gnb > ul > li"),
     GnbSub = $(".gnb ul.sub"),
     menuBg = $(".gnb .menu_bg");
@@ -63,7 +63,7 @@ $(document).ready(function () {
     menuBg.hide();
   });
 
-  /*** radio guide ***/
+  /* radio guide */
   const radioBtn = $('input[type="radio"]'),
     radioGuide = $('.radio_guide');
 
@@ -74,6 +74,24 @@ $(document).ready(function () {
       $(radioGuide).hide();
     }
   });
+
+  /* table all check *//* cp-20240400 */
+  const chkTbls = document.querySelectorAll('table[data-check="check-group"]');
+  chkTbls.forEach(chkGroups => {
+    const chkAll = chkGroups.querySelector('label[data-check="check-all"] input[type="checkbox"]');
+    const chkTbds = chkGroups.querySelectorAll('tbody input[type="checkbox"]');
+    chkAll.addEventListener('change', function() {
+        chkTbds.forEach(chkItems => {
+          chkItems.checked = chkAll.checked;
+        });
+    });
+    chkTbds.forEach(chkItems => {
+      chkItems.addEventListener('change', function() {
+            chkAll.checked = [...chkTbds].every(chkItems => chkItems.checked);
+        });
+    });
+  });
+
 });
 
 /* datepicker */
@@ -187,4 +205,37 @@ $(document).ready(function(){
   if (lndngCardNbr >= 2) {
     lndngAcrd.css("height",acrdHeight)
   }
+});
+
+
+  /* table context menu *//* cp-20240400 */
+  $(document).ready(function(){
+    var contextMenus = document.querySelectorAll(".contextmenu");
+    contextMenus.forEach(function(menu, index) {
+      var table = menu.previousElementSibling;
+      function showMenu(e) {
+        e.preventDefault();
+        contextMenus.forEach(function(otherMenu, otherIndex) {
+          otherMenu.style.display = otherIndex === index ? "block" : "none";
+        });
+        menu.style.left = e.pageX + "px";
+        menu.style.top = e.pageY + "px";
+      }
+      table.addEventListener("contextmenu", showMenu);
+      table.addEventListener("click", function() {
+        menu.style.display = "none";
+      });
+      menu.querySelectorAll("li a").forEach(function(item) {
+        item.addEventListener("click", function(e) {
+          e.preventDefault();
+          console.log("Clicked on: " + this.textContent);
+          menu.style.display = "none";
+        });
+      });
+    });
+    document.addEventListener("click", function() {
+      contextMenus.forEach(function(menu) {
+        menu.style.display = "none";
+      });
+    });
 });

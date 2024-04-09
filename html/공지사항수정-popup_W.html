@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>공지사항 수정::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body class="win_pop">
+
+  <div class="wrap">
+    <!-- <div class="modal_inner"> -->
+      <div class="modal_header" >
+        <h1>공지사항 수정</h1>
+        <!-- <a href="#"><img src="../img/close.png" alt="닫기"></a> -->
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+        <!-- <p style="margin-bottom: 10px;">* 아래 파일에 대하여 BPR 재입고를 진행하였습니다.</p> -->
+        <div class="modal_board scroll">
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                공지사항 수정
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 150px">
+                <col span="1" style="width: calc(100% - 150px)">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">
+                    <label for="inp_01">작성자</label>
+                    </th>
+                  <td>김기업</td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_02">구분</label>
+                  </th>
+                  <td>
+                    <select id="inp_02">
+                      <option selected="selected">공지사항</option>
+                      <option>자료실</option>
+                      <option>게시안함</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_03">제목</label>
+                  </th>
+                  <td>
+                    <input type="text" class="input_ty input_full" value="공지사항 제목">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_04">내용</label>
+                  </th>
+                  <td>
+                    <textarea name="textarea" id="rqsCnt" class="input_full textarea_fixed" style="height: 165px;" rows="8">공지사항 내용</textarea>
+                    <!-- <span style="float: right">( 0 / 2000 )</span> -->
+                  </td>
+                </tr>
+                <tr>
+                <tr>
+                  <th class="row" rowspan="3">
+                    <label for="inp_06">첨부파일</label>
+                  </th>
+                  <td>
+                    <span class="board_btn">
+                    <label for="file_txt" class="file_label btn2">파일변경</label>
+                    <input type="file" accept=".txt" id="file_txt" />
+                    <span class="file_name">일임형 ISA 반송체크리스트.hwp</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="board_btn">
+                    <label for="file_txt" class="file_label btn2">파일변경</label>
+                    <input type="file" accept=".txt" id="file_txt" />
+                    <span class="file_name">일임형 ISA 반송체크리스트(재신고용) VER4_FN.hwp</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="board_btn">
+                      <label for="file_HwPd" class="file_label btn2">파일선택</label>
+                      <input type="file" accept=".Hwp, .pdf" id="file_HwPd" />
+                      <!-- <span>* (기획확인필요) 첨부가능 확장자 및 용량 안내문구</span> -->
+                    </span>
+                    <!-- <span class="board_btn">
+                      <label for="file_HwPd" class="file_label btn2">파일변경</label>
+                      <input type="file" accept=".hwp" id="file_HwPd" />
+                      <span class="file_name">서식파일(서식명).hwp</span>
+                    </span> --> 
+                  </td>
+                </tr>
+
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button class="btn2">저장</button>
+          <button class="btn3">닫기</button>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div> 
+
+</body>
+</html>
