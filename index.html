@@ -197,9 +197,10 @@
 
       table tbody tr.ing td{background: #ceff3a !important;}
     </style>
-    <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script>
+    <!-- <script type="text/javascript" src="./js/jquery-1.12.4.min.js"></script> -->
+    <script type="text/javascript" src="./js/jquery-3.6.1.min.js"></script>
     <script type="text/javascript">
-      $(function () {
+      $(function(){
         $(".tab_nav a").click(function () {
           var activeTab = $(this).attr("href");
           $("html, body")
@@ -1058,31 +1059,19 @@
               <td></td>
             </tr>
             <!-- ------------------ 전자문서시스템관리 ------------------ -->
-            <tr class="end none ing">
+            <tr class="end ing">
               <td rowspan="25"></td>
-              <td rowspan="2">
+              <td>
                 거래제어
               </td>
               <td>
-                거래별 차단등록 목록
+                전자문서거래제어
               </td>
               <td></td>
-              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td class="url"><a href="./html/전자문서시스템관리-전자문서거래제어.html" target="_blank">전자문서시스템관리-전자문서거래제어</a></td>
               <td>마스터</td>
               <td>
-                2024-04-00
-              </td>
-              <td></td>
-            </tr>
-            <tr class="end none ing">
-              <td>
-                전자문서차단 등록
-              </td>
-              <td></td>
-              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
-              <td>마스터</td>
-              <td>
-                2024-04-00
+                2024-04-09
               </td>
               <td></td>
             </tr>
@@ -1212,30 +1201,45 @@
               </td>
               <td></td>
             </tr>
-            <tr class="end none ing">
-              <td rowspan="2">
+            <tr class="end ing">
+              <td rowspan="3">
                 미존재/미매칭관리
               </td>
               <td>
                 <i>[TAB]</i> 미존재/미매칭 관리 (미존재case)
               </td>
               <td></td>
-              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td class="url"><a href="./html/전자문서시스템관리-미존재.html" target="_blank">전자문서시스템관리-미존재</a></td>
               <td>마스터</td>
               <td>
-                2024-04-00
+                2024-04-09
               </td>
               <td></td>
             </tr>
-            <tr class="end none ing">
+            <tr class="end ing">
               <td>
                 <i>[TAB]</i> 미존재/미매칭 관리 (미매칭case)
               </td>
               <td></td>
-              <td class="url"><a href="./html/SC-MNT_000.html" target="_blank">SC-MNT_000</a></td>
+              <td class="url"><a href="./html/전자문서시스템관리-미매칭.html" target="_blank">전자문서시스템관리-미매칭</a></td>
               <td>마스터</td>
               <td>
-                2024-04-00
+                2024-04-09
+              </td>
+              <td></td>
+            </tr>
+            <tr class="end ing">
+              <td>
+                [팝업] PDF조회
+              </td>
+              <td></td>
+              <td class="url">
+                <a href="./html/전자문서시스템관리-PDF조회-popup_L.html" target="_blank">전자문서시스템관리-PDF조회-popup_L</a> <br>
+                <a href="./html/전자문서시스템관리-PDF조회-popup_W.html" target="_blank" onclick="window.open(this.href,'','width=1204,height=800,scrollbars=yes,resizable=yes'); return false;">전자문서시스템관리-PDF조회-popup_W</a>  
+              </td>
+              <td>팝업</td>
+              <td>
+                2024-04-09
               </td>
               <td></td>
             </tr>

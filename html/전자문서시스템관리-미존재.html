@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전자문서 서류정보 미존재/미매칭 관리 (미존재case)::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서 시스템관리 &gt;</span>
+              <span>미존재/미매칭 관리</span>
+            </div>
+            <h2>전자문서 서류정보 미존재/미매칭 관리</h2>
+          </div>
+          <div class="cont_tab">
+            <ul>
+              <li class="active"><a href="#">미존재</a></li>
+              <li><a href="#">미매칭</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- cont_header -->
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>
+                전자문서 서류정보 미존재 조회 조건
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 6%">
+                <col span="1" style="width: 37%;">
+                <col span="1" style="width: 6%">
+                <col span="1" style="width: 30%;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_01">거래일자</label>
+                  </th>
+                  <td>
+                    <span class="date">
+                      <input type="text" class="select_date input_ty" id="inp_01" autocomplete="off" />
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_02">업무구분</label>
+                  </th>
+                  <td>
+                    <select id="inp_02">
+                      <option>수신</option>
+                      <option>가계여신</option>
+                      <option>기업여신</option>
+                      <option>외환</option>
+                      <option>카드</option>
+                      <option>방카</option>
+                      <option>전표(지원)</option>
+                      <option>기타</option>
+                      <option>본부서류</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_03">부점코드</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_03" placeholder="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_03_1" placeholder="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_04">취급자</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_04" placeholder="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_04_1" placeholder="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cont_btn ty_new">
+            <div class="right">
+              <select title="보기선택">
+                <option>20개씩 보기</option>
+              </select>
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+        <!-- content 검색영역 -->
+        <div class="content">
+          <h3 class="title">전자문서 업무기본 내역</h3>
+          <div class="cont_box">
+            <div class="board_search">전체 0 건</div>
+            <div class="cont_btn">
+              <a class="btn3 auto" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
+            </div>
+          </div>
+          <div class="board_ty colgroup">
+            <table>
+              <caption>
+                전자문서 업무기본 내역
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 275px;">
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 80px;">
+                <col span="1">
+                <col span="1" style="width: 125px;">
+                <col span="1" style="width: 85px;">
+                <col span="1" style="width: 295px;">
+                <col span="1" style="width: 65px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">표준글로벌ID</th>
+                  <th scope="col">거래년월일</th>
+                  <th scope="col">거래시간</th>
+                  <th scope="col">거래부점</th>
+                  <th scope="col">거래직원</th>
+                  <th scope="col">화면번호</th>
+                  <th scope="col">전자문서 인덱스 번호</th>
+                  <th scope="col">업무유형</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="8" class="emp">조회결과가 없습니다.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="">202404030653036ED094159902068</a>
+                  </td>
+                  <td>2024-04-03</td>
+                  <td>09:35:12</td>
+                  <td>(0653)반월공단</td>
+                  <td>(A80087)이기업</td>
+                  <td>11925</td>
+                  <td>0377910653A8008720240403ED199898</td>
+                  <td>DP</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="">202404030653036ED094159902068</a>
+                  </td>
+                  <td>2024-04-03</td>
+                  <td>09:35:12</td>
+                  <td>(0653)반월공단</td>
+                  <td>(A80087)이기업</td>
+                  <td>11925</td>
+                  <td>0377910653A8008720240403ED199898</td>
+                  <td>DP</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="">202404030653036ED094159902068</a>
+                  </td>
+                  <td>2024-04-03</td>
+                  <td>09:35:12</td>
+                  <td>(0653)반월공단</td>
+                  <td>(A80087)이기업</td>
+                  <td>11925</td>
+                  <td>0377910653A8008720240403ED199898</td>
+                  <td>DP</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          
+        </div>
+        <!-- content 결과영역 -->
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+      </section>
+      <!-- container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- footer -->
+    </div>
+  </body>
+</html>
