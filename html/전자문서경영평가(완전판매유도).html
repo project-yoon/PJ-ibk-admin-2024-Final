@@ -162,11 +162,11 @@
                     <col span="1" style="width:80px;">
                     <col span="1" style="width:80px;">
                     <col span="1" style="width:80px;">
-                    <col span="1" style="width:70px;">
-                    <col span="1" style="width:70px;">
-                    <col span="1" style="width:70px;">
-                    <col span="1" style="width:70px;">
-                    <col span="1" style="width:70px;">
+                    <col span="1" style="width: 120px;">
+                    <col span="1" style="width: 120px;">
+                    <col span="1" style="width: 120px;">
+                    <col span="1" style="width: 120px;">
+                    <col span="1" style="width: 120px;">
                     <col span="1" style="width:80px;">
                     <col span="1" style="width:70px;">
                     <col span="1" style="width:70px;">
@@ -263,39 +263,101 @@
           </div>
         </div>
 
-        <!-- content 검색영역 -->
+        <!-- content accordion -->
         <div class="content">
-          <div class="accordion">
+          <div class="accordion full">
             <ul>
-              <li class="item"></li>
-              <li class="item">
+              <li>
+                <div class="item">
+                  <div class="ttl">전자문서 사용률 경영평가 점수표</div>
+                  <div class="image">
+                    <img src="../img/acrd_off.png" alt="닫기">
+                  </div>
+                </div>
                 <div class="cnt">
-                  <p>.accordion .cnt p</p>
+                  <p>
+                    * 전자문서 사용률 경영평가 (10점)
+                  </p>
+                  <!-- 테이블 시작 -->
+                  <div class="board_ty colgroup">
+                    <table>
+                      <caption>
+                        전자문서 사용률 경영평가 점수표
+                      </caption>
+                      <colgroup>
+                        <col span="1" />
+                        <col span="1" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">구간점수</th>
+                          <th scope="col">점수</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>기본점수</td>
+                          <td>1.0점</td>
+                        </tr>
+                        <tr>
+                          <td>70% 초과</td>
+                          <td>4.0점</td>
+                        </tr>
+                        <tr>
+                          <td>65% 초과</td>
+                          <td>3.5점</td>
+                        </tr>
+                        <tr>
+                          <td>60% 초과</td>
+                          <td>3.0점</td>
+                        </tr>
+                        <tr>
+                          <td>55% 초과</td>
+                          <td>2.5점</td>
+                        </tr>
+                        <tr>
+                          <td>50% 초과</td>
+                          <td>2.0점</td>
+                        </tr>
+                        <tr>
+                          <td>45% 초과</td>
+                          <td>1.5점</td>
+                        </tr>
+                        <tr>
+                          <td>40% 초과</td>
+                          <td>1.0점</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- // 테이블 종료 -->
+                  <p>
+                    <font color="#005199">* 기업고객팀에서 발생한 종이문서 건수 제외</font>
+                  </p>
                 </div>
               </li>
-              <li class="item">
-                <div class="image">
-                  <img src="#" alt="zz">
+              <li>
+                <div class="item">
+                  <div class="ttl">전자문서 사용률 계산식</div>
+                  <div class="image">
+                    <img src="../img/acrd_off.png" alt="닫기">
+                  </div>
+                </div>
+                <div class="cnt">
+                  <p>
+                    * 사용률(%) = 전자문서 사용건수(고객작성 전자전표 가산, 기업고객팀 사용건수 가산) / 전체건수 *100
+                  </p>
+                  <p>
+                    * 전체건수 = 전자문서(기업고객팀 사용건수 가삼) + 종이문서 (전자문서 적용되는 서류) + 고객작성 전자전표 (기업고객 팀 전자전표 포함) – (5배수 제외상품 * 5건)
+                    -(3배수 제외상품 * 3건) – (단체서류 * 2건) – (제외등록 3건) - 조정신청
+                  </p>
+                  <p>
+                    <font color="#005199">* 기타 자세한 내용은 [경영평가 기준안내]를 참조</font>
+                  </p>
                 </div>
               </li>
             </ul>
-            <div class="accordion_body">
-              <ul>
-                <li class="item"></li>
-                <li class="item">
-                  <div class="cnt">
-                    <p>.accordion .cnt p</p>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="image">
-                    <img src="#" alt="zz">
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-          </div>
+          </div><!-- // accordion -->
         </div>
 
         <!-- content 결과영역 -->

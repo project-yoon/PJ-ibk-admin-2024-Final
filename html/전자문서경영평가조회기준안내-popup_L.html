@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no"/>
-  <title>공지사항 상세정보::IBK 신전자문서 시스템 관리자</title>
+  <title>전자문서경영평가조회 기준안내 (전자문서관리자 전용)::IBK 신전자문서 시스템 관리자</title>
   <link rel="stylesheet" href="../css/style.css"/>
   <script src="../js/jquery-3.6.1.min.js"></script>
   <script src="../js/jquery-ui.min.js"></script>
@@ -15,97 +15,96 @@
 
   <div class="wrap">
   <div class="modal">
-    <div class="modal_inner" style="height: 635px; width: 700px;">
+    <div class="modal_inner" style="height: 730px; width: 700px;">
       <div class="modal_header">
-        <h1>공지사항 상세정보</h1>
+        <h1>전자문서경영평가조회 기준안내 (전자문서관리자 전용)</h1>
         <a href="#"><img src="../img/close.png" alt="닫기"></a>
       </div>
       <div class="modal_body" style="margin-top: 27px;">
-        <!-- <p style="margin-bottom: 10px;">* 아래 파일에 대하여 BPR 재입고를 진행하였습니다.</p> -->
+        <div class="board_box">
+          <table>
+            <caption>
+              전자문서경영평가 조회 조건
+            </caption>
+            <colgroup>
+              <col span="1" style="width: 10%">
+              <col span="1" style="width: 65%">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="inp_01">조회기준</label>
+                </th>
+                <td>
+                  <select id="inp_01">
+                    <option>선택해주세요</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt10 mb10">* 조회기준을 선택해 조회해주세요</p>
+        <div class="cont_box">
+          <div class="board_search">총 0 건</div>
+          <div class="cont_btn">
+            <a class="btn3 auto" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
+          </div>
+        </div>
         <div class="modal_board scroll">
           <div class="board_ty">
-            <table class="table_col">
+            <table>
               <caption>
-                공지사항 상세정보
+                전자문서경영평가조회 기준안내(전자문서관리자 전용) 조회결과
               </caption>
               <colgroup>
-                <col span="1" style="width: 150px">
-                <col span="1" style="width: calc(100% - 150px)">
+                <col span="1" style="width: 20%"> <!-- 구분코드 -->
+                <col span="1" style="width: 20%"> <!-- 구분명 -->
+                <col span="1" style="width: 16%"> <!-- 별도구분 -->
+                <col span="1" style="width: 14%"> <!-- 포함여부 -->
+                <col span="1" style="width: auto"> <!-- 수정일자 -->
               </colgroup>
+              <thead>
+                <tr>
+                  <th class="row">
+                    구분코드
+                  </th>
+                  <th class="row">
+                    구분명
+                  </th>
+                  <th class="row">
+                    별도구분
+                  </th>
+                  <th class="row">
+                    포함여부
+                  </th>
+                  <th class="row">
+                    수정일자
+                  </th>
+                </tr>
+              </thead>
               <tbody>
                 <tr>
-                  <th class="row">
-                    <label for="inp_01">작성자</label>
-                    </th>
-                  <td>김기업</td>
+                  <td>000000</td>
+                  <td>부서내팀_부점장급</td>
+                  <td></td>
+                  <td></td>
+                  <td>2024-04-00</td>
                 </tr>
                 <tr>
-                  <th class="row">
-                    <label for="inp_02">구분</label>
-                  </th>
-                  <td>
-                    공지사항
-                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
-                  <th class="row">
-                    <label for="inp_03">제목</label>
-                  </th>
-                  <td>
-                    금융정보제공 샘플 파일
-                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
-                <tr>
-                  <th class="row">
-                    <label for="inp_04">내용</label>
-                  </th>
-                  <td>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                    금융정보제공 샘플 파일<br>
-                  </td>
-                </tr>
-                <tr>
-                <tr>
-                  <th class="row" rowspan="3">
-                    <label for="inp_06">첨부파일</label>
-                  </th>
-                  <td>
-                    <span class="board_btn">
-                      <!-- <label for="file_xlsx" class="file_label btn2">파일변경</label>
-                      <input type="file" accept=".xls, .xlsx" id="file_xlsx" /> -->
-                      <a href="extSample.xls" class="file_name file_name_st" download>extSample.xls</a>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="board_btn">
-                      <!-- <label for="file_xlsx" class="file_label btn2">파일변경</label>
-                      <input type="file" accept=".xls, .xlsx" id="file_xlsx" /> -->
-                      <a href="extSample.xls" class="file_name file_name_st" download>extSample.xls</a>
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="board_btn">
-                      <!-- <label for="file_xlsx" class="file_label btn2">파일변경</label>
-                      <input type="file" accept=".xls, .xlsx" id="file_xlsx" /> -->
-                      <a href="extSample.xls" class="file_name file_name_st" download>extSample.xls</a>
-                    </span>
-                  </td>
-                </tr>
-
-                
               </tbody>
             </table>
           </div>
