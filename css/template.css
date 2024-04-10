@@ -476,7 +476,7 @@ select.text_center option{
 }
 .radio_btn {
   display: inline-block;
-  width: 200px;
+  width: 198px;
   height: 30px;
   border-radius: 6px;
   border: 1px solid #b3cbe0;
@@ -491,17 +491,18 @@ input[type=file] {
 }
 .radio_btn label {
   display: inline-block;
-  width: calc(50% - 1.6px);
+  width: calc(49.6% - 1px);
   height: 30px;
   line-height: 30px;
   text-align: center;
   color: #b3cbe0;
+  cursor: pointer;
 }
 .radio_thr label {
   width: 32.6%;
 }
 .radio_btn input:checked + label {
-  color: white;
+  color: #fff;
   background-color: #1378ca;
   border-radius: 5px;
 }

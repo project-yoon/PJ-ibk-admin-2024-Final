@@ -154,6 +154,8 @@
               </div>
             </div>
             <div class="scroll_body">
+              <!-- table context menu(js) : cp-20240400
+                [1]  테이블을 감싸는 div에 클래스"contexttables" 추가 필수 -->
               <div class="board_ty colgroup contexttables">
                 <table>
                   <caption>전자문서경영평가 결과 목록</caption>
@@ -247,6 +249,10 @@
                     </tr>
                   </tbody>
                 </table>
+                <!-- table context menu(js) : cp-20240400
+                   [2] 테이블 바로 뒤에, 사용할 컨텍스트 메뉴(클래스contextmenu)를 배치
+                   [3] 테이블 마다 사용할 컨텍스트 메뉴의 아이디를 지정
+                -->
                 <div id="contextmenu1" class="contextmenu">
                   <ul class="menulist" role="menu" aria-labelledby="dropdownmenu">
                     <li><a tabindex="-1" href="#">다중정렬</a></li>
