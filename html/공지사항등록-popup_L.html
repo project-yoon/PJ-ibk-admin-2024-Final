@@ -28,43 +28,56 @@
                 공지사항 등록
               </caption>
               <colgroup>
-                <col span="1" style="width: 150px">
-                <col span="1" style="width: calc(100% - 150px)">
+                <col span="1" style="width: 30px;">
+                <col span="1" style="width: 80px;">
+                <col span="1" style="width: 30px;">
+                <col span="1" style="width: 80px;">
               </colgroup>
               <tbody>
                 <tr>
                   <th class="row">
-                    <label for="inp_01">작성자</label>
+                    <label for="inp_01">작성자*</label>
                     </th>
-                  <td>김기업</td>
+                  <td colspan="3">김기업</td>
                 </tr>
                 <tr>
                   <th class="row">
-                    <label for="inp_02">구분</label>
+                    <label for="inp_02">구분*</label>
                   </th>
                   <td>
                     <select id="inp_02">
                       <option>공지사항</option>
                       <option>자료실</option>
-                      <option>게시안함</option>
                     </select>
+                  </td>
+                  <th class="row">
+                    <label for="inp_05">노출여부</label>
+                  </th>
+                  <td>
+                    <span class="flex_box radio_box">
+                      <span class="radio_btn">
+                        <input type="radio" id="radio_on" name="radio_btn" value="" checked>
+                        <label for="radio_on">노출</label>
+                        <input type="radio" id="radio_off" name="radio_btn" value="">
+                        <label for="radio_off">미노출</label>
+                      </span>
+                    </span><!-- radio_btn -->
                   </td>
                 </tr>
                 <tr>
                   <th class="row">
-                    <label for="inp_03">제목</label>
+                    <label for="inp_03">제목*</label>
                   </th>
-                  <td>
+                  <td colspan="3">
                     <input type="text" class="input_ty input_full" value="">
                   </td>
                 </tr>
                 <tr>
                   <th class="row">
-                    <label for="inp_04">내용</label>
+                    <label for="inp_04">내용*</label>
                   </th>
-                  <td>
+                  <td colspan="3">
                     <textarea name="textarea" id="rqsCnt" class="input_full textarea_fixed" style="height: 165px;" rows="8"></textarea>
-                    <!-- <span style="float: right">( 0 / 2000 )</span> -->
                   </td>
                 </tr>
                 <tr>
@@ -72,11 +85,10 @@
                   <th class="row" rowspan="3">
                     <label for="inp_06">첨부파일</label>
                   </th>
-                  <td>
+                  <td colspan="3">
                     <span class="board_btn">
                       <label for="file_HwPd" class="file_label btn2">파일선택</label>
                       <input type="file" accept=".Hwp, .pdf" id="file_HwPd" />
-                      <span>* (기획확인필요) 첨부가능 확장자 및 용량 안내문구</span>
                     </span>
                     <!-- <span class="board_btn">
                       <label for="file_HwPd" class="file_label btn2">파일변경</label>
@@ -86,11 +98,10 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td colspan="3">
                     <span class="board_btn">
                       <label for="file_HwPd" class="file_label btn2">파일선택</label>
                       <input type="file" accept=".Hwp, .pdf" id="file_HwPd" />
-                      <!-- <span>* (기획확인필요) 첨부가능 확장자 및 용량 안내문구</span> -->
                     </span>
                     <!-- <span class="board_btn">
                       <label for="file_HwPd" class="file_label btn2">파일변경</label>
@@ -100,11 +111,10 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td colspan="3">
                     <span class="board_btn">
                       <label for="file_HwPd" class="file_label btn2">파일선택</label>
                       <input type="file" accept=".Hwp, .pdf" id="file_HwPd" />
-                      <!-- <span>* (기획확인필요) 첨부가능 확장자 및 용량 안내문구</span> -->
                     </span>
                     <!-- <span class="board_btn">
                       <label for="file_HwPd" class="file_label btn2">파일변경</label>
@@ -114,14 +124,13 @@
                   </td>
                 </tr>
 
-                
               </tbody>
             </table>
           </div>
         </div>
         <div class="cont_btn modal_btn">
           <button class="btn2">저장</button>
-          <button class="btn3">닫기</button>
+          <button class="btn3">취소</button>
         </div>
       </div>
     </div>

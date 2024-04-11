@@ -506,6 +506,9 @@ input[type=file] {
   background-color: #1378ca;
   border-radius: 5px;
 }
+.radio_btn input:disabled + label {
+  cursor: default;
+}
 .board_ty .select_date,
 .board_ty .input_ty,
 .board_ty select,
@@ -519,6 +522,7 @@ textarea {
   border: solid 1px #b3cbe0;
   box-sizing: border-box;
 }
+.input_full,
 .board_ty .input_full,
 .board_box .search_full {
   width: 100%;

@@ -29,15 +29,17 @@
                 공지사항 상세정보
               </caption>
               <colgroup>
-                <col span="1" style="width: 150px">
-                <col span="1" style="width: calc(100% - 150px)">
+                <col span="1" style="width: 30px;">
+                <col span="1" style="width: 80px;">
+                <col span="1" style="width: 30px;">
+                <col span="1" style="width: 80px;">
               </colgroup>
               <tbody>
                 <tr>
                   <th class="row">
                     <label for="inp_01">작성자</label>
                     </th>
-                  <td>김기업</td>
+                  <td colspan="3">김기업</td>
                 </tr>
                 <tr>
                   <th class="row">
@@ -46,12 +48,25 @@
                   <td>
                     공지사항
                   </td>
+                  <th class="row">
+                    <label for="inp_05">노출여부</label>
+                  </th>
+                  <td>
+                    <span class="flex_box radio_box">
+                      <span class="radio_btn">
+                        <input type="radio" id="radio_on" name="radio_btn" value="" disabled>
+                        <label for="radio_on">노출</label>
+                        <input type="radio" id="radio_off" name="radio_btn" value="" checked disabled>
+                        <label for="radio_off">미노출</label>
+                      </span>
+                    </span><!-- radio_btn -->
+                  </td>
                 </tr>
                 <tr>
                   <th class="row">
                     <label for="inp_03">제목</label>
                   </th>
-                  <td>
+                  <td colspan="3">
                     금융정보제공 샘플 파일
                   </td>
                 </tr>
@@ -59,7 +74,7 @@
                   <th class="row">
                     <label for="inp_04">내용</label>
                   </th>
-                  <td>
+                  <td colspan="3">
                     금융정보제공 샘플 파일<br>
                     금융정보제공 샘플 파일<br>
                     금융정보제공 샘플 파일<br>
@@ -78,7 +93,7 @@
                   <th class="row" rowspan="3">
                     <label for="inp_06">첨부파일</label>
                   </th>
-                  <td>
+                  <td colspan="3">
                     <span class="board_btn">
                       <!-- <label for="file_xlsx" class="file_label btn2">파일변경</label>
                       <input type="file" accept=".xls, .xlsx" id="file_xlsx" /> -->
@@ -87,7 +102,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td colspan="3">
                     <span class="board_btn">
                       <!-- <label for="file_xlsx" class="file_label btn2">파일변경</label>
                       <input type="file" accept=".xls, .xlsx" id="file_xlsx" /> -->
@@ -96,7 +111,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>
+                  <td colspan="3">
                     <span class="board_btn">
                       <!-- <label for="file_xlsx" class="file_label btn2">파일변경</label>
                       <input type="file" accept=".xls, .xlsx" id="file_xlsx" /> -->

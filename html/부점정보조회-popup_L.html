@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>부점정보조회::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 800px; width: 640px;">
+      <div class="modal_header">
+        <h1>부점정보조회</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <div class="board_box">
+          <table>
+            <caption>
+              부점정보조회 조회 조건
+            </caption>
+            <colgroup>
+              <col span="1" style="width: 12%;">
+              <col span="1" style="width: 74%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>
+                  <label for="inp_01">부점코드</label>
+                </th>
+                <td>
+                  <span class="flex_box radio_box">
+                    <input type="text" id="inp_01" class="input_ty" value="">
+                    <!-- <span class="attn"></span> -->
+                    <span class="radio_btn">
+                      <input type="radio" id="radio_on" name="radio_btn" value="" checked="">
+                      <label for="radio_on">폐쇄부점 포함</label>
+                      <input type="radio" id="radio_off" name="radio_btn" value="">
+                      <label for="radio_off">미포함</label>
+                    </span>
+                  </span><!-- radio_btn -->
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <label for="inp_02">부점명</label>
+                </th>
+                <td>
+                  <input type="text" id="inp_02" class="input_ty input_full" value="">
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <label for="inp_03">지역본부</label>
+                </th>
+                <td>
+                  <select id="inp_03">
+                    <option>선택하세요</option>
+                    <option>강동지역본부</option>
+                    <option>충청지역본부</option>
+                    <option>강북지역본부</option>
+                    <option>강남지역본부</option>
+                    <option>서부지역본부</option>
+                    <option>경수지역본부</option>
+                    <option>경인지역본부</option>
+                    <option>부산울산지역본부</option>
+                    <option>호남지역본부</option>
+                    <option>대구경북지역본부</option>
+                    <option>강서지역본부</option>
+                    <option>중부지역본부</option>
+                    <option>남부지역본부</option>
+                    <option>경기중앙지역본부</option>
+                    <option>부산경남지역본부</option>
+                    <option>남중지역본부</option>
+                  </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cont_btn ty_new">
+          <div class="center">
+            <button class="btn2">조회</button>
+          </div>
+        </div>
+        <div class="cont_box">
+          <div class="board_search">총 0 건</div>
+        </div>
+        <div class="modal_board scroll">
+          <div class="board_ty">
+            <table>
+              <caption>
+                부점조회 조회결과
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 20%"> <!-- 부점코드 -->
+                <col span="1" style="width: 20%"> <!-- 부점명 -->
+                <col span="1" style="width: auto"> <!-- 지역본부 -->
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="row">
+                    부점코드
+                  </th>
+                  <th class="row">
+                    부점명
+                  </th>
+                  <th class="row">
+                    지역본부
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0003</td>
+                  <td>회기역 출장소</td>
+                  <td>경기중앙지역본부</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>

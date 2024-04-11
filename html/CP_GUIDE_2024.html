@@ -115,8 +115,7 @@
 
         <!-- @ 컨텐츠 관련주석 키워드: cp-20240400 -->
         <div class="content">
-          <h3>[1] 테이블 전체선택
-            <br>
+          <h3>[1] 테이블 - 전체선택/해제<br>
             <p class="tit_subtex">
               <span>관련 주석 키워드 : table all check(js) : cp-20240400</span>
             </p>
@@ -183,111 +182,189 @@
               </tbody>
             </table>
           </div>
-        </div> <!-- // [1] 테이블 전체선택 -->
+        </div>
+
+
+        <template><!-- *********************************************************** --></template>
 
 
         <div class="content mt50">
-            <h3>[2] 테이블 컨텍스트 메뉴 (우클릭)
-              <br>
-              <p class="tit_subtex">
-                <span>관련 주석 키워드 : table context menu(js) : cp-20240400</span><br>
-                <span><i>(p.17) 전자문서현황 > 전자문서경영평가(완전판매유도)</i></span>
-              </p>
-            </h3><br>
+          <h3>[2] 테이블 - 컨텍스트 메뉴 (우클릭)<br>
+            <p class="tit_subtex">
+              <span>관련 주석 키워드 : table context menu(js) : cp-20240400</span><br>
+              <span><i>(p.17) 전자문서현황 > 전자문서경영평가(완전판매유도)</i></span>
+            </p>
+          </h3><br>
 
-            <div class="cont_box">
-              <div class="board_search">[테이블 1]</div>
-            </div>
-            <!--
-                [1]  테이블을 감싸는 div에 클래스"contexttables" 추가 필수 -->
-            <div class="board_ty colgroup contexttables">
-              <table>
-                <caption>
-                  테이블 컨텍스트 메뉴
-                </caption>
-                <colgroup>
-                  <col span="1" />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- 
-                   [2] 테이블 바로 뒤에, 사용할 컨텍스트 메뉴(클래스contextmenu)를 배치
-                   [3] 테이블 마다 사용할 컨텍스트 메뉴의 아이디를 지정
-                -->
-              <div id="contextmenu1" class="contextmenu">
-                <ul class="menulist" role="menu" aria-labelledby="dropdownmenu">
-                  <li><a tabindex="-1" href="#">menu 1-1</a></li>
-                  <li><a tabindex="-1" href="#">menu 1-2</a></li>
-                  <li><a tabindex="-1" href="#">menu 1-3</a></li>
-                  <li><a tabindex="-1" href="#">menu 1-4</a></li>
-                </ul>
-              </div>
-
-            </div>
-
-            <div class="cont_box mt30">
-              <div class="board_search">[테이블 2, 다중일 경우]</div>
-            </div>
+          <div class="cont_box">
+            <div class="board_search">[테이블 1]</div>
+          </div>
+          <!--
+                 [1]  테이블을 감싸는 div에 클래스"contexttables" 추가 필수 -->
+          <div class="board_ty colgroup contexttables">
+            <table>
+              <caption>
+                테이블 컨텍스트 메뉴
+              </caption>
+              <colgroup>
+                <col span="1" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
             <!-- 
-                [1] 테이블을 감싸는 div에 클래스"contexttables" 추가 필수 -->
-            <div class="board_ty colgroup contexttables">
-              <table>
-                <caption>
-                  테이블 컨텍스트 메뉴 (다중일 경우)
-                </caption>
-                <colgroup>
-                  <col span="1" />
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- 
                    [2] 테이블 바로 뒤에, 사용할 컨텍스트 메뉴(클래스contextmenu)를 배치
                    [3] 테이블 마다 사용할 컨텍스트 메뉴의 아이디를 지정
-                -->
-              <div id="contextmenu2" class="contextmenu">
-                <ul class="menulist" role="menu" aria-labelledby="dropdownmenu">
-                  <li><a tabindex="-1" href="#">menu 2-1</a></li>
-                  <li><a tabindex="-1" href="#">menu 2-2</a></li>
-                  <li><a tabindex="-1" href="#">menu 2-3</a></li>
-                  <li><a tabindex="-1" href="#">menu 2-4</a></li>
-                </ul>
-              </div>
-
+              -->
+            <div id="contextmenu1" class="contextmenu">
+              <ul class="menulist" role="menu" aria-labelledby="dropdownmenu">
+                <li><a tabindex="-1" href="#">menu 1-1</a></li>
+                <li><a tabindex="-1" href="#">menu 1-2</a></li>
+                <li><a tabindex="-1" href="#">menu 1-3</a></li>
+                <li><a tabindex="-1" href="#">menu 1-4</a></li>
+              </ul>
             </div>
+          </div>
+
+          <div class="cont_box mt30">
+            <div class="board_search">[테이블 2, 다중일 경우]</div>
+          </div>
+          <!-- 
+                 [1] 테이블을 감싸는 div에 클래스"contexttables" 추가 필수 -->
+          <div class="board_ty colgroup contexttables">
+            <table>
+              <caption>
+                테이블 컨텍스트 메뉴 (다중일 경우)
+              </caption>
+              <colgroup>
+                <col span="1" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- 
+                   [2] 테이블 바로 뒤에, 사용할 컨텍스트 메뉴(클래스contextmenu)를 배치
+                   [3] 테이블 마다 사용할 컨텍스트 메뉴의 아이디를 지정
+              -->
+            <div id="contextmenu2" class="contextmenu">
+              <ul class="menulist" role="menu" aria-labelledby="dropdownmenu">
+                <li><a tabindex="-1" href="#">menu 2-1</a></li>
+                <li><a tabindex="-1" href="#">menu 2-2</a></li>
+                <li><a tabindex="-1" href="#">menu 2-3</a></li>
+                <li><a tabindex="-1" href="#">menu 2-4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
 
-            
-        </div> <!-- // [2] 테이블 오른쪽 마우스 클릭 시 데이터 보기 또는 셀 복사 -->
+        <template><!-- *********************************************************** --></template>
+
+
+        <div class="content mt50">
+          <h3>[3] 테이블 - 행 클릭으로 공지 팝업<br>
+            <p class="tit_subtex">
+              <span>관련 주석 키워드 : randing notice popup(js) : cp-20240400</span><br>
+              <span style="color: #ff0000;">⚠ <b>#lndng_notice</b> 전용</span>
+            </p>
+          </h3><br>
+        </div>
+
+        <div class="lndng_content">
+          <div class="lndng_notice" style="width: 100%;">
+              <div class="board_ty colgroup">
+                <table id="lndng_notice"> <!-- [D] randing notice popup (js) : 20240400 -->
+                  <caption>
+                    공지사항 목록
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 8%">
+                    <col span="1" style="width: auto">
+                    <col span="1" style="width: 15%">
+                    <col span="1" style="width: 20%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="row">No.</th>
+                      <th class="row">제목</th>
+                      <th class="row">작성자</th>
+                      <th class="row">날짜</th>
+                    </tr>
+                  </thead>
+                  <tbody> <!-- [D] randing notice popup (js) : 20240400 -->
+                    <tr data-popup="공지사항상세-popup_W.html"> <!-- [D] 팝업 경로 -->
+                      <td>1</td>
+                      <td class="ntTit">
+                        <span class="title">클릭 시 상세팝업 호출</span>
+                        <span>(3)</span>
+                      </td>
+                      <td>홍길동</td>
+                      <td>2024-04-00</td>
+                    </tr>
+                    <tr data-popup="공지사항수정-popup_W.html"> <!-- [D] 팝업 경로 -->
+                      <td>2</td>
+                      <td class="ntTit">
+                        <span class="title">텍스트 초과 말줄임 테스트 텍스트 초과 말줄임 테스트 텍스트 초과 말줄임 테스트 텍스트 초과 말줄임 테스트 텍스트 초과 말줄임 테스트 텍스트 초과 말줄임 테스트 텍스트 초과 말줄임 테스트 텍스트 초과 말줄임 테스트</span>
+                        <span>(0)</span>
+                      </td>
+                      <td>홍길동</td>
+                      <td>2024-04-00</td>
+                    </tr>
+                    <tr data-popup="">
+                      <td></td>
+                      <td class="ntTit"></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="">
+                      <td></td>
+                      <td class="ntTit"></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="">
+                      <td></td>
+                      <td class="ntTit"></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+
+
+        <template><!-- *********************************************************** --></template>
+
 
       </section>
 

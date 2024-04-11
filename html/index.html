@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>메인::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/jquery.timepicker.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <section class="container max_width min_width" style="margin-top: 180px;">
+        <div class="lndng_header">
+          <h2 class="user_name">한기획</h2>
+          <span>님, 안녕하세요!</span>
+        </div>
+        <div class="content lndng_content" style="margin-top: 48px;">
+          <!-- 좌측, lndng_card -->
+          <div class="lndng_card">
+            <!-- 전자문서 미처리 업무 -->
+            <div>
+              <div class="card_title">
+                <h3>전자문서 미처리 업무</h3>
+              </div>
+              <div class="cont_tab">
+                <ul>
+                  <li class="active">
+                    <a href="#">개인별</a>
+                  </li>
+                  <li>
+                    <a href="#">영업점</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="items">
+                <div class="item thm1">
+                  <div class="ttl">수신</div>
+                  <a href="#" class="info">
+                    <span class="info_value under">0</span>
+                    <span>건</span>
+                  </a>
+                </div>
+                <div class="item thm2">
+                  <div class="ttl">카드</div>
+                  <a href="#" class="info">
+                    <span class="info_value under">2</span>
+                    <span>건</span>
+                  </a>
+                </div>
+                <div class="item thm3">
+                  <div class="ttl">여신</div>
+                  <a href="#" class="info">
+                    <span class="info_value under">1</span>
+                    <span>건</span>
+                  </a>
+                </div>
+                <div class="item thm3">
+                  <div class="ttl">외환</div>
+                  <a href="#" class="info">
+                    <span class="info_value under">1</span>
+                    <span>건</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 빠른메뉴 -->
+            <div>
+              <div class="card_title">
+                <h3>빠른메뉴</h3>
+              </div>
+
+              <div class="items quick">
+                <div class="item thm4">
+                  <a href="#">
+                      <span class="ico">전자문서결재</span>
+                  </a>
+                </div>
+                <div class="item thm4">
+                  <a href="#">
+                      <span class="ico">나의결재선관리</span>
+                  </a>
+                </div>
+                <div class="item thm4">
+                  <a href="#">
+                      <span class="ico">시스템자료실</span>
+                  </a>
+                </div>
+                <div class="item thm4">
+                  <a href="#">
+                      <span class="ico">안내번호</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div><!-- // lndng_card -->
+
+            <!-- 우측, lndng_notice -->
+            <div class="lndng_notice">
+              <div class="cont_box">
+                <h3>공지사항</h3>
+                <div class="cont_btn">
+                  <button type="button" class="btn3 xl" title="더보기">더보기</button>
+                </div>
+              </div>
+              <div class="scroll">
+                <div class="board_ty colgroup">
+                  <table id="lndng_notice"> <!-- [D] randing notice popup (js) : 20240400 -->
+                    <caption>
+                      공지사항 목록
+                    </caption>
+                    <colgroup>
+                      <col span="1" style="width: 8%"> <!-- No -->
+                      <col span="1" style="width: auto"> <!-- 제목 -->
+                      <col span="1" style="width: 15%"> <!-- 작성자 -->
+                      <col span="1" style="width: 20%"> <!-- 날짜 -->
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th class="row">No.</th>
+                        <th class="row">제목</th>
+                        <th class="row">작성자</th>
+                        <th class="row">날짜</th>
+                      </tr>
+                    </thead>
+                    <tbody> <!-- [D] randing notice popup (js) : 20240400 -->
+                      <tr data-popup="공지사항상세-popup_W.html"> <!-- [D] 팝업 경로 -->
+                        <td>1</td>
+                        <td class="ntTit">
+                          <span class="title">클릭 시 상세팝업 호출, 텍스트 초과 말줄임 테스트</span>
+                          <span>(3)</span>
+                        </td>
+                        <td>홍길동</td>
+                        <td>2022-01-01</td>
+                      </tr>
+                      <tr data-popup="공지사항수정-popup_W.html"> <!-- [D] 팝업 경로 -->
+                        <td>2</td>
+                        <td class="ntTit">
+                          <span class="title">괄호는 첨부파일 개수</span>
+                          <span>(0)</span>
+                        </td>
+                        <td>홍길동</td>
+                        <td>2022-01-01</td>
+                      </tr>
+                      <tr data-popup="">
+                        <td></td>
+                        <td class="ntTit"></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr data-popup="">
+                        <td></td>
+                        <td class="ntTit"></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div><!-- // lndng_notice -->
+      </section>
+      <!-- container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- footer -->
+    </div>
+  </body>
+</html>

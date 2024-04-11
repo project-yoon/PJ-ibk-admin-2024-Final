@@ -191,7 +191,19 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  /* table all check *//* cp-20240400 */
+  /* randing notice popup(js) *//* cp-20240400 */
+  var ntTble = document.getElementById("lndng_notice");
+  var ntItems = ntTble ? ntTble.getElementsByTagName("tr") : [];
+  for (var i = 1; i < ntItems.length; i++) { // 헤더 제외
+    ntItems[i].addEventListener("click", function() {
+      var popPath = this.getAttribute("data-popup");
+      window.open(popPath,'','width=700,height=635,scrollbars=yes,resizable=yes'); return false;
+    });
+  }
+});
+
+$(document).ready(function(){
+  /* table all check(js) *//* cp-20240400 */
   const chkTbls = document.querySelectorAll('table[data-check="check-group"]');
   chkTbls.forEach(chkGroups => {
     const chkAll = chkGroups.querySelector('label[data-check="check-all"] input[type="checkbox"]');
@@ -209,7 +221,7 @@ $(document).ready(function(){
   });
 });
 
-  /* table context menu *//* cp-20240400 */
+  /* table context menu(js) *//* cp-20240400 */
   $(document).ready(function(){
     var contextMenus = document.querySelectorAll(".contextmenu");
     contextMenus.forEach(function(menu,index) {
