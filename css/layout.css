@@ -793,13 +793,22 @@
   overflow-y: scroll !important;
   -ms-overflow-style: auto;
 }
+
+
 .accordion.full{
+  padding: 0;
   height: 100%;
   overflow:visible;
   overflow-y: auto !important;
   /* background-color: unset; */
   /* border: 0px; */
   /* border-radius: 0px; */
+}
+.accordion.full .item{
+  padding: 0 20px 8px;
+}
+.accordion.full .cnt{
+  padding: 0 20px;
 }
 .accordion li{
   padding-top: 24px;
