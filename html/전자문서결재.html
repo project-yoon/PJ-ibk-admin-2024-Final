@@ -57,7 +57,7 @@
                     </span><!-- radio_btn -->
                   </td>
                   <th scope="row">
-                    <label for="inp_02">부점코드</label>
+                    <label for="inp_02">부점코드*</label>
                   </th>
                   <td>
                     <span class="sel_inp">
@@ -65,7 +65,7 @@
                         <input type="search" id="inp_02" placeholder="">
                       </span>
                       <span class="search_int">
-                        <input type="search" id="inp_02_1" placeholder="">
+                        <input type="search" id="inp_02_1" placeholder="" disabled>
                       </span>
                       <span class="board_btn">
                         <button class="btn2 btn_half">검색</button>
@@ -95,7 +95,7 @@
                 </tr>
                 <tr>
                   <th scope="row">
-                    <label for="inp_05">진행상태</label>
+                    <label for="inp_05">진행상태*</label>
                   </th>
                   <td>
                     <select id="inp_05">
@@ -110,7 +110,7 @@
                   <td>
                     <span class="sel_inp">
                       <span class="search_int">
-                        <input type="search" id="inp_06" placeholder="" disabled>
+                        <input type="search" id="inp_06" placeholder="" >
                       </span>
                       <span class="search_int">
                         <input type="search" id="inp_06_1" placeholder="" disabled>
@@ -162,7 +162,11 @@
           <div class="cont_box">
             <div class="board_search">전체 {20} 건</div>
             <div class="cont_btn">
-              <button type="button" class="btn3" title="일괄스캔">일괄스캔</a>
+              <span class="board_btn">
+                <label for="file_HwPd" class="file_label btn3">일괄스캔</label>
+                <input type="file" accept=".Hwp, .pdf" id="file_HwPd">
+              </span>
+              <!-- <button type="button" class="btn3" title="일괄스캔">일괄스캔</a> -->
               <button type="button" class="btn3" title="데이터보기">데이터보기</a>
               <button type="button" class="btn3 xl" title="데이터보기(레코드)">데이터보기(레코드)</a>
             </div>

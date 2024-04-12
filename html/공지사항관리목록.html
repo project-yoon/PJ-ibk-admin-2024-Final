@@ -60,11 +60,19 @@
                     <label for="inp_02">조회</label>
                   </th>
                   <td>
-                    <select id="inp_02">
-                      <option>전체</option>
-                      <option>제목</option>
-                      <option>내용</option>
-                    </select>
+                    <span class="sel_inp">
+                      <select id="inp_02">
+                        <option>전체</option>
+                        <option>제목</option>
+                        <option>내용</option>
+                      </select>
+                      <span class="search_int">
+                        <input type="search" id="inp_04_1" placeholder="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
                   </td>
                 </tr>
               </tbody>
@@ -126,8 +134,9 @@
                   <th scope="col">번호</th>
                   <th scope="col">구분</th>
                   <th scope="col">제목</th>
-                  <th scope="col">첨부</th>
+                  <!-- <th scope="col">첨부</th> -->
                   <th scope="col">작성자</th>
+                  <th scope="col">노출여부</th>
                   <th scope="col">등록부서</th>
                   <th scope="col">작성일</th>
                 </tr>
@@ -135,6 +144,7 @@
               <tbody>
                 <tr>
                   <td colspan="8" class="emp">조회결과가 없습니다.</td>
+                  <!-- [D] 첨부표기일경우 <td colspan="9" class="emp">조회결과가 없습니다.</td> -->
                 </tr>
                 <tr>
                   <td>
@@ -149,12 +159,14 @@
                   <td class="left">
                     <a href="#">금융정보제공 샘플파일</a>
                   </td>
-                  <td>
+                  <!-- [D] 첨부
+                    <td>
                     <a href="#" download><img src="../img/files.png"></a>
                     <a href="#" download><img src="../img/files.png"></a>
                     <a href="#" download><img src="../img/files.png"></a>
-                  </td>
+                  </td> -->
                   <td>TEST</td>
+                  <td>노출</td>
                   <td>IT금융개발부</td>
                   <td>2024-03-25</td>
                 </tr>
@@ -171,10 +183,12 @@
                   <td class="left">
                     <a href="#">금융정보제공 샘플파일</a>
                   </td>
-                  <td>
+                  <!-- [D] 첨부
+                    <td>
                     <a href="#" download><img src="../img/files.png"></a>
-                  </td>
+                  </td> -->
                   <td>TEST</td>
+                  <td>미노출</td>
                   <td>IT금융개발부</td>
                   <td>2024-03-25</td>
                 </tr>
@@ -191,12 +205,14 @@
                   <td class="left">
                     <a href="#">금융정보제공 샘플파일</a>
                   </td>
-                  <td>
+                  <!-- [D] 첨부
+                    <td>
                     <a href="#" download><img src="../img/files.png"></a>
                     <a href="#" download><img src="../img/files.png"></a>
                     <a href="#" download><img src="../img/files.png"></a>
-                  </td>
+                  </td> -->
                   <td>TEST</td>
+                  <td>미노출</td>
                   <td>IT금융개발부</td>
                   <td>2024-03-25</td>
                 </tr>
@@ -213,10 +229,12 @@
                   <td class="left">
                     <a href="#">금융정보제공 샘플파일</a>
                   </td>
-                  <td>
+                  <!-- [D] 첨부
+                    <td>
                     <a href="#" download><img src="../img/files.png"></a>
-                  </td>
+                  </td> -->
                   <td>TEST</td>
+                  <td>노출</td>
                   <td>IT금융개발부</td>
                   <td>2024-03-25</td>
                 </tr>

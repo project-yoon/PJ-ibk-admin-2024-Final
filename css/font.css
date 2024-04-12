@@ -81,7 +81,7 @@
 
 
 /*
-@font-face {
+@font-face{
 	font-family:'Spoqa Han Sans Neo';
 	font-style:normal;
 	font-weight:400;
@@ -90,7 +90,7 @@
 		url(../font/SpoqaHanSansNeo-Regular.otf) format('opentype'),
     url(../font/SpoqaHanSansNeo-Regular.eot?#iefix) format('embedded-opentype');
 }
-@font-face {
+@font-face{
 	font-family:'Spoqa Han Sans Neo';
 	font-style:normal;
 	font-weight:500;
@@ -99,7 +99,7 @@
 		url(../font/SpoqaHanSansNeo-Medium.otf) format('opentype'),
 		url(../font/SpoqaHanSansNeo-Medium.eot?#iefix) format('embedded-opentype');
 }
-@font-face {
+@font-face{
 	font-family:'Spoqa Han Sans Neo';
 	font-style:normal;
 	font-weight:700;
