@@ -449,6 +449,7 @@ select.text_center option{
 .board_ty td:last-child{
   border-right: none;
 }
+.board_ty tfoot td,
 .board_ty th{
   background-color: #F6FAFC;
 }
@@ -466,6 +467,10 @@ select.text_center option{
 .flex_box{
   display: flex;
   align-items: center;
+}
+.flex_box.gap10{
+  gap: 10px;
+  align-items: start;
 }
 .radio_btn + .attn,
 .board_ty .attn{
@@ -792,6 +797,10 @@ input.select_date{
   border: 0;
   -webkit-appearance: none;
   appearance: none;
+  /* 20240400 : 년월 스타일 추가 */
+  text-align: center;
+  font-family: unset;
+  border-bottom: 2px dotted #B3CBE0;
 }
 /* 달력 IE 기본 아이콘 숨김 */
 .select_date::-ms-clear,
