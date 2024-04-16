@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>공지사항 등록::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body class="win_pop">
+
+  <div class="wrap">
+    <!-- <div class="modal_inner"> -->
+      <div class="modal_header" >
+        <h1>공지사항 등록</h1>
+        <!-- <a href="#"><img src="../img/close.png" alt="닫기"></a> -->
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+        <div class="modal_board scroll">
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                전자문서 제어알림 등록
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 90px;">
+                <col span="1" style="width: 215px;">
+                <col span="1" style="width: 80px;">
+                <col span="1" >
+              </colgroup>
+              <tbody>
+                <tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_01">거래기능ID*</label>
+                  </th>
+                  <td colspan="3">
+                    <select id="inp_01">
+                      <option>전체</option>
+                    </select>
+                    <span class="attn">* 공통코드 ‘03009’ 전자문서 공지코드 참조</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_02">알림내용*</label>
+                  </th>
+                  <td colspan="3">
+                    <textarea name="textarea" id="inp_02" class="input_full textarea_fixed" style="height: 130px;" rows="8"></textarea>
+                    <span class="attn">* 항목설명을 확인하신 후 등록 바랍니다.</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_03">항목설명*</label>
+                  </th>
+                  <td colspan="3">
+                    <textarea name="textarea" id="inp_03" class="input_full textarea_fixed" style="height: 135px;" rows="8"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_04">사용여부*</label>
+                  </th>
+                  <td colspan="3">
+                    <span class="flex_box radio_box">
+                      <span class="radio_btn">
+                        <input type="radio" id="radio_on" name="radio_btn" value="" checked>
+                        <label for="radio_on">사용</label>
+                        <input type="radio" id="radio_off" name="radio_btn" value="">
+                        <label for="radio_off">사용안함</label>
+                      </span>
+                    </span><!-- radio_btn -->
+                  </td>
+                </tr>
+                <tr>
+                  <tr>
+                    <th class="row">
+                      <label for="inp_05">적용직원</label>
+                    </th>
+                    <td>
+                      <span class="flex_box gap10">
+                        <input type="search" id="inp_05" class="input_ty" style="width: 70px;" placeholder="직원코드" value="A90639" disabled="">
+                        <input type="search" id="inp_05_1" class="input_ty" style="width: 115px;" placeholder="직원명" value="TEST" disabled="">
+                      </span>
+                    </td>
+                    <th class="row">
+                      <label for="inp_06">적용일시</label>
+                    </th>
+                    <td>
+                      <input type="text" class="input_ty" id="inp_06" value="yyyy-mm-dd hh:mm:ss" disabled="">
+                    </td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button class="btn2">등록</button>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div> 
+
+</body>
+</html>
