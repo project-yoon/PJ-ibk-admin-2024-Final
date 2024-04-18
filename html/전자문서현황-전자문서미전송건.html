@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전자문서 미전송건::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서현황 &gt;</span>
+              <span>전자문서 미전송건</span>
+            </div>
+            <h2>전자문서 미전송건</h2>
+            <p class="sub_txt">
+              * 전자문서 업무종료(이미지전송)가 되지 않은 건의 목록입니다.<br>
+              * IBK 전자문서 (e-紙전표) Viewer에서 미전송 버튼이 비활성화되어 있다면, 반드시 전화주시기 바랍니다.
+            </p>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <div class="content">
+
+          <!-- 23.01.13 [초기화] 추가 -->
+          <div class="cont_btn ty_new">
+            <div class="">
+              <!-- <button class="btn3 ">초기화</button> -->
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+        <!-- // content 검색영역 -->
+
+        <div class="content">
+          <div class="cont_box flex_right">
+            <div class="cont_btn">
+              <button class="btn3">엑셀 다운</button>
+            </div>
+          </div>
+          <div class="board_ty colgroup">
+            <table>
+              <caption>
+                전자문서 미전송건 조회 결과
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">업무유형</th>
+                  <th scope="col">거래일자</th>
+                  <th scope="col">거래시간</th>
+                  <th scope="col">거래부점</th>
+                  <th scope="col">거래직원</th>
+                  <th scope="col">고객명</th>
+                  <th scope="col">거래명</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="8" class="emp">조회결과가 없습니다.</td>
+                  <!-- [D] 첨부표기일경우 <td colspan="9" class="emp">조회결과가 없습니다.</td> -->
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="border: 1px solid red;color: red;margin-top:10px;">
+            <p>
+              <b> ※ 기획 확인 필요 </b><br>
+              내용에 해당하는 컨텐츠 필요 , 전달되는 내용으로 업데이트 예정<br>
+               - 내용 : 미전송건이 있을 경우 이미지 전송하는 절차 방법 안내화면<br>
+            </p>
+          </div>
+          <div class="center">
+            <img src="../img/login_bg.png" alt="미전송건이 있을 경우 이미지 전송하는 절차 방법 안내화면" style="width: 100%;height: 100%;background-color: #ddd;">
+          </div>
+        </div>
+        <!-- // content 결과영역 -->
+
+        <!-- [D] 페이지네이션 미사용
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div> -->
+      </section>
+      <!-- // container  -->
+
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>

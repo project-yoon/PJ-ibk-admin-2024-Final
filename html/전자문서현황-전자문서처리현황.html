@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전자문서 처리현황::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서현황 &gt;</span>
+              <span>전자문서 처리현황</span>
+            </div>
+            <h2>전자문서 처리현황</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>
+                전자문서처리현황 조회 조건
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 6%">
+                <col span="1" style="width: 28%">
+                <col span="1" style="width: auto">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_01">거래일자</label>
+                  </th>
+                  <td>
+                    <span class="date">
+                      <input type="text" class="select_date_day input_ty" id="inp_01" autocomplete="off"  displayFormat="yyyy-MM" />
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 22.11.28 보기 선택 추가 -->
+          <!-- 23.01.13 [초기화] 추가 -->
+          <div class="cont_btn ty_new">
+            <div class="right">
+              <!-- <button class="btn3 ">초기화</button> -->
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+        <!-- // content 검색영역 -->
+
+        <div class="content">
+          <div class="cont_box flex_right">
+            <div class="cont_btn">
+              <button class="btn3">재전송처리</button>
+              <button class="btn3">재처리</button>
+            </div>
+          </div>
+          <div class="board_ty colgroup">
+            <table>
+              <caption>
+                공지사항 관리 조회
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+                <col span="1" style="width: 60px" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">업무</th>
+                  <th scope="col">총건수</th>
+                  <th scope="col">PDF생성</th>
+                  <th scope="col">TSA인증</th>
+                  <th scope="col">PDF전송</th>
+                  <th scope="col">이미지변환</th>
+                  <th scope="col">이미지전송</th>
+                  <th scope="col">처리완료</th>
+                  <th scope="col">오류</th>
+                  <th scope="col">미전송(예외)</th>
+                  <th scope="col">미존재</th>
+                  <th scope="col">미매칭</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="12" class="emp">조회결과가 없습니다.</td>
+                </tr>
+                <tr>
+                  <td>수신</td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">0</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">0</button></td>
+                  <td><button class="contxt" type="button">0</button></td>
+                  <td><button class="contxt" type="button">0</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">0</button></td>
+                  <td><button class="contxt" type="button">0 (<span>0</span>)</button></td>
+                  <td><button class="contxt" type="button">0</button></td>
+                  <td><button class="contxt" type="button">0</button></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>합계</td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">0 (<span>0</span>)</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                  <td><button class="contxt" type="button">3</button></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <!-- 좌우분할 시작 -->
+          <div class="flex_box gap10"> 
+
+            <div class="content"> <!-- 좌측 시작 -->
+              <h3 class="title mt40">처리현황</h3>
+              <!-- 처리현황 테이블 시작 -->
+              <div class="board_fixed">
+                <div class="scroll_body vertical">
+                  <div class="board_ty colgroup">
+                    <!-- [D] table all check(js) : 
+                        [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                    -->
+                    <table data-check="check-group">
+                      <caption>
+                        처리현황 조회 결과
+                      </caption>
+                      <colgroup>
+                        <col span="1" style="width: 35px;">
+                        <col span="1">
+                        <col span="1" style="width: 100px;">
+                        <col span="1" style="width: 76px;">
+                        <col span="1" style="width: 130px;">
+                        <col span="1" style="width: 100px;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <div class="checkbox_inner">
+                              <!-- [D] table all check(js) : 
+                                  [2] 전체선택 될 라벨에, data-check="check-all" 추가 필수
+                              -->
+                              <label for="checkAll" data-check="check-all">
+                                <input type="checkbox" id="checkAll">
+                              </label>
+                            </div>
+                          </th>
+                          <th scope="col">거래부점</th>
+                          <th scope="col">거래일시</th>
+                          <th scope="col">거래직원</th>
+                          <th scope="col">전자문서인덱스번호</th>
+                          <th scope="col">서버IP</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="6" class="emp">조회결과가 없습니다.</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox_inner">
+                              <label for="check1">
+                                <input type="checkbox" id="check1">
+                              </label>
+                            </div>
+                          </td>
+                          <td>남대문점</td>
+                          <td>2024-02-29 15:30:50</td>
+                          <td>김민수</td>
+                          <td>0000000000000</td>
+                          <td>10.000.00.00</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox_inner">
+                              <label for="check2">
+                                <input type="checkbox" id="check2">
+                              </label>
+                            </div>
+                          </td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox_inner">
+                              <label for="check2">
+                                <input type="checkbox" id="check2">
+                              </label>
+                            </div>
+                          </td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox_inner">
+                              <label for="check2">
+                                <input type="checkbox" id="check2">
+                              </label>
+                            </div>
+                          </td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- // 좌측 종료 -->
+
+            <div class="content"> <!-- 우측 시작 -->
+              <h3 class="title mt40">처리상세</h3>
+              <!-- 처리상세 테이블 시작 -->
+              <div class="board_fixed">
+                <div class="scroll_body vertical">
+                  <div class="board_ty colgroup ">
+                    <table>
+                      <caption>
+                        처리상세 조회 결과
+                      </caption>
+                      <colgroup>
+                        <col span="1" style="width: 125px;">
+                        <col span="1" style="width: 100px;">
+                        <col span="1" style="width: 120px;">
+                        <col span="1" style="width: 150px;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">처리단계</th>
+                          <th scope="col">처리구분</th>
+                          <th scope="col">처리일시</th>
+                          <th scope="col">오류내용</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td colspan="4" class="emp">조회결과가 없습니다.</td>
+                        </tr>
+                        <tr>
+                          <td>390영업일초과</td>
+                          <td>2024-02-29 15:30:50</td>
+                          <td>김민수</td>
+                          <td>0000000000000</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- // 우측 종료 -->
+          </div>
+          <!-- // 좌우분할 종료 -->
+
+        </div>
+        <!-- // content 결과영역 -->
+
+        <!-- [D] 페이지네이션 미사용
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div> -->
+      </section>
+      <!-- // container  -->
+
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전자문서사용률::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서현황 &gt;</span>
+              <span>전자문서사용률</span>
+            </div>
+            <h2>전자문서사용률(완전판매유도)</h2>
+          </div>
+        </div>
+        <!-- cont_header -->
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>
+                전자문서사용률 조회 조건
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 6%">
+                <col span="1" style="width: 48%">
+                <col span="1" style="width: 6%">
+                <col span="1" style="width: 20%">
+                <col span="1" style="width: 6%">
+                <col span="1" style="width: auto">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp1_01">거래년월*</label>
+                  </th>
+                  <td colspan="7">
+                    <span class="date">
+                      <input type="text" class="select_date input_ty" id="inp1_01" autocomplete="off" />
+                      ~
+                      <input type="text" class="select_date input_ty second" id="inp1_02" autocomplete="off" />
+                    </span>
+                    <span style="color: #8c8c8c">(최대 3개월 내역만 조회 가능)</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_01">부점정보</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_01" placeholder="사용자부점코드" value="0818">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_01_1" placeholder="부점명" value="디지털기획부" disabled>
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_02">지역본부</label>
+                  </th>
+                  <td>
+                    <select id="inp_02">
+                      <option>선택하세요</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="cont_btn ty_new">
+            <div class="right">
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+        <!-- content 검색영역 -->
+        <div class="content">
+          <div class="cont_box">
+            <div class="board_search">전체 {20} 건</div>
+            <div class="cont_btn">
+              <a class="btn3 auto" href="#" title="안내 페이지로 이동">(시행문)경영평가 기준 안내</a>
+              <a class="btn3 auto" href="#" title="전자문서 경영평가 조회기준안내 안내 팝업">경영평가 조회기준</a>
+              <a class="btn3 xl" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
+            </div>
+          </div>
+          <div class="board_fixed">
+            <div class="fixed">
+              <div class="board_ty colgroup">
+                <table>
+                  <caption>전자문서경영평가 조회 조건</caption>
+                  <colgroup>
+                    <col span="1" style="width:100px;">
+                    <col span="1" style="width:90px;">
+                    <col span="1" style="width:90px;">
+                    <col span="1" style="width:90px;">
+                    <col span="1" style="width:90px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col"colspan="5"></th>
+                    </tr>
+                    <tr>
+                      <th scope="col" rowspan="2">거래년월</th>
+                      <th scope="col" rowspan="2">부점코드</th>
+                      <th scope="col" rowspan="2">부점명</th>
+                      <th scope="col" rowspan="2">지역본부</th>
+                      <th scope="col" rowspan="2">지역본부명</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2024-01-01</td>
+                      <td>0001</td>
+                      <td class="bg1">영업부</td>
+                      <td class="bg1">0001</td>
+                      <td class="bg1">영업부</td>
+                    </tr>
+                    <tr>
+                      <td>2024-01-01</td>
+                      <td>0001</td>
+                      <td class="bg1">영업부</td>
+                      <td class="bg1">0001</td>
+                      <td class="bg1">영업부</td>
+                    </tr>
+                    <tr>
+                      <td>2024-01-01</td>
+                      <td>0001</td>
+                      <td class="bg1">영업부</td>
+                      <td class="bg1">0001</td>
+                      <td class="bg1">영업부</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="scroll_body">
+              <!-- table context menu(js) : cp-20240400
+                [1]  테이블을 감싸는 div에 클래스"contexttables" 추가 필수 -->
+              <div class="board_ty colgroup contexttables">
+                <table>
+                  <caption>전자문서경영평가 결과 목록</caption>
+                  <colgroup>
+                    <col span="1" style="width:80px;">
+                    <col span="1" style="width:80px;">
+                    <col span="1" style="width:80px;">
+                    <col span="1" style="width:80px;">
+                    <col span="1" style="width:120px;">
+                    <col span="1" style="width:120px;">
+                    <col span="1" style="width:120px;">
+                    <col span="1" style="width:120px;">
+                    <col span="1" style="width:120px;">
+                    <col span="1" style="width:80px;">
+                    <col span="1" style="width:70px;">
+                    <col span="1" style="width:70px;">
+                    <col span="1" style="width:70px;">
+                    <col span="1" style="width:70px;">
+                  </colgroup>
+                  <thead>
+                    
+                    <tr>
+                      <th scope="col" colspan="10">거래건수</th>
+                      <th scope="col" rowspan="2">사용률</th>
+                      <th scope="col" colspan="3" >경영평가 점수</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">전자문서</th>
+                      <th scope="col">전자전표</th>
+                      <th scope="col">기업고객팀</th>
+                      <th scope="col">종이문서</th>
+                      <th scope="col">제외상품(5건)</th>
+                      <th scope="col">제외상품(3건)</th>
+                      <th scope="col">단체서류(2건)</th>
+                      <th scope="col">제외등록(5건)</th>
+                      <th scope="col">조정신청(1건)</th>
+                      <th scope="col">전체건수</th>
+                      <th scope="col">기본</th>
+                      <th scope="col">구간</th>
+                      <th scope="col">총점</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- table context menu(js) : cp-20240400
+                   [2] 테이블 바로 뒤에, 사용할 컨텍스트 메뉴(클래스contextmenu)를 배치
+                   [3] 테이블 마다 사용할 컨텍스트 메뉴의 아이디를 지정
+                -->
+                <div id="contextmenu1" class="contextmenu">
+                  <ul class="menulist" role="menu" aria-labelledby="dropdownmenu">
+                    <li><a tabindex="-1" href="#">다중정렬</a></li>
+                    <li><a tabindex="-1" href="#">틀고정</a></li>
+                    <li><a tabindex="-1" href="#">틀고정해제</a></li>
+                    <li><a tabindex="-1" href="#">찾기</a></li>
+                    <li><a tabindex="-1" href="#">데이터 보기</a></li>
+                    <li><a tabindex="-1" href="#">데이터 보기(레코드)</a></li>
+                    <li><a tabindex="-1" href="#">셀복사</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- content accordion -->
+        <div class="content">
+          <div class="accordion full">
+            <ul>
+              <li>
+                <div class="item">
+                  <div class="ttl">전자문서 사용률 경영평가 점수표</div>
+                  <div class="image">
+                    <img src="../img/acrd_off.png" alt="닫기">
+                  </div>
+                </div>
+                <div class="cnt">
+                  <p>
+                    * 전자문서 사용률 경영평가 (10점)
+                  </p>
+                  <!-- 테이블 시작 -->
+                  <div class="board_ty colgroup">
+                    <table>
+                      <caption>
+                        전자문서 사용률 경영평가 점수표
+                      </caption>
+                      <colgroup>
+                        <col span="1" />
+                        <col span="1" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">구간점수</th>
+                          <th scope="col">점수</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>기본점수</td>
+                          <td>1.0점</td>
+                        </tr>
+                        <tr>
+                          <td>70% 초과</td>
+                          <td>4.0점</td>
+                        </tr>
+                        <tr>
+                          <td>65% 초과</td>
+                          <td>3.5점</td>
+                        </tr>
+                        <tr>
+                          <td>60% 초과</td>
+                          <td>3.0점</td>
+                        </tr>
+                        <tr>
+                          <td>55% 초과</td>
+                          <td>2.5점</td>
+                        </tr>
+                        <tr>
+                          <td>50% 초과</td>
+                          <td>2.0점</td>
+                        </tr>
+                        <tr>
+                          <td>45% 초과</td>
+                          <td>1.5점</td>
+                        </tr>
+                        <tr>
+                          <td>40% 초과</td>
+                          <td>1.0점</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- // 테이블 종료 -->
+                  <p>
+                    <font color="#005199">* 기업고객팀에서 발생한 종이문서 건수 제외</font>
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="ttl">전자문서 사용률 계산식</div>
+                  <div class="image">
+                    <img src="../img/acrd_off.png" alt="닫기">
+                  </div>
+                </div>
+                <div class="cnt">
+                  <p>
+                    * 사용률(%) = 전자문서 사용건수(고객작성 전자전표 가산, 기업고객팀 사용건수 가산) / 전체건수 *100
+                  </p>
+                  <p>
+                    * 전체건수 = 전자문서(기업고객팀 사용건수 가삼) + 종이문서 (전자문서 적용되는 서류) + 고객작성 전자전표 (기업고객 팀 전자전표 포함) – (5배수 제외상품 * 5건)
+                    -(3배수 제외상품 * 3건) – (단체서류 * 2건) – (제외등록 3건) - 조정신청
+                  </p>
+                  <p>
+                    <font color="#005199">* 기타 자세한 내용은 [경영평가 기준안내]를 참조</font>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div><!-- // accordion -->
+        </div>
+
+        <!-- content 결과영역 -->
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+      </section>
+      <!-- container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- footer -->
+    </div>
+  </body>
+</html>

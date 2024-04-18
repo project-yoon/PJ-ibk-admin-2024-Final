@@ -450,6 +450,10 @@ select.text_center option{
   border-right: none;
 }
 .board_ty tfoot td,
+.board_ty tfoot td>*{
+  font-weight: 600;
+}
+.board_ty tfoot td,
 .board_ty th{
   background-color: #F6FAFC;
 }
@@ -468,9 +472,27 @@ select.text_center option{
   display: flex;
   align-items: center;
 }
+.flex_box.w3 .content:first-child{
+  width:325px;
+}
+.flex_box.w3 .content:last-child{
+  width:calc(100% - 325px);
+}
+.flex_box.w8 .content:first-child{
+  width:840px;
+}
+.flex_box.w8 .content:last-child{
+  width:calc(100% - 810px);
+}
 .flex_box.gap10{
   gap: 10px;
   align-items: start;
+}
+.flex_box .board_box {
+  margin-bottom: 20px;
+}
+.flex_box .board_box table{
+  width: auto;
 }
 .radio_btn + .attn,
 .board_ty .attn{
@@ -515,6 +537,7 @@ input[type=file]{
   cursor: default;
 }
 .board_ty .select_date,
+.board_ty .select_date_day,
 .board_ty .input_ty,
 .board_ty select,
 textarea{
@@ -695,6 +718,10 @@ textarea{
   width:75px;
   margin-left:0;
 }
+.cont_btn.ty_new .left .btn3,
+.cont_btn.ty_new .left .btn2{
+  width:unset;
+}
 
 .board_scroll{
   overflow: auto;
@@ -785,6 +812,7 @@ textarea{
 } */
 
 /* datepicker */
+input.select_date_day,
 input.select_date{
   background: url(../img/clndr.png) no-repeat;
   background-position: 95%;
@@ -804,6 +832,7 @@ input.select_date{
 }
 /* 달력 IE 기본 아이콘 숨김 */
 .select_date::-ms-clear,
+.select_date_day::-ms-clear,
 .ui-datepicker select.ui-datepicker-month::-ms-expand,
 .ui-datepicker select.ui-datepicker-year::-ms-expand{
   display:none;
@@ -950,6 +979,88 @@ select{
   background: rgba(0, 81, 153, 0.08);
   font-weight: 500;
 }
+button.contxt{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: unset;
+  font-size: 100%;
+  text-decoration: none;
+  vertical-align: middle;
+  background: none;
+  cursor: pointer;
+}
+.rule mfrac {
+  font-size: 17px;
+}
+.rule .flx {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.rule .box,
+.rule .flx .list{
+  margin: 10px 0;
+  padding: 10px 10px;
+  background-color: #f5f5f5;
+  /* border: 1px solid #ddd; */
+}
+.rule .flx .list li{
+  padding: 5px 10px;
+  border-bottom: 1px solid #ddd;
+}
+.rule .flx .list li:last-child{
+  border-bottom: 0;
+}
+
+/* 20240400 : .vertical 세로스크롤 */
+.board_fixed .fixed.vertical,
+.board_fixed .scroll_body.vertical{
+  max-height: 560px;
+}
+/* .board_fixed .fixed.vertical table, */
+.board_fixed .scroll_body.vertical table{
+  width: 100%;
+}
+.board_fixed .fixed.vertical tfoot,
+.board_fixed .fixed.vertical thead,
+.board_fixed .scroll_body.vertical tfoot,
+.board_fixed .scroll_body.vertical thead{
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: contents;
+  z-index: 1;
+  display: table-header-group;
+  width: 100%;
+}
+.board_fixed .fixed.vertical tfoot,
+.board_fixed .scroll_body.vertical tfoot{
+  top: auto;
+  bottom: 0;
+}
+/* 세로스크롤 */
+table[data-scroll="row"] thead {
+  display: table-header-group;
+  width: 100%;
+}
+table[data-scroll="row"] tbody {
+  display: block;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+table[data-scroll="row"] tbody tr {
+  width: 100%;
+  display: inline-table;
+  max-width: 615px;
+}
+.flex_box table[data-scroll="row"] tbody {
+  width: 635px;
+}
+
+
 .contextmenu{
   z-index: 999;
   display: none;
