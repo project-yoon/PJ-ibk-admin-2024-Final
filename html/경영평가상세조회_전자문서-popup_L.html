@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>전자문서경영평가상세조회(전자문서)::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+  <div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 755px;width: 920px;">
+      <div class="modal_header">
+        <h1>전자문서경영평가상세조회(전자문서)</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+        <div class="board_box">
+          <table>
+            <caption>
+              전자문서경영평가상세조회(전자문서) 조회 조건
+            </caption>
+            <colgroup>
+              <col span="1" style="width: 80px;">
+              <col span="1" style="width: 450px;">
+              <col span="1" style="width: 80px;">
+              <col span="1" style="width: 250px;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="inp_01">부점코드</label>
+                </th>
+                <td>
+                  <span class="sel_inp">
+                    <span class="search_int">
+                      <input type="search" id="inp_01" placeholder="사용자부점코드" value="0818" disabled="">
+                    </span>
+                    <span class="search_int">
+                      <input type="search" id="inp_01_1" placeholder="부점명" value="디지털기획부" disabled="">
+                    </span>
+                  </span>
+                </td>
+                <th scope="row">
+                  <label for="inp_01">거래일자</label>
+                </th>
+                <td>
+                  <span class="date">
+                    <input type="text" class="select_date input_ty hasDatepicker" id="inp_01" autocomplete="off" displayformat="yyyy-MM-dd">
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt10 mb10">* 데이터양이 많아 일자별 조회만 가능하오니 업무에 참고하시길 바랍니다</p>
+        <div class="cont_btn ty_new">
+          <div class="center">
+            <button class="btn2">조회</button>
+          </div>
+        </div>
+        <div class="cont_box">
+          <div class="board_search">총 {0} 건</div>
+          <div class="cont_btn">
+            <a class="btn3" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
+          </div>
+        </div>
+        <div class="modal_board scroll">
+          <div class="board_ty">
+            <table>
+              <caption>
+                전자문서경영평가상세조회(전자문서) 조회결과
+              </caption>
+              <colgroup>
+                <col span="1">
+                <col span="1" style="width: 120px;"> <!-- 거래년월일 -->
+                <col span="1">
+                <col span="1">
+                <col span="1">
+                <col span="1" style="width: 100px;"> <!-- 진행고객번호 -->
+                <col span="1">
+                <col span="1">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>
+                    업무유형
+                  </th>
+                  <th>
+                    거래년월일
+                  </th>
+                  <th>
+                    거래시간
+                  </th>
+                  <th>
+                    조작자
+                  </th>
+                  <th>
+                    조작자명
+                  </th>
+                  <th>
+                    진행고객번호
+                  </th>
+                  <th>
+                    고객명
+                  </th>
+                  <th>
+                    서류명
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>업무유형</td>
+                  <td>YYYY-MM-DD</td>
+                  <td>00:00:00</td>
+                  <td>044076</td>
+                  <td>김기업</td>
+                  <td>11111111</td>
+                  <td>거래명</td>
+                  <td>서류명</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>

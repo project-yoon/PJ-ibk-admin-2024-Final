@@ -348,6 +348,7 @@
 }
 .modal_body .board_box table{
   width: auto;
+  padding: 8px 10px;
 }
 .modal_text textarea{
   border: solid 2px #b3cbe0;
