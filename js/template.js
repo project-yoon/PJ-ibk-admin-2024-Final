@@ -224,6 +224,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
   /* table all check(js) *//* cp-20240400 */
+  /*
   const chkTbls = document.querySelectorAll('table[data-check="check-group"]');
   chkTbls.forEach(chkGroups => {
     const chkAll = chkGroups.querySelector('label[data-check="check-all"] input[type="checkbox"]');
@@ -239,8 +240,36 @@ $(document).ready(function(){
         });
     });
   });
+  */
+  ALLCHK();
 });
+function ALLCHK(){
+  const chkTbls = document.querySelectorAll('table[data-check="check-group"]');
+  chkTbls.forEach(chkGroups => {
+    const chkAll = chkGroups.querySelector('label[data-check="check-all"] input[type="checkbox"]');
+    const chkTbds = chkGroups.querySelectorAll('tbody input[type="checkbox"]');
+    chkAll.addEventListener('change', function() {
+        chkTbds.forEach(chkItems => {
+          chkItems.checked = chkAll.checked;
+        });
+    });
+    chkTbds.forEach(chkItems => {
+      chkItems.addEventListener('change', function() {
+            chkAll.checked = [...chkTbds].every(chkItems => chkItems.checked);
+        });
+    });
+  });
+}
 
+function TABS(){
+  $('.cont_tab li a').click(function(){
+    var tab_id = $(this).attr('data-tab');  
+    $('.cont_tab li a').removeClass('active');
+    $('.tab-content').removeClass('active');  
+    $(this).addClass('active');
+    $("#"+tab_id).addClass('active');
+  });
+}
   /* table context menu(js) *//* cp-20240400 */
   $(document).ready(function(){
     var contextMenus = document.querySelectorAll(".contextmenu");

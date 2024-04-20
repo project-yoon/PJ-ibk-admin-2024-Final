@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>메뉴정보관리::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>시스템 관리 &gt;</span>
+              <span>메뉴관리</span>
+            </div>
+            <h2>메뉴관리</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <div class="cont_tab">
+          <ul>
+            <li><a href='javascript:void(0);' onclick="TABS();" data-tab="tab-1" class="active">메뉴정보관리</a></li>
+            <li><a href='javascript:void(0);' onclick="TABS();" data-tab="tab-2" class="">메뉴별권한관리</a></li>
+            <li><a href='javascript:void(0);' onclick="TABS();" data-tab="tab-3" class="">메뉴차단관리</a></li>
+          </ul>
+        </div>
+
+        <!-- TAB 컨텐츠 1 -->
+        <div id="tab-1" class="tab-content active">
+
+          <div class="content">
+            <div class="board_box">
+              <table>
+                <caption>
+                  메뉴정보관리 조회 조건
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 7%;">
+                  <col span="1" style="width: 29%;">
+                  <col span="1" style="width: 7%;">
+                  <col span="1" style="width: 29%;">
+                  <col span="1" style="width: 7%;">
+                  <col span="1" style="width: auto;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <label for="inp1_01">대분류명</label>
+                    </th>
+                    <td>
+                      <select id="inp_02">
+                        <option>전자문서</option>
+                      </select>
+                    </td>
+                    <th scope="row">
+                      <label for="inp_02">메뉴명</label>
+                    </th>
+                    <td>
+                      <select id="inp_02">
+                        <option>선택하세요</option>
+                      </select>
+                    </td>
+                    <th scope="row">
+                    </th>
+                    <td>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="cont_btn ty_new">
+              <div class="left">
+                <p>※ 메뉴정보관리는 공통담당자와 사전협의 후 진행하시기 바랍니다. </p>
+              </div>
+              <div class="right">
+                <select title="보기선택">
+                  <option>20개씩 보기</option>
+                </select>
+                <button class="btn2">조회</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- content : 테이블1 : 메뉴정보관리 -->
+          <div class="content">
+            <div class="cont_box">
+              <div class="board_search">전체 {0} 건</div>
+              <div class="cont_btn">
+                <button type="button" class="btn3" title="매칭">엑셀 다운</a>
+              </div>
+            </div>
+
+            <!-- 테이블 시작 -->
+            <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+              <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
+                <div class="board_ty colgroup">
+                  <table>
+                    <caption>
+                      메뉴정보관리 조회 결과
+                    </caption>
+                    <colgroup>
+                      <col span="1" style="width: 200px;">
+                      <col span="1" style="width: 200px;">
+                      <col span="1" style="width: 80px;">
+                      <col span="1" style="width: 650px;">
+                      <col span="1" style="width: 65px;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">대분류명</th>
+                        <th scope="col">메뉴명</th>
+                        <th scope="col">화면번호</th>
+                        <th scope="col">URL</th>
+                        <th scope="col">정렬순서</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td colspan="5" class="emp">조회결과가 없습니다.</td>
+                      </tr>
+                      <tr>
+                        <td>전자문서</td>
+                        <td>전자문서결재목록</td>
+                        <td>090101</td>
+                        <td class="left">eds_snct::EDS_SNCT_0100.xml</td>
+                        <td>1</td>
+                      </tr>
+                      <!-- tr, 이하 테이블 스크롤 확인 -->
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <!-- // 테이블 종료 -->
+          </div>
+
+          <!-- content : 테이블2 : 메뉴관리 (수정/삭제 시 MM_ID 수정금지) -->
+          <div class="content">
+            <h3 class="title">※ 메뉴관리 (수정/삭제 시 MM_ID 수정금지)</h3>
+            <div class="cont_box flex_right">
+              <div class="cont_btn">
+                <button type="button" class="btn3" title="매칭">메뉴삭제</a>
+                <button type="button" class="btn3" title="매칭">메뉴갱신</a>
+                <button type="button" class="btn3" title="매칭">초기화</a>
+                <button type="button" class="btn3" title="매칭">메뉴등록</a>
+              </div>
+            </div>
+
+            <!-- 테이블 시작 -->
+            <div class="board_ty colgroup">
+              <table>
+                <caption>
+                  메뉴관리 - 메뉴ID, 메뉴명, 대분류, 대분류명, 정렬, 레벨, URL, 화면번호
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 90px;">
+                  <col span="1" style="width: 180px;">
+                  <col span="1" style="width: 70px;">
+                  <col span="1" style="width: 180px;">
+                  <col span="1" style="width: 60px;">
+                  <col span="1" style="width: 60px;">
+                  <col span="1" style="width: 485px;">
+                  <col span="1" style="width: 90px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">메뉴ID</th>
+                    <th scope="col">메뉴명</th>
+                    <th scope="col">대분류</th>
+                    <th scope="col">대분류명</th>
+                    <th scope="col">정렬</th>
+                    <th scope="col">레벨</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">화면번호</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="8" class="emp">조회결과가 없습니다.</td>
+                  </tr>
+                  <tr>
+                    <td>ED021</td>
+                    <td>전자문서처리현황</td>
+                    <td>09</td>
+                    <td>전자문서</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td class="left">eds_sttc::EDS_STTC_0100.xml</td>
+                    <td>090201</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <!-- // 테이블 종료 -->
+          </div>
+
+          <div class="paginate">
+            <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+            <a href="#" class="on">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+            <a href="#">9</a>
+            <a href="#">10</a>
+            <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+          </div>
+
+        </div><!--// TAB 컨텐츠 1 종료  -->
+
+        <!-- TAB 컨텐츠 2 -->
+        <div id="tab-2" class="tab-content ">
+        </div><!--// TAB 컨텐츠 2 종료  -->
+
+        <!-- TAB 컨텐츠 3 -->
+        <div id="tab-3" class="tab-content ">
+        </div><!--// TAB 컨텐츠 3 종료  -->
+
+
+      </section>
+      <!-- // container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>

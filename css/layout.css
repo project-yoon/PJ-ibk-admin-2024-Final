@@ -552,7 +552,7 @@
 .cont_tab ul li{
   float: left;
   min-width: 122px;
-  padding: 11px 33px;
+  /* padding: 11px 33px; */
   margin-right: 5px;
   text-align: center;
   cursor: pointer;
@@ -567,19 +567,20 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 21px;
+  padding: 11px 33px;
 }
 .cont_tab ul li .num{
   font-weight: 700;
   margin-left: 4px;
 }
-.cont_tab ul li.active{
+.cont_tab ul li:has(.active){
   border-bottom: 2px solid #000000;
 }
-.cont_tab ul li.active a{
+.cont_tab ul li:has(.active) a{
   color: #000000;
   font-weight: 700;
 }
-.cont_tab ul li.active .num{
+.cont_tab ul li:has(.active) .num{
   color: #2873E3;
 }
 .cont_tab ul li:hover a{

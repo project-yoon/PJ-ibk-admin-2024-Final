@@ -431,7 +431,9 @@ select.text_center option{
   /* pointer-events: none; */
 }
 
-
+.board_ty .cont_btn{
+  margin: 2px 0;
+}
 .board_ty th,
 .board_ty td{
   height: 45px;
@@ -744,12 +746,12 @@ textarea{
   text-align: right;
 }
 
-.board_scroll.row4 {height:calc(16px + 45px * 4);} /* 4줄노출 */
-.board_scroll.row5 {height:calc(16px + 45px * 5);} /* 5줄노출 */
-.board_scroll.row7 {height:calc(16px + 45px * 7);} /* 7줄노출 */
-.board_scroll.row10{height:calc(16px + 45px * 10);} /* 10줄노출 */
-.board_scroll.row15{height:calc(16px + 45px * 15);} /* 15줄노출 */
-.board_scroll.row20{ height:calc(16px + 45px * 20);} /* 20줄노출 */
+.board_scroll.row4,.trow4 {height:calc(16px + 45px * 4);} /* 4줄노출 */
+.board_scroll.row5,.trow5 {height:calc(16px + 45px * 5);} /* 5줄노출 */
+.board_scroll.row7,.trow7 {height:calc(16px + 45px * 7);} /* 7줄노출 */
+.board_scroll.row10,.trow10{height:calc(16px + 45px * 10);} /* 10줄노출 */
+.board_scroll.row15,.trow15{height:calc(16px + 45px * 15);} /* 15줄노출 */
+.board_scroll.row20,.trow20{ height:calc(16px + 45px * 20);} /* 20줄노출 */
 
 .tooltip{
   position: relative;
@@ -979,6 +981,16 @@ select{
   background: rgba(0, 81, 153, 0.08);
   font-weight: 500;
 }
+
+/* tab-content : cp-20240400 */
+.tab-content{
+  display: none;  
+}
+.tab-content.active{
+  display: inherit;
+}
+
+/* button.contxt : cp-20240400 */
 button.contxt{
   padding: 0;
   margin: 0;
@@ -990,6 +1002,8 @@ button.contxt{
   background: none;
   cursor: pointer;
 }
+
+/* .rule : cp-20240400 */
 .rule mfrac {
   font-size: 17px;
 }
@@ -1004,7 +1018,6 @@ button.contxt{
   margin: 10px 0;
   padding: 10px 10px;
   background-color: #f5f5f5;
-  /* border: 1px solid #ddd; */
 }
 .rule .flx .list li{
   padding: 5px 10px;
@@ -1014,7 +1027,7 @@ button.contxt{
   border-bottom: 0;
 }
 
-/* 20240400 : .vertical 세로스크롤 */
+/* vertical 세로스크롤 : cp-20240400 */
 .board_fixed .fixed.vertical,
 .board_fixed .scroll_body.vertical{
   max-height: 560px;
@@ -1041,26 +1054,61 @@ button.contxt{
   top: auto;
   bottom: 0;
 }
-/* 세로스크롤 */
-table[data-scroll="row"] thead {
-  display: table-header-group;
+
+/* .appendbox : cp-20240400 */
+.appendbox {
   width: 100%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: space-between;
 }
-table[data-scroll="row"] tbody {
+.appendbox::after {
+  content: '';
   display: block;
-  max-height: 200px;
-  overflow-y: scroll;
+  clear: both;
 }
-table[data-scroll="row"] tbody tr {
-  width: 100%;
-  display: inline-table;
-  max-width: 615px;
+.appendbox .app_left {
+  float: left;
+  width: 45%;
 }
-.flex_box table[data-scroll="row"] tbody {
-  width: 635px;
+.appendbox .app_right {
+  float: right;
+  width: 45%;
+}
+.appendbox .app_btn {
+  margin: auto 0;
+  flex-direction: column;
+}
+.appendbox .app_btn div {
+  margin: 10px 25px;
+}
+.appendbox .app_btn button {
+  position: relative;
+  width: 75px;
+  height: 50px;
+  font-size: 0;
+}
+.appendbox .app_btn button::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 75px;
+  top: -27%;
+  left: 17%;
+  z-index: 0;
+  background: url(../img/select_arrow.png) no-repeat;
+  background-size: 16px auto;
+  background-position: center center;
+}
+.appendbox .app_btn button#left::before {
+  transform: rotate(90deg);
+}
+.appendbox .app_btn button#right::before {
+  transform: rotate(-90deg);
 }
 
 
+/* .contextmenu : cp-20240400 */
 .contextmenu{
   z-index: 999;
   display: none;
@@ -1075,6 +1123,8 @@ content: " ";
 clear: both;
 display: table;
 }
+
+/* .pdf_content : cp-20240400 */
 .pdf_content{
   display: flex;
   justify-content: space-between;

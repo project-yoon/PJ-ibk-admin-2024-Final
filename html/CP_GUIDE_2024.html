@@ -417,7 +417,8 @@
           <h3>[5] table scroll<br>
             <p class="tit_subtex">
               <span>[기본 : 가로스크롤] <b>.board_fixed &gt; .scroll_body</b> </span><br>
-              <span>[타입추가 : 세로스크롤] <b>.board_fixed &gt; .scroll_body + <u>.vertical</u></b></span>
+              <span>[타입추가 : 세로스크롤] <b>.board_fixed &gt; .scroll_body + <u>.vertical</u></b></span><br>
+              <span>[타입추가 : 세로스크롤+노출 행 제어] <b>.board_fixed &gt; .scroll_body + .vertical + <u>.trow4 ~ .trow420</u></b></span>
             </p>
           </h3><br>
           <div class="cont_box">
@@ -561,7 +562,7 @@
             </div>
           </div>
           <div class="cont_box mt30">
-            <div class="board_search">세로타입 추가 - 데이터가 영역을 넘치지 않을때</div>
+            <div class="board_search">세로타입 추가 - <b>10줄을 기본</b>으로, 데이터가 10줄 이하일 경우 스크롤 생성 없음</div>
           </div>
           <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
             <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
@@ -716,13 +717,148 @@
               </div>
             </div>
           </div>
+          <div class="cont_box mt30">
+            <div class="board_search">세로타입 노출 개수 지정 - 경우에 따라 노출되는 줄의 갯수를 클래스 <b>.trow4</b>, <b>.trow5</b>, <b>.trow7</b>, <b>.trow10</b>, <b>.trow15</b>, <b>.trow20</b>로 지정할 수 있습니다</div>
+          </div>
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical trow7"><!--[D] 스크롤 타입 정의 -->
+              <div class="board_ty "><!--[D] 테이블 영역 시작 -->
+                <table><!--[D] 실제 테이블 시작 -->
+                  <caption>
+                    세로타입 노출 개수 지정 - 클래스 trow7 사용
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 100px;"/>
+                    <col span="1" style="width: 540px;"/>
+                    <col span="1" style="width: 540px;"/>
+                    <col span="1" style="width: 540px;"/>
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>thead</th>
+                      <th> - </th>
+                      <th> - </th>
+                      <th> - </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>tbody</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td>100</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td>tfoot</td>
+                      <td>***</td>
+                      <td>***</td>
+                      <td>***</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
 
 
         </div>
 
         <template><!-- *********************************************************** --></template>
 
-      </section>
+
+        <div class="content mt50">
+          <h3>[6] TABS<br>
+            <p class="tit_subtex">
+              <span>[ <b>function TABS();</b> ] </span><br>
+            </p>
+          </h3><br>
+          <div class="cont_box">
+            <div class="board_search">li > a  /  data-tab</div>
+          </div>
+
+          <div class="cont_tab">
+            <ul>
+              <li><a href='javascript:void(0);' onclick="TABS();" data-tab="tab-1" class="active">TAB1</a></li>
+              <li><a href='javascript:void(0);' onclick="TABS();" data-tab="tab-2">TAB2</a></li>
+            </ul>
+          </div>
+          <div id="tab-1" class="tab-content active">
+            <div style="height: 500px;background-color: #eee;color: #666;">탭컨텐츠1</div>
+          </div>
+          <div id="tab-2" class="tab-content">
+            <div style="height: 500px;background-color: #ddd;color: #666;">탭컨텐츠2</div>
+          </div>
+        </div>
+
+
+
+
+        <template><!-- *********************************************************** --></template>
+
+
+        </section>
 
       
       <footer class="footer">
