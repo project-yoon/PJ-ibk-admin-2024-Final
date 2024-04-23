@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>프로그램 배포 등록 목록::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서시스템관리 &gt;</span>
+              <span>프로그램 배포 등록 목록</span>
+            </div>
+            <h2>프로그램 배포 등록 목록</h2>
+          </div>
+        </div>
+        <!-- cont_header -->
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>
+                프로그램 배포 등록 조회 조건
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 8%;">
+                <col span="1" style="width: 19%;">
+                <col span="1" style="width: 8%;">
+                <col span="1" style="width: 19%;">
+                <col span="1" style="width: 6%;">
+                <col span="1" style="width: 19%;">
+                <col span="1" style="width: 6%;">
+                <col span="1" style="width: auto;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_01">프로그램 구분</label>
+                  </th>
+                  <td>
+                    <select id="inp_01">
+                      <option>전체</option>
+                      <option>전자문서 ANDROID앱</option>
+                      <option>전자문서PCVIEWER</option>
+                    </select>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_02">배포대상구분</label>
+                  </th>
+                  <td>
+                    <select id="inp_02">
+                      <option>전체</option>
+                      <option>전부점</option>
+                      <option>특정부점</option>
+                      <option>특정사원</option>
+                    </select>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_03">배포대상</label>
+                  </th>
+                  <td>
+                    <select id="inp_03">
+                      <option>전체</option>
+                      <option>Y</option>
+                      <option>N</option>
+                    </select>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_04">배포여부</label>
+                  </th>
+                  <td>
+                    <select id="inp_04">
+                      <option>전체</option>
+                      <option>배포전</option>
+                      <option>배포중</option>
+                      <option>배포완료</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cont_btn ty_new">
+            <div class="right">
+              <select title="보기선택">
+                <option>20개씩 보기</option>
+              </select>
+              <!-- <button class="btn3 ">초기화</button> -->
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="content">
+          <div class="cont_box">
+            <div class="board_search">전체 {135} 건</div>
+            <div class="cont_btn">
+              <button class="btn3">등록</button>
+              <button class="btn3">결재요청</button>
+              <button class="btn3">배포</button>
+            </div>
+          </div>
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical trow7"><!--[D] 스크롤 타입 정의 -->
+              <div class="board_ty colgroup">
+                <!-- [D] table all check(js) : 
+                    [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                -->
+                <table data-check="check-group">
+                  <caption>
+                    공지사항 관리 조회
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 35px;">
+                    <col span="1" style="width: 142px;">
+                    <col span="1" style="width: 120px;">
+                    <col span="1" style="width: 320px;">
+                    <col span="1" style="width: 90px;">
+                    <col span="1" style="width: 90px;">
+                    <col span="1" style="width: 66px;">
+                    <col span="1" style="width: 66px;">
+                    <col span="1" style="width: auto;">
+                    <col span="1" style="width: 80px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="checkbox_inner">
+                          <!-- [D] table all check(js) : 
+                              [2] 전체선택 될 라벨에, data-check="check-all" 추가 필수
+                          -->
+                          <label for="checkAll" data-check="check-all">
+                            <input type="checkbox" id="checkAll">
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">프로그램 구분</th>
+                      <th scope="col">프로그램 버전</th>
+                      <th scope="col">배포파일명</th>
+                      <th scope="col">배포대상구분</th>
+                      <th scope="col">배포대상여부</th>
+                      <th scope="col">결재상태</th>
+                      <th scope="col">배포구분</th>
+                      <th scope="col">비고</th>
+                      <th scope="col">설치내역</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="10" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check1">
+                            <input type="checkbox" id="check1">
+                          </label>
+                        </div>
+                      </td>
+                      <td class="left">
+                        <a href="#">전자문서 ANDROID앱</a>
+                      </td>
+                      <td>5.7.2</td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td>Y</td>
+                      <td>결재완료</td>
+                      <td>배포중</td>
+                      <td class="left"></td>
+                      <td>
+                        <div class="cont_btn">
+                          <a href="#" class="btn4">설치내역</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check2">
+                            <input type="checkbox" id="check2">
+                          </label>
+                        </div>
+                      </td>
+                      <td class="left">
+                        <a href="#">전자문서PCVIEWER</a>
+                      </td>
+                      <td>2023101002</td>
+                      <td class="left">
+                        IBK_EDS_Setup_2023111002.exe
+                      </td>
+                      <td>특정부점</td>
+                      <td>Y</td>
+                      <td>미등록</td>
+                      <td>-</td>
+                      <td class="left"></td>
+                      <td>
+                        <div class="cont_btn">
+                          <a href="#" class="btn4">설치내역</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check3">
+                            <input type="checkbox" id="check3">
+                          </label>
+                        </div>
+                      </td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td>
+                        <div class="cont_btn">
+                          <a href="#" class="btn4">설치내역</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check4">
+                            <input type="checkbox" id="check4">
+                          </label>
+                        </div>
+                      </td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td>
+                        <div class="cont_btn">
+                          <a href="#" class="btn4">설치내역</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check5">
+                            <input type="checkbox" id="check5">
+                          </label>
+                        </div>
+                      </td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td>
+                        <div class="cont_btn">
+                          <a href="#" class="btn4">설치내역</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check6">
+                            <input type="checkbox" id="check6">
+                          </label>
+                        </div>
+                      </td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td>
+                        <div class="cont_btn">
+                          <a href="#" class="btn4">설치내역</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check7">
+                            <input type="checkbox" id="check7">
+                          </label>
+                        </div>
+                      </td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td>
+                        <div class="cont_btn">
+                          <a href="#" class="btn4">설치내역</a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+      </section>
+      <!-- container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- footer -->
+    </div>
+  </body>
+</html>

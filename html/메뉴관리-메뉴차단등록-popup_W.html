@@ -21,7 +21,71 @@
       </div>
       <div class="modal_body" style="margin-top: 27px;">
 
-        붙이세요
+        <div class="modal_board ">
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                메뉴차단 등록
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 570px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">
+                    <label for="inp_01">대분류명*</label>
+                    </th>
+                  <td>
+                    <select id="inp_01">
+                      <option>선택하세요</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_02">메뉴명*</label>
+                  </th>
+                  <td>
+                    <select id="inp_02">
+                      <option>선택하세요</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_03">차단사유*</label>
+                  </th>
+                  <td>
+                    <input type="text" id="inp_03" class="input_ty input_full" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_04">차단메세지*</label>
+                  </th>
+                  <td>
+                    <input type="text" id="inp_04" class="input_ty input_full" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_05">결재 책임자*</label>
+                  </th>
+                  <td>
+                    <select id="inp_05">
+                      <option>선택하세요</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="mt10 mb10">※ 등록과 동시에 차단되며 책임자 결재는 사후 결재입니다.</p>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button class="btn2">등록</button>
+        </div>
 
 
       </div>

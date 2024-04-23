@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전자문서결재::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서결재 &gt;</span>
+              <span>전자문서결재</span>
+            </div>
+            <h2>전자문서결재</h2>
+          </div>
+        </div>
+        <!-- cont_header -->
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>
+                전자문서결재 조회 조건
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 6%;">
+                <col span="1" style="width: 30%;">
+                <col span="1" style="width: 6%;">
+                <col span="1" style="width: 30%;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label>업무구분*</label>
+                  </th>
+                  <td>
+                    <span class="flex_box radio_box">
+                      <span class="radio_btn">
+                        <input type="radio" id="radio_on" name="radio_btn" value="" checked>
+                        <label for="radio_on">내업무</label>
+                        <input type="radio" id="radio_off" name="radio_btn" value="">
+                        <label for="radio_off">전체업무</label>
+                      </span>
+                    </span><!-- radio_btn -->
+                  </td>
+                  <th scope="row">
+                    <label for="inp_02">부점코드*</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_02" placeholder="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_02_1" placeholder="" disabled>
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_03">거래일자*</label>
+                  </th>
+                  <td>
+                    <div class="sel_inp">
+                      <span class="date">
+                        <input type="text" class="select_date input_ty" id="inp_03" autocomplete="off" />
+                        ~
+                        <input type="text" class="select_date input_ty second" id="inp03_2" autocomplete="off" />
+                      </span>
+                      <span class="board_btn"> <!-- [D] 20240423 추가 -->
+                        <button class="btn4 btn_half">7일</button>
+                      </span>
+                    </div>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_04">거래화면번호</label>
+                  </th>
+                  <td>
+                    <span class="search_int">
+                      <input type="search" id="inp_04" placeholder="">
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_05">진행상태*</label>
+                  </th>
+                  <td>
+                    <select id="inp_05">
+                      <option>전체</option>
+                      <option>진행중</option>
+                      <option>완료</option>
+                    </select>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_06">취급자</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_06" placeholder="" >
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_06_1" placeholder="" disabled>
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cont_btn ty_new">
+            <div class="left">
+              <p>* 당일취소(수신/카드)건은 매시 30분 결재목록에서 자동 삭제 </p>
+              <p>* [현재담당자]만 다음단계로 진행 가능 (업무 이관이 필요한 경우 통합단말 [A0609]</p>
+              <p>* 결재 완료된 건의 조회 및 추가 스캔이 필요한 경우 조회조건 “전체업무” 선택 후 조회</p>
+              <p>* 상위 결재자의 대작자가 조회되지 않는 경우 통합 단말 [A0612]에서 대직 등록 확인 </p>
+              <p>* 일괄스캔 : 다건 선택 후 첨부서류 스캔 (고객번호로 조회되지 않는 거래가 있으니 확인 후 별도 스캔 또는 메모기능 활용)</p>
+            </div>
+            <div class="right">
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 탭 -->
+        <!-- [D] 20240423 탭 변경 -->
+        <div class="cont_tab">
+          <ul> 
+            <li>
+              <a href='javascript:void(0);' onclick="TABS();" data-tab="tab-1" class="active">전체<span class="num">0</span></a>
+            </li>
+            <li class="">
+              <a href='javascript:void(0);' onclick="TABS();" data-tab="tab-2" class="">수신<span class="num">0</span></a>
+            </li>
+            <li class="">
+              <a href='javascript:void(0);' onclick="TABS();" data-tab="tab-3" class="">카드<span class="num">0</span></a>
+            </li>
+            <li class="">
+              <a href='javascript:void(0);' onclick="TABS();" data-tab="tab-4" class="">외환<span class="num">0</span></a>
+            </li>
+            <li class="">
+              <a href='javascript:void(0);' onclick="TABS();" data-tab="tab-5" class="">여신<span class="num">0</span></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- TAB 컨텐츠 1 -->
+        <div id="tab-1" class="tab-content active">
+          <!-- '전체' 결과 유틸 -->
+          <div class="cont_box">
+            <div class="board_search">전체 {20} 건</div>
+            <div class="cont_btn">
+              <span class="board_btn">
+                <label for="file_HwPd" class="file_label btn3">일괄스캔</label>
+                <input type="file" accept=".Hwp, .pdf" id="file_HwPd">
+              </span>
+              <button type="button" class="btn3" title="데이터보기">데이터보기</a>
+              <button type="button" class="btn3 xl" title="데이터보기(레코드)">데이터보기(레코드)</a>
+            </div>
+          </div>
+          <!-- '전체' 결과 -->
+          <div class="board_fixed">
+            <div class="scroll_body vertical">
+              <!-- 테이블 시작 -->
+              <div class="board_ty colgroup">
+                <!-- [D] table all check(js) : 
+                    [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                -->
+                <table data-check="check-group">
+                  <caption>
+                    결과 목록
+                  </caption>
+                  <colgroup>
+                    <!-- [D] thead가 변경될 시 셀간격 확인 필요 -->
+                    <col span="1" style="width: 38px;"> <!-- 선택 -->
+                    <col span="1" style="width: 100px;"> <!-- 결재일초과 -->
+                    <col span="1" style="width: 105px;"> <!-- 거래일시 -->
+                    <col span="1" style="width: 75px;"> <!-- 화면번호 -->
+                    <col span="1" style="width: 305px;"> <!-- 거래명 -->
+                    <col span="1" style="width: 95px;"> <!-- 고객명 -->
+                    <col span="1" style="width: 120px;"> <!-- 신분증 -->
+                    <col span="1" style="width: 125px;"> <!-- 취급자 -->
+                    <col span="1" style="width: 115px;"> <!-- 진행상태 -->
+                    <col span="1" style="width: 125px;"> <!-- 현재담당자 -->
+                    <col span="1" style="width: 75px;"> <!-- 부점코드 -->
+                    <col span="1" style="width: 85px;"> <!-- 부점명 -->
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="checkbox_inner">
+                          <!-- [D] table all check(js) : 
+                              [2] 전체선택 될 라벨에, data-check="check-all" 추가 필수
+                          -->
+                          <label for="checkAll" data-check="check-all">
+                            <input type="checkbox" id="checkAll">
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">결재일초과</th>
+                      <th scope="col">거래일시</th>
+                      <th scope="col">화면번호</th>
+                      <th scope="col">거래명</th>
+                      <th scope="col">고객명</th>
+                      <th scope="col">신분증</th>
+                      <th scope="col">취급자</th>
+                      <th scope="col">진행상태</th>
+                      <th scope="col">현재담당자</th>
+                      <th scope="col">부점코드</th>
+                      <th scope="col">부점명</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <!-- [D] colspan="" : thead가 변경될 시, 셀 개수 변경 -->
+                      <td colspan="12" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check1">
+                            <input type="checkbox" id="check1">
+                          </label>
+                        </div>
+                      </td>
+                      <td>3영업일초과</td>
+                      <td>2024-04-03 09:35:12</td>
+                      <td>Q1102</td>
+                      <td>퇴직연금 디폴트옵션 선정 (가입자)</td>
+                      <td>홍길동</td>
+                      <td></td>
+                      <td>김민수 (042316)</td>
+                      <td>담당자 결재요청</td>
+                      <td>김민수 (042316)</td>
+                      <td>0001</td>
+                      <td>영업부</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- // 테이블 종료 -->
+            </div>
+          </div>
+
+        </div><!--// TAB 컨텐츠 1 종료  -->
+
+        <!-- TAB 컨텐츠 2 -->
+        <div id="tab-2" class="tab-content ">
+          <!-- '수신' 결과 유틸 -->
+          <div class="cont_box">
+            <div class="board_search">전체 {20} 건</div>
+            <div class="cont_btn">
+              <span class="board_btn">
+                <label for="file_HwPd" class="file_label btn3">일괄스캔</label>
+                <input type="file" accept=".Hwp, .pdf" id="file_HwPd">
+              </span>
+              <button type="button" class="btn3" title="데이터보기">데이터보기</a>
+              <button type="button" class="btn3 xl" title="데이터보기(레코드)">데이터보기(레코드)</a>
+            </div>
+          </div>
+          <!-- '수신' 결과 -->
+          <div class="board_fixed">
+            <div class="scroll_body vertical">
+              <!-- 테이블 시작 -->
+              <div class="board_ty colgroup">
+                <!-- [D] table all check(js) : 
+                    [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                -->
+                <table data-check="check-group">
+                  <caption>
+                    수신 결과 목록
+                  </caption>
+                  <colgroup>
+                    <!-- [D] thead가 변경될 시 셀간격 확인 필요 -->
+                    <col span="1" style="width: 38px;"> <!-- 선택 -->
+                    <col span="1" style="width: 100px;"> <!-- 결재일초과 -->
+                    <col span="1" style="width: 105px;"> <!-- 거래일시 -->
+                    <col span="1" style="width: 75px;"> <!-- 화면번호 -->
+                    <col span="1" style="width: 305px;"> <!-- 거래명 -->
+                    <col span="1" style="width: 95px;"> <!-- 고객명 -->
+                    <col span="1" style="width: 120px;"> <!-- 신분증 -->
+                    <col span="1" style="width: 125px;"> <!-- 취급자 -->
+                    <col span="1" style="width: 115px;"> <!-- 진행상태 -->
+                    <col span="1" style="width: 125px;"> <!-- 현재담당자 -->
+                    <col span="1" style="width: 75px;"> <!-- 부점코드 -->
+                    <col span="1" style="width: 85px;"> <!-- 부점명 -->
+                    <col span="1" style="width: 85px;"> <!-- 참조구분 -->
+                    <col span="1" style="width: 185px;"> <!-- 참조번호 -->
+                    <col span="1" style="width: 85px;"> <!-- 책임자 -->
+                    <col span="1" style="width: 85px;"> <!-- 팀장 -->
+                    <col span="1" style="width: 85px;"> <!-- 부점장 -->
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="checkbox_inner">
+                          <!-- [D] table all check(js) : 
+                              [2] 전체선택 될 라벨에, data-check="check-all" 추가 필수
+                          -->
+                          <label for="checkAll" data-check="check-all">
+                            <input type="checkbox" id="checkAll">
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">결재일초과</th>
+                      <th scope="col">거래일시</th>
+                      <th scope="col">화면번호</th>
+                      <th scope="col">거래명</th>
+                      <th scope="col">고객명</th>
+                      <th scope="col">신분증</th>
+                      <th scope="col">취급자</th>
+                      <th scope="col">진행상태</th>
+                      <th scope="col">현재담당자</th>
+                      <th scope="col">부점코드</th>
+                      <th scope="col">부점명</th>
+                      <th scope="col">참조구분</th>
+                      <th scope="col">참조번호</th>
+                      <th scope="col">책임자</th>
+                      <th scope="col">팀장</th>
+                      <th scope="col">부점장</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <!-- [D] colspan="" : thead가 변경될 시, 셀 개수 변경 -->
+                      <td colspan="17" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check1">
+                            <input type="checkbox" id="check1">
+                          </label>
+                        </div>
+                      </td>
+                      <td>3영업일초과</td>
+                      <td>2024-04-03 09:35:12</td>
+                      <td>Q1102</td>
+                      <td>퇴직연금 디폴트옵션 선정 (가입자)</td>
+                      <td>홍길동</td>
+                      <td></td>
+                      <td>김민수 (042316)</td>
+                      <td>담당자 결재요청</td>
+                      <td>김민수 (042316)</td>
+                      <td>0001</td>
+                      <td>영업부</td>
+                      <td>기타번호</td>
+                      <td>202402297000000040</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- // 테이블 종료 -->
+            </div>
+          </div><!-- // '수신' 결과 -->
+
+        </div><!--// TAB 컨텐츠 2 종료  -->
+
+        <!-- TAB 컨텐츠 3 -->
+        <div id="tab-3" class="tab-content ">
+          <!-- '카드' 결과 유틸 -->
+          <div class="cont_box">
+            <div class="board_search">전체 {20} 건</div>
+            <div class="cont_btn">
+              <span class="board_btn">
+                <label for="file_HwPd" class="file_label btn3">일괄스캔</label>
+                <input type="file" accept=".Hwp, .pdf" id="file_HwPd">
+              </span>
+              <button type="button" class="btn3" title="데이터보기">데이터보기</a>
+              <button type="button" class="btn3 xl" title="데이터보기(레코드)">데이터보기(레코드)</a>
+            </div>
+          </div>
+          <!-- '카드' 결과 -->
+          <div class="board_fixed">
+            <div class="scroll_body vertical">
+              <!-- 테이블 시작 -->
+              <div class="board_ty colgroup">
+                <!-- [D] table all check(js) : 
+                    [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                -->
+                <table data-check="check-group">
+                  <caption>
+                    카드 결과 목록
+                  </caption>
+                  <colgroup>
+                    <!-- [D] thead가 변경될 시 셀간격 확인 필요 -->
+                    <col span="1" style="width: 38px;"> <!-- 선택 -->
+                    <col span="1" style="width: 100px;"> <!-- 결재일초과 -->
+                    <col span="1" style="width: 105px;"> <!-- 거래일시 -->
+                    <col span="1" style="width: 75px;"> <!-- 화면번호 -->
+                    <col span="1" style="width: 305px;"> <!-- 거래명 -->
+                    <col span="1" style="width: 95px;"> <!-- 고객명 -->
+                    <col span="1" style="width: 120px;"> <!-- 신분증 -->
+                    <col span="1" style="width: 125px;"> <!-- 취급자 -->
+                    <col span="1" style="width: 115px;"> <!-- 진행상태 -->
+                    <col span="1" style="width: 125px;"> <!-- 현재담당자 -->
+                    <col span="1" style="width: 75px;"> <!-- 부점코드 -->
+                    <col span="1" style="width: 85px;"> <!-- 부점명 -->
+                    <col span="1" style="width: 125px;"> <!-- 카드종류 --> <!-- [D] 항목 확인 -->
+                    <col span="1" style="width: 85px;"> <!-- 책임자 -->
+                    <col span="1" style="width: 85px;"> <!-- 팀장 -->
+                    <col span="1" style="width: 85px;"> <!-- 부점장 -->
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="checkbox_inner">
+                          <!-- [D] table all check(js) : 
+                              [2] 전체선택 될 라벨에, data-check="check-all" 추가 필수
+                          -->
+                          <label for="checkAll" data-check="check-all">
+                            <input type="checkbox" id="checkAll">
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">결재일초과</th>
+                      <th scope="col">거래일시</th>
+                      <th scope="col">화면번호</th>
+                      <th scope="col">거래명</th>
+                      <th scope="col">고객명</th>
+                      <th scope="col">신분증</th>
+                      <th scope="col">취급자</th>
+                      <th scope="col">진행상태</th>
+                      <th scope="col">현재담당자</th>
+                      <th scope="col">부점코드</th>
+                      <th scope="col">부점명</th>
+                      <th scope="col">카드종류</th> <!-- [D] 항목 확인 -->
+                      <th scope="col">책임자</th>
+                      <th scope="col">팀장</th>
+                      <th scope="col">부점장</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <!-- [D] colspan="" : thead가 변경될 시, 셀 개수 변경 -->
+                      <td colspan="16" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check1">
+                            <input type="checkbox" id="check1">
+                          </label>
+                        </div>
+                      </td>
+                      <td>3영업일초과</td>
+                      <td>2024-04-03 09:35:12</td>
+                      <td>Q1102</td>
+                      <td>퇴직연금 디폴트옵션 선정 (가입자)</td>
+                      <td>홍길동</td>
+                      <td></td>
+                      <td>김민수 (042316)</td>
+                      <td>담당자 결재요청</td>
+                      <td>김민수 (042316)</td>
+                      <td>0001</td>
+                      <td>영업부</td>
+                      <td>기타번호</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check2">
+                            <input type="checkbox" id="check2">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check3">
+                            <input type="checkbox" id="check3">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check4">
+                            <input type="checkbox" id="check4">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check5">
+                            <input type="checkbox" id="check5">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check6">
+                            <input type="checkbox" id="check6">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check7">
+                            <input type="checkbox" id="check7">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check8">
+                            <input type="checkbox" id="check8">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check9">
+                            <input type="checkbox" id="check9">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check10">
+                            <input type="checkbox" id="check10">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- // 테이블 종료 -->
+            </div>
+          </div><!-- // '카드' 결과 -->
+
+        </div><!--// TAB 컨텐츠 3 종료  -->
+
+        <!-- TAB 컨텐츠 4 -->
+        <div id="tab-4" class="tab-content ">
+          <!-- '외환' 결과 유틸 -->
+          <div class="cont_box">
+            <div class="board_search">전체 {20} 건</div>
+            <div class="cont_btn">
+              <span class="board_btn">
+                <label for="file_HwPd" class="file_label btn3">일괄스캔</label>
+                <input type="file" accept=".Hwp, .pdf" id="file_HwPd">
+              </span>
+              <button type="button" class="btn3" title="데이터보기">데이터보기</a>
+              <button type="button" class="btn3 xl" title="데이터보기(레코드)">데이터보기(레코드)</a>
+            </div>
+          </div>
+          <!-- '외환' 결과 -->
+          <div class="board_fixed">
+            <div class="scroll_body vertical">
+              <!-- 테이블 시작 -->
+              <div class="board_ty colgroup">
+                <!-- [D] table all check(js) : 
+                    [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                -->
+                <table data-check="check-group">
+                  <caption>
+                    외환 결과 목록
+                  </caption>
+                  <colgroup>
+                    <!-- [D] thead가 변경될 시 셀간격 확인 필요 -->
+                    <col span="1" style="width: 38px;"> <!-- 선택 -->
+                    <col span="1" style="width: 100px;"> <!-- 결재일초과 -->
+                    <col span="1" style="width: 105px;"> <!-- 거래일시 -->
+                    <col span="1" style="width: 75px;"> <!-- 화면번호 -->
+                    <col span="1" style="width: 305px;"> <!-- 거래명 -->
+                    <col span="1" style="width: 95px;"> <!-- 고객명 -->
+                    <col span="1" style="width: 120px;"> <!-- 신분증 -->
+                    <col span="1" style="width: 125px;"> <!-- 취급자 -->
+                    <col span="1" style="width: 115px;"> <!-- 진행상태 -->
+                    <col span="1" style="width: 125px;"> <!-- 현재담당자 -->
+                    <col span="1" style="width: 75px;"> <!-- 부점코드 -->
+                    <col span="1" style="width: 85px;"> <!-- 부점명 -->
+                    <col span="1" style="width: 85px;"> <!-- 서류종류 -->
+                    <col span="1" style="width: 85px;"> <!-- 책임자 -->
+                    <col span="1" style="width: 85px;"> <!-- 팀장 -->
+                    <col span="1" style="width: 85px;"> <!-- 부점장 -->
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="checkbox_inner">
+                          <!-- [D] table all check(js) : 
+                              [2] 전체선택 될 라벨에, data-check="check-all" 추가 필수
+                          -->
+                          <label for="checkAll" data-check="check-all">
+                            <input type="checkbox" id="checkAll">
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">결재일초과</th>
+                      <th scope="col">거래일시</th>
+                      <th scope="col">화면번호</th>
+                      <th scope="col">거래명</th>
+                      <th scope="col">고객명</th>
+                      <th scope="col">신분증</th>
+                      <th scope="col">취급자</th>
+                      <th scope="col">진행상태</th>
+                      <th scope="col">현재담당자</th>
+                      <th scope="col">부점코드</th>
+                      <th scope="col">부점명</th>
+                      <th scope="col">서류종류</th>
+                      <th scope="col">책임자</th>
+                      <th scope="col">팀장</th>
+                      <th scope="col">부점장</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <!-- [D] colspan="" : thead가 변경될 시, 셀 개수 변경 -->
+                      <td colspan="16" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check1">
+                            <input type="checkbox" id="check1">
+                          </label>
+                        </div>
+                      </td>
+                      <td>3영업일초과</td>
+                      <td>2024-04-03 09:35:12</td>
+                      <td>Q1102</td>
+                      <td>퇴직연금 디폴트옵션 선정 (가입자)</td>
+                      <td>홍길동</td>
+                      <td></td>
+                      <td>김민수 (042316)</td>
+                      <td>담당자 결재요청</td>
+                      <td>김민수 (042316)</td>
+                      <td>0001</td>
+                      <td>영업부</td>
+                      <td>기타번호</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check2">
+                            <input type="checkbox" id="check2">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check3">
+                            <input type="checkbox" id="check3">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check4">
+                            <input type="checkbox" id="check4">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check5">
+                            <input type="checkbox" id="check5">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check6">
+                            <input type="checkbox" id="check6">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check7">
+                            <input type="checkbox" id="check7">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check8">
+                            <input type="checkbox" id="check8">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check9">
+                            <input type="checkbox" id="check9">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check10">
+                            <input type="checkbox" id="check10">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- // 테이블 종료 -->
+            </div>
+          </div><!-- // '외환' 결과 -->
+
+        </div><!--// TAB 컨텐츠 4 종료  -->
+
+        <!-- TAB 컨텐츠 5 -->
+        <div id="tab-5" class="tab-content ">
+          <!-- '여신' 결과 유틸 -->
+          <div class="cont_box">
+            <div class="board_search">전체 {20} 건</div>
+            <div class="cont_btn">
+              <span class="board_btn">
+                <label for="file_HwPd" class="file_label btn3">일괄스캔</label>
+                <input type="file" accept=".Hwp, .pdf" id="file_HwPd">
+              </span>
+              <button type="button" class="btn3" title="데이터보기">데이터보기</a>
+              <button type="button" class="btn3 xl" title="데이터보기(레코드)">데이터보기(레코드)</a>
+            </div>
+          </div>
+          <!-- '여신' 결과 -->
+          <div class="board_fixed">
+            <div class="scroll_body vertical">
+              <!-- 테이블 시작 -->
+              <div class="board_ty colgroup">
+                <!-- [D] table all check(js) : 
+                    [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                -->
+                <table data-check="check-group">
+                  <caption>
+                    여신 결과 목록
+                  </caption>
+                  <colgroup>
+                    <!-- [D] thead가 변경될 시 셀간격 확인 필요 -->
+                    <col span="1" style="width: 38px;"> <!-- 선택 -->
+                    <col span="1" style="width: 100px;"> <!-- 결재일초과 -->
+                    <col span="1" style="width: 105px;"> <!-- 거래일시 -->
+                    <col span="1" style="width: 75px;"> <!-- 화면번호 -->
+                    <col span="1" style="width: 305px;"> <!-- 거래명 -->
+                    <col span="1" style="width: 95px;"> <!-- 고객명 -->
+                    <col span="1" style="width: 120px;"> <!-- 신분증 -->
+                    <col span="1" style="width: 125px;"> <!-- 취급자 -->
+                    <col span="1" style="width: 115px;"> <!-- 진행상태 -->
+                    <col span="1" style="width: 125px;"> <!-- 현재담당자 -->
+                    <col span="1" style="width: 75px;"> <!-- 부점코드 -->
+                    <col span="1" style="width: 85px;"> <!-- 부점명 -->
+                    <col span="1" style="width: 85px;"> <!-- 서류종류 -->
+                    <col span="1" style="width: 85px;"> <!-- 책임자 -->
+                    <col span="1" style="width: 85px;"> <!-- 팀장 -->
+                    <col span="1" style="width: 85px;"> <!-- 부점장 -->
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">
+                        <div class="checkbox_inner">
+                          <!-- [D] table all check(js) : 
+                              [2] 전체선택 될 라벨에, data-check="check-all" 추가 필수
+                          -->
+                          <label for="checkAll" data-check="check-all">
+                            <input type="checkbox" id="checkAll">
+                          </label>
+                        </div>
+                      </th>
+                      <th scope="col">결재일초과</th>
+                      <th scope="col">거래일시</th>
+                      <th scope="col">화면번호</th>
+                      <th scope="col">거래명</th>
+                      <th scope="col">고객명</th>
+                      <th scope="col">신분증</th>
+                      <th scope="col">취급자</th>
+                      <th scope="col">진행상태</th>
+                      <th scope="col">현재담당자</th>
+                      <th scope="col">부점코드</th>
+                      <th scope="col">부점명</th>
+                      <th scope="col">서류종류</th>
+                      <th scope="col">책임자</th>
+                      <th scope="col">팀장</th>
+                      <th scope="col">부점장</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <!-- [D] colspan="" : thead가 변경될 시, 셀 개수 변경 -->
+                      <td colspan="16" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check1">
+                            <input type="checkbox" id="check1">
+                          </label>
+                        </div>
+                      </td>
+                      <td>3영업일초과</td>
+                      <td>2024-04-03 09:35:12</td>
+                      <td>Q1102</td>
+                      <td>퇴직연금 디폴트옵션 선정 (가입자)</td>
+                      <td>홍길동</td>
+                      <td></td>
+                      <td>김민수 (042316)</td>
+                      <td>담당자 결재요청</td>
+                      <td>김민수 (042316)</td>
+                      <td>0001</td>
+                      <td>영업부</td>
+                      <td>기타번호</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check2">
+                            <input type="checkbox" id="check2">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check3">
+                            <input type="checkbox" id="check3">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check4">
+                            <input type="checkbox" id="check4">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check5">
+                            <input type="checkbox" id="check5">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check6">
+                            <input type="checkbox" id="check6">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check7">
+                            <input type="checkbox" id="check7">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check8">
+                            <input type="checkbox" id="check8">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check9">
+                            <input type="checkbox" id="check9">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox_inner">
+                          <label for="check10">
+                            <input type="checkbox" id="check10">
+                          </label>
+                        </div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- // 테이블 종료 -->
+            </div>
+          </div><!-- // '여신' 결과 -->
+
+        </div><!--// TAB 컨텐츠 5 종료  -->
+
+
+        <!-- [D] 20240423 처리현황 제거, 기획 변경 확인필요 -->
+
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+      </section>
+      <!-- container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- footer -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>프로그램 배포 등록::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 800px; width: 1000px;">
+      <div class="modal_header">
+        <h1>프로그램 배포 등록</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <h3 class="title mt10 mb10">프로그램 버전 상세</h3>
+        <div class="board_box">
+          <table>
+            <caption>
+              프로그램 배포 등록 (ANDROID)
+            </caption>
+            <colgroup>
+              <col span="1" style="width: 145px;">
+              <col span="1" style="width: 384px;">
+              <col span="1" style="width: 145px;">
+              <col span="1" style="width: 200px;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="row">
+                  <label for="inp_01">프로그램 구분*</label>
+                </th>
+                <td colspan="3">
+                  <select id="inp_01">
+                    <option>전자문서 ANDROID앱</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th class="row">
+                  <label for="inp_02">프로그램버전*</label>
+                </th>
+                <td>
+                  <input type="search" id="inp_02" class="input_ty" placeholder="" value="5.7.3">
+                  <span class="attn">최종버전 :5.7.2</span>
+                </td>
+                <th class="row">
+                  <label for="inp_03">어플리케이션ID*</label>
+                </th>
+                <td>
+                  <input type="search" id="inp_03" class="input_ty input_full" placeholder="" value="com.ibk.eds">
+                </td>
+              </tr>
+              <tr>
+                <th class="row">
+                  <label for="inp_04">배포파일*</label>
+                </th>
+                <td colspan="3">
+                  <span class="board_btn">
+                    <label for="file_HwPd" class="file_label btn2">파일선택</label>
+                    <input type="file" accept=".Hwp, .pdf" id="file_HwPd" />
+                  </span>
+                  <!-- <span class="board_btn">
+                    <label for="file_HwPd" class="file_label btn2">파일변경</label>
+                    <input type="file" accept=".hwp" id="file_HwPd" />
+                    <span class="file_name">서식파일(서식명).hwp</span>
+                  </span> -->
+                </td>
+              </tr>
+              <tr>
+                <th class="row">
+                  <label for="inp_05">배포대상 구분*</label>
+                </th>
+                <td>
+                  <select id="inp_05">
+                    <option>선택하세요</option>
+                  </select>
+                  <span class="attn">변경시 세부배포대상 삭제</span>
+                </td>
+                <th>
+                  <label for="inp_06">배포대상여부*</label>
+                </th>
+                <td>
+                  <span class="flex_box radio_box">
+                    <span class="radio_btn">
+                      <input type="radio" id="radio_on" name="radio_btn" value="" checked="">
+                      <label for="radio_on">배포</label>
+                      <input type="radio" id="radio_off" name="radio_btn" value="">
+                      <label for="radio_off">배포안함</label>
+                    </span>
+                  </span><!-- radio_btn -->
+                </td>
+              </tr>
+              <tr>
+                <th class="row">
+                  <label for="inp_07">APP다운로드 URL*</label>
+                </th>
+                <td colspan="3">
+                  <input type="search" id="inp_07" class="input_ty input_full" placeholder="" value="http://203.235.68.66:23720/EDS_APP/Android/IBK_EDS_DEV.apk">
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <label for="inp_08">비고</label>
+                </th>
+                <td colspan="3">
+                  <input type="text" id="inp_08" class="input_ty input_full" value="">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cont_box mt30">
+          <h3 class="title mt10 mb10">세부배포대상</h3>
+          <div class="cont_btn">
+            <!-- [D] .btn1 : 선택 불가일 경우, 버튼 스타일 클래스 -->
+            <a class="btn1" href="#" title="선택삭제">선택삭제</a>
+            <a class="btn1" href="#" title="부점선택">부점선택</a>
+            <a class="btn1" href="#" title="직원선택">직원선택</a>
+          </div>
+        </div>
+        <div class="modal_board board_fixed" style="height: 265px;">
+          <div class="board_ty scroll_body vertical">
+            <table>
+              <caption>
+                세부배포대상 
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 75px;"> <!-- 선택 -->
+                <col span="1" style="width: 195px;"> <!-- 프로그램구분 -->
+                <col span="1" style="width: 240px;"> <!-- 프로그램버전 -->
+                <col span="1" style="width: 195px;"> <!-- 배포대상구분 -->
+                <col span="1" style="width: 198px;"> <!-- 배포대상번호 -->
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="row">
+                    선택
+                  </th>
+                  <th class="row">
+                    프로그램구분
+                  </th>
+                  <th class="row">
+                    프로그램버전
+                  </th>
+                  <th class="row">
+                    배포대상구분
+                  </th>
+                  <th class="row">
+                    배포대상번호
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <!-- tr, 이하 테이블 스크롤 확인 -->
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn"><!-- 안드로이드앱 -->
+          <button class="btn2">등록</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>

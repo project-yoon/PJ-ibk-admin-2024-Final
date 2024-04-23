@@ -398,6 +398,9 @@ input.select_time:last-child{
   border: none;
   cursor: pointer;
 }
+.board_box .attn {
+  color: #ff0000;
+}
 select.text_center option{
   text-align: center;
 }
@@ -892,6 +895,11 @@ input.select_date{
 .tit_subtex h3.title{
   display: inline-block;
 }
+.modal_body h3.title{
+  font-size: 18px;
+  font-weight: 600;
+  color: #005199;
+}
 .tit_subtex span{
   margin-left: 8px;
 }
@@ -977,6 +985,9 @@ select{
 }
 
 /* cp-20240400 */
+select:disabled {
+  background-color: #f6fafc !important;
+}
 .cp-gd .content .tit_subtex span{
   background: rgba(0, 81, 153, 0.08);
   font-weight: 500;
