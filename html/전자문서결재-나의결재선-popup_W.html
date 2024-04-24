@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>나의 결재선 관리::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body class="win_pop">
+
+  <div class="wrap">
+    <!-- <div class="modal_inner"> -->
+      <div class="modal_header" >
+        <h1>나의 결재선 관리</h1>
+        <!-- <a href="#"><img src="../img/close.png" alt="닫기"></a> -->
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <div class="modal_board ">
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                나의 결재선 관리
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 200px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">
+                    <label for="inp_01">결재유형</label>
+                  </th>
+                  <td>
+                    <select id="inp_01">
+                      <option>선택해주세요</option>
+                      <option>인장관리</option>
+                      <option>금융정보</option>
+                      <option>전자문서</option>
+                      <option>홍보물관리</option>
+                      <option>전자전표</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_02">책임자</label>
+                  </th>
+                  <td>
+                    <select id="inp_02">
+                      <option>선택해주세요</option>
+                      <option>책임자1</option>
+                      <option>책임자2</option>
+                      <option>책임자3</option>
+                      <option selected>선택안함</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_03">팀장</label>
+                  </th>
+                  <td>
+                    <select id="inp_03">
+                      <option>선택해주세요</option>
+                      <option>팀장1</option>
+                      <option>팀장2</option>
+                      <option>팀장3</option>
+                      <option selected>선택안함</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_04">영업점장</label>
+                  </th>
+                  <td>
+                    <select id="inp_04">
+                      <option>선택해주세요</option>
+                      <option>영업점장1</option>
+                      <option>영업점장2</option>
+                      <option>영업점장3</option>
+                      <option selected>선택안함</option>
+                    </select>
+                  </td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button class="btn2">저장</button>
+        </div>
+
+
+      </div>
+    <!-- </div> -->
+  </div> 
+
+</body>
+</html>

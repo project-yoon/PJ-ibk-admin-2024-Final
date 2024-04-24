@@ -331,6 +331,13 @@
   margin-top: 48px;
   padding: 0 40px;
 }
+.modal_body.modal_scroll{
+  /* 20240400 */
+  padding-top: 4px;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: calc(100% - 100px);
+}
 .modal{
   position: fixed;
   z-index: 100000;

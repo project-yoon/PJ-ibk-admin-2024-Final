@@ -296,6 +296,14 @@ h2.login_box_title{
   background-color: #f6fafc;
   border: 1px solid #1378ca;
 }
+.cont_btn .max,
+.board_btn .max{
+  height: 50px;
+  width: 100%;
+  vertical-align: middle;
+  line-height: 50px;
+  font-size: 16px;
+}
 .cont_btn .views_btn{
   width: 75px; 
   margin-top: 8px !important;
@@ -398,7 +406,10 @@ input.select_time:last-child{
   border: none;
   cursor: pointer;
 }
-.board_box .attn {
+.modal_board .attn,
+.radio_btn + .attn,
+.board_box .attn,
+.board_ty .attn{
   color: #ff0000;
 }
 select.text_center option{
@@ -498,10 +509,6 @@ select.text_center option{
 }
 .flex_box .board_box table{
   width: auto;
-}
-.radio_btn + .attn,
-.board_ty .attn{
-  color: #ff0000;
 }
 .board_ty .check{
   color: #1378ca;
@@ -988,11 +995,22 @@ select{
 select:disabled {
   background-color: #f6fafc !important;
 }
+.cont-w320{
+  width: 320px;
+}
 .cp-gd .content .tit_subtex span{
   background: rgba(0, 81, 153, 0.08);
   font-weight: 500;
 }
 
+/* txt_in : cp-20240400 */
+.cont_btn.ty_new .txt_in{
+  display: inline-block;
+  text-indent: 12px;
+}
+.cont_btn.ty_new p:has(.txt_in)+p{
+  margin-top: 5px;
+}
 /* tab-content : cp-20240400 */
 .tab-content{
   display: none;  
@@ -1151,6 +1169,33 @@ display: table;
   width: 40%;
 }
 .pdf_content .pdf_info .modal_board.scroll{
+  height: 435px;
+}
+/* .doc_content : cp-20240400 */
+.doc_content{
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.doc_content .doc_left{
+  width: 80%;
+}
+.doc_content .doc_view .viewbox{
+  width: 100%;
+  display: inline-flex;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  background-color: #f6fafc;
+}
+.doc_content .doc_view .viewbox img{
+  width: 100%;
+  height: auto;
+}
+.doc_content .doc_right{
+  width: 37%;
+}
+.doc_content .doc_info .modal_board.scroll{
   height: 435px;
 }
 .menulist{
