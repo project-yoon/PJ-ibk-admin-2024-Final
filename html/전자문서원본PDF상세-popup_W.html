@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>전자문서원본PDF상세::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body class="win_pop">
+
+  <div class="wrap">
+    <!-- <div class="modal_inner"> -->
+      <div class="modal_header" >
+        <h1>전자문서원본PDF상세</h1>
+        <!-- <a href="#"><img src="../img/close.png" alt="닫기"></a> -->
+      </div>
+      <div class="modal_body modal_scroll" style="margin-top: 27px;">
+      <!-- [D] 주의:클래스추가 modal_scroll  -->
+
+        <div class="cont_btn ty_new mb20"> <!-- 상단버튼 -->
+          <div class="left">
+            <button type="button" class="btn3 xl">이미지새로고침</button>
+          </div>
+          <div class="right">
+            <button type="button" class="btn2 ">열람이력</button>
+            <button type="button" class="btn2 ">결재이력</button>
+          </div>
+        </div> <!-- // 상단버튼 -->
+
+        <div class="pdf_content">
+          <!-- left -->
+          <div class="pdf_view">
+            <div class="viewbox">
+              <iframe src="../pdf/dummy.pdf" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
+          </div><!--// left 종료-->
+
+          <!-- right -->
+          <div class="pdf_info">
+            <p class="mb10">* 원본PDF는 1회에 한하여 출력이 가능합니다.<br>* 출력완료의 경우 열람이력을 확인 바랍니다.</p>
+            <h3 class="title_head mb10"><span>문서정보</span></h3>
+            <div class="modal_board scroll" style="height: 200px;">
+              <div class="board_ty colgroup">
+                <table class="table_col">
+                  <caption>
+                    문서정보
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: calc(100% - 100px)">
+                    <col span="1" style="width: 100px">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="row">
+                        고객정보등록(변경해제)표
+                      </th>
+                      <th class="row">
+                        미출력
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div> <!--// 문서정보 테이블 종료 -->
+
+            <h3 class="title_head mt30 mb10"><span>기본정보</span></h3>
+            <div class="modal_board mb30">
+              <div class="board_ty colgroup">
+                <table class="table_col">
+                  <caption>
+                    기본 정보
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 95px;">
+                    <col span="1">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th class="row">
+                        거래명
+                      </th>
+                      <td>
+                        통지계좌 추가등록 및 해제
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="row">
+                        거래일시
+                      </th>
+                      <td>
+                        2024-03-06 11:01:34
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="row">
+                        고객명
+                      </th>
+                      <td>
+                        홍**
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="row">
+                        참조구분
+                      </th>
+                      <td>
+                        카드번호
+                      </td>
+                    </tr>
+                    <tr>
+                      <th class="row">
+                        참조번호
+                      </th>
+                      <td>
+                        ****-0326-****-3890
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div> <!--// 기본정보 테이블 종료 -->
+
+            <h3 class="title_head mt30 mb10"><span>시스템기능</span></h3>
+            <div class="modal_board mb30">
+              <div class="board_ty">
+                <table class="table_col">
+                  <caption>
+                    시스템기능 : 시스템 관리자에게만 노출
+                  </caption>
+                  <colgroup>
+                    <col span="1">
+                    <col span="1" style="width: 220px;"></colgroup>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4 xl" title="출력초기화">출력초기화</button></div>
+                      </td>
+                    <td>
+                        <p> 1회 출력 후 재 출력 가능상태 변경</p>
+                      </td></tr>
+                    <tr>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4 xl" title="EDOC 강제 삭제">EDOC 강제 삭제</button></div>
+                      </td><td>
+                        <p> 강제삭제/업무종료</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div> <!--// 시스템기능 종료-->
+
+          </div> <!--// right 종료-->
+        </div>
+
+
+      </div>
+    <!-- </div> -->
+  </div> 
+
+</body>
+</html>

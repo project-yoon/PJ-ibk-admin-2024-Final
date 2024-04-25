@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>전자문서 결재제어 관리 상세 - 수정::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body class="win_pop">
+
+  <div class="wrap">
+    <!-- <div class="modal_inner"> -->
+      <div class="modal_header" >
+        <h1>전자문서 결재제어 관리 상세</h1>
+        <!-- <a href="#"><img src="../img/close.png" alt="닫기"></a> -->
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <h3 class="title mt10 mb10">전자문서 결재제어 관리 상세(수정)</h3>
+        <div class="board_box">
+          <table>
+            <caption>
+              전자문서 결재제어 관리 상세 수정
+            </caption>
+            <colgroup>
+              <col span="1" style="width: 100px;">
+              <col span="1" style="width: 250px;">
+              <col span="1" style="width: 70px;">
+              <col span="1" style="width: 250px;">
+              <col span="1" style="width: 95px;">
+              <col span="1" style="width: 100px;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="row">
+                  <label for="inp_01">단말화면번호</label>
+                </th>
+                <td>
+                  <input type="search" id="inp_01" class="input_ty" placeholder="" value="11101" disabled="">
+                </td>
+                <th class="row">
+                  <label for="inp_02">순번</label>
+                </th>
+                <td>
+                  <input type="search" id="inp_02" class="input_ty" placeholder="" value="3" disabled="">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt10 mb10">* 조건내용 (!=) 다중 값 사용의 경우, ' ,(콤마)'를 이용해주세요.<br>
+          * 출력 내용이  Multi Line 인 경우 Ctrl + Enter 키를 입력해주세요.<br>
+          * 구분코드 추가 시 공통코드 '03040'에 등록하시고, 제어구분 (CNTL_DCD) 추가  시 공통코드 '03039'에 등록해주세요</p>
+        <div class="cont_box mt30">
+          <h3 class="title mt10 mb10">결재제어 항목 정의</h3>
+          <div class="cont_btn">
+            <!-- [D] .btn1 : 선택 불가일 경우, 버튼 스타일 클래스 -->
+            <a class="btn2 auto" href="#" title="실명증표 이미지제어 포멧">실명증표 이미지제어 포멧</a>
+            <a class="btn2 auto" href="#" title="필수서식 제어 포멧">필수서식 제어 포멧</a>
+            <button type="button" class="btn3 auto" title="행추가">행추가</button>
+            <button type="button" class="btn3 auto" title="행삭제">행삭제</button>
+          </div>
+        </div>
+        <div class="modal_board board_fixed" style="height: 265px;">
+          <div class="board_ty colgroup scroll_body vertical">
+            <table>
+              <caption>
+                결재제어 항목 정의 테이블 
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 240px;"> <!-- 구분코드 -->
+                <col span="1" style="width: 240px;"> <!-- 구분컬럼명 -->
+                <col span="1" style="width: auto"> <!-- 구분내용 -->
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="row">
+                    구분코드
+                  </th>
+                  <th class="row">
+                    구분컬럼명
+                  </th>
+                  <th class="row">
+                    구분내용
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <select id="">
+                      <option selected="">제어구분</option>
+                      <option>조건내용</option>
+                      <option>조건내용(!=)</option>
+                      <option>제어내용</option>
+                      <option>비고내용</option>
+                      <option>안내문구</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="" class="input_ty" value="">
+                  </td>
+                  <td>
+                    <textarea name="" id="" class="input_ty input_full"></textarea>
+                  </td>
+                </tr>
+                <!-- tr, 이하 테이블 스크롤 확인 -->
+                <tr>
+                  <td>
+                    <select id="" readonly="">
+                      <option>제어구분</option>
+                      <option>조건내용</option>
+                      <option>조건내용(!=)</option>
+                      <option>제어내용</option>
+                      <option selected="">비고내용</option>
+                      <option>안내문구</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="" class="input_ty" value="FXFM_CD" readonly="">
+                  </td>
+                  <td>
+                    <textarea name="" id="" class="input_ty input_full">금융거래목적확인코드=일반계좌개설(금융거래목적확인)</textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select id="" readonly="">
+                      <option>제어구분</option>
+                      <option>조건내용</option>
+                      <option>조건내용(!=)</option>
+                      <option>제어내용</option>
+                      <option>비고내용</option>
+                      <option selected="">안내문구</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="" class="input_ty" value="GDNC_MSG_CON" readonly="">
+                  </td>
+                  <td>
+                    <textarea name="" id="" class="input_ty input_full">param_fxfm1="901102,901029,901066,201510,ED0008,201257,006082,101042,901067,901418,BCO500" param_stt1="" 
+                    param_stt2="금융거래목적확인 관련 증빙서류" param_stt3="" param_stt4=""
+                    </textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select id="" readonly="">
+                      <option>제어구분</option>
+                      <option>조건내용</option>
+                      <option>조건내용(!=)</option>
+                      <option>제어내용</option>
+                      <option>비고내용</option>
+                      <option>안내문구</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="" class="input_ty" value="" readonly="">
+                  </td>
+                  <td>
+                    <textarea name="" id="" class="input_ty input_full"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select id="" readonly="">
+                      <option>제어구분</option>
+                      <option>조건내용</option>
+                      <option>조건내용(!=)</option>
+                      <option>제어내용</option>
+                      <option>비고내용</option>
+                      <option>안내문구</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="" class="input_ty" value="" readonly="">
+                  </td>
+                  <td>
+                    <textarea name="" id="" class="input_ty input_full"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <select id="" readonly="">
+                      <option>제어구분</option>
+                      <option>조건내용</option>
+                      <option>조건내용(!=)</option>
+                      <option>제어내용</option>
+                      <option>비고내용</option>
+                      <option>안내문구</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" id="" class="input_ty" value="" readonly="">
+                  </td>
+                  <td>
+                    <textarea name="" id="" class="input_ty input_full"></textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button type="button" class="btn4">미리보기</button>
+          <button type="button" class="btn2">수정</button>
+        </div>
+
+
+      </div>
+    <!-- </div> -->
+  </div> 
+
+</body>
+</html>

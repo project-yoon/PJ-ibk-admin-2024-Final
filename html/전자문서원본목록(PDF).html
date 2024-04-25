@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전자문서원본목록(PDF)::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서 관리 &gt;</span>
+              <span>전자문서원본목록(PDF)</span>
+            </div>
+            <h2>전자문서원본목록(PDF)</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+        
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>
+                전자문서원본목록(PDF) 조회 조건
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 6%">
+                <col span="1" style="width: 37%;">
+                <col span="1" style="width: 6%">
+                <col span="1" style="width: 30%;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_01">업무유형</label>
+                  </th>
+                  <td>
+                    <select id="inp_01">
+                      <option>전체</option>
+                      <option>수신</option>
+                      <option>가계여신</option>
+                      <option>외환</option>
+                      <option>카드</option>
+                      <option>방카</option>
+                      <option>전표(진원)</option>
+                      <option>기타</option>
+                      <option>본부서류</option>
+                    </select>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_02">부점코드</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_02" placeholder="" value="0818">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_02_1" placeholder="" value="디지털기획부" disabled="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_03">조작자</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_03" placeholder="" value="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_03_1" placeholder="" value="" disabled="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_04">거래일자</label>
+                  </th>
+                  <td>
+                    <span class="date">
+                      <input type="text" class="select_date_day input_ty" id="inp_04_1" autocomplete="off" />
+                      ~
+                      <input type="text" class="select_date_day input_ty second" id="inp_04_2" autocomplete="off" />
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cont_btn ty_new">
+            <div class="right">
+              <select title="보기선택">
+                <option>20개씩 보기</option>
+              </select>
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="content">
+          <div class="cont_box">
+            <div class="board_search">전체 {0} 건</div>
+          </div>
+
+          <!-- 테이블 시작 -->
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
+              <div class="board_ty colgroup">
+                <!-- [D] table all check(js) : 
+                    [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                -->
+                <table data-check="check-group">
+                  <caption>
+                    공지사항 관리 조회
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 80px;"><!-- 부점코드 -->
+                    <col span="1" style="width: 115px;"><!-- 부점명 -->
+                    <col span="1" style="width: 115px;"><!-- 조작자 -->
+                    <col span="1" style="width: 158px;"><!-- 거래일시 -->
+                    <col span="1" style="width: 300px;"><!-- 거래명 -->
+                    <col span="1" style="width: 95px;"><!-- 고객명 -->
+                    <col span="1" style="width: 80px;"><!-- 참조구분 -->
+                    <col span="1" style="width: 180px;"><!-- 참조번호 -->
+                    <col span="1" style="width: 100px;"><!-- 이력 -->
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">부점코드</th>
+                      <th scope="col">부점명</th>
+                      <th scope="col">조작자</th>
+                      <th scope="col">거래일시</th>
+                      <th scope="col">거래명</th>
+                      <th scope="col">고객명</th>
+                      <th scope="col">참조구분</th>
+                      <th scope="col">참조번호</th>
+                      <th scope="col">이력</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="9" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr>
+                      <td>0428</td>
+                      <td>영업부</td>
+                      <td>TEST(A80843)</td>
+                      <td>2021-01-01 15:23:50</td>
+                      <td class="left">재발급갱신확정내역출력</td>
+                      <td>김**</td>
+                      <td>카드번호</td>
+                      <td>****-0000-****-0000</td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td><div class="cont_btn"><button type="button" class="btn4">열람이력</button></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+      </section>
+      <!-- // container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>
