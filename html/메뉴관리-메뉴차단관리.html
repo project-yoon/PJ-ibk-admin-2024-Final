@@ -96,13 +96,11 @@
               </table>
             </div>
             <div class="cont_btn ty_new">
-              <div class="left">
+              <!-- [D] 제거 
+              <div class="left"> 
                 <p>※ 메뉴정보관리는 공통담당자와 사전협의 후 진행하시기 바랍니다. </p>
-              </div>
+              </div> -->
               <div class="right">
-                <select title="보기선택">
-                  <option>20개씩 보기</option>
-                </select>
                 <button class="btn2">조회</button>
               </div>
             </div>
@@ -110,11 +108,18 @@
 
           <!-- content : 테이블1 : 메뉴차단관리 -->
           <div class="content">
+            <p>※ 메뉴정보관리는 공통담당자와 사전협의 후 진행하시기 바랍니다. </p> <!-- [D] 이동 -->
             <div class="cont_box">
               <div class="board_search">전체 {0} 건</div>
               <div class="cont_btn">
                 <button type="button" class="btn3" title="엑셀 다운">엑셀 다운</a>
               </div>
+              <!-- [D] 이동 -->
+              <select title="보기선택">
+                <option>10개씩 보기</option>
+                <option>15개씩 보기</option>
+                <option>20개씩 보기</option>
+              </select>
             </div>
 
             <!-- 테이블 시작 -->
@@ -144,7 +149,7 @@
                         <th scope="col">차단여부</th>
                         <th scope="col">최종변경직원</th>
                         <th scope="col">최종변경일시</th>
-                        <th scope="col">정렬순서</th>
+                        <th scope="col">차단</th> <!-- [D] 교정 -->
                       </tr>
                     </thead>
                     <tbody>

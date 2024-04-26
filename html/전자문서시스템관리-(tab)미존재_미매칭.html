@@ -44,252 +44,6 @@
             <div class="board_box">
               <table>
                 <caption>
-                  전자문서 서류정보 미매칭 조회 조건
-                </caption>
-                <colgroup>
-                  <col span="1" style="width: 6%">
-                  <col span="1" style="width: 37%;">
-                  <col span="1" style="width: 6%">
-                  <col span="1" style="width: 30%;">
-                </colgroup>
-                <tbody>
-                  <tr>
-                    <th scope="row">
-                      <label for="inp1_01">거래일자</label>
-                    </th>
-                    <td>
-                      <span class="date">
-                        <input type="text" class="select_date input_ty" id="inp1_01" autocomplete="off" />
-                        ~
-                        <input type="text" class="select_date input_ty second" id="inp1_02" autocomplete="off" />
-                      </span>
-                    </td>
-                    <th scope="row">
-                      <label for="inp_02">업무구분</label>
-                    </th>
-                    <td>
-                      <select id="inp_02">
-                        <option>수신</option>
-                        <option>가계여신</option>
-                        <option>기업여신</option>
-                        <option>외환</option>
-                        <option>카드</option>
-                        <option>방카</option>
-                        <option>전표(지원)</option>
-                        <option>기타</option>
-                        <option>본부서류</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <label for="inp_03">부점코드</label>
-                    </th>
-                    <td>
-                      <span class="sel_inp">
-                        <span class="search_int">
-                          <input type="search" id="inp_03" placeholder="">
-                        </span>
-                        <span class="search_int">
-                          <input type="search" id="inp_03_1" placeholder="">
-                        </span>
-                        <span class="board_btn">
-                          <button class="btn2 btn_half">검색</button>
-                        </span>
-                      </span>
-                    </td>
-                    <th scope="row">
-                      <label for="inp_04">취급자</label>
-                    </th>
-                    <td>
-                      <span class="sel_inp">
-                        <span class="search_int">
-                          <input type="search" id="inp_04" placeholder="">
-                        </span>
-                        <span class="search_int">
-                          <input type="search" id="inp_04_1" placeholder="">
-                        </span>
-                        <span class="board_btn">
-                          <button class="btn2 btn_half">검색</button>
-                        </span>
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="cont_btn ty_new">
-              <div class="right">
-                <select title="보기선택">
-                  <option>20개씩 보기</option>
-                </select>
-                <button class="btn2">조회</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- content : 테이블1 : 전자문서 업무기본 내역 -->
-          <div class="content">
-            <h3 class="title">전자문서 업무기본 내역</h3>
-            <div class="cont_box">
-              <div class="board_search">전체 {0} 건</div>
-              <div class="cont_btn">
-                <button type="button" class="btn3" title="매칭">매칭</a>
-              </div>
-            </div>
-
-            <!-- 테이블 시작 -->
-            <div class="board_ty colgroup">
-              <table>
-                <caption>
-                  전자문서 업무기본 내역
-                </caption>
-                <colgroup>
-                  <col span="1" style="width: 275px;">
-                  <col span="1" style="width: 100px;">
-                  <col span="1" style="width: 80px;">
-                  <col span="1">
-                  <col span="1" style="width: 125px;">
-                  <col span="1" style="width: 85px;">
-                  <col span="1" style="width: 295px;">
-                  <col span="1" style="width: 65px;">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th scope="col">표준글로벌ID</th>
-                    <th scope="col">거래년월일</th>
-                    <th scope="col">거래시간</th>
-                    <th scope="col">거래부점</th>
-                    <th scope="col">거래직원</th>
-                    <th scope="col">화면번호</th>
-                    <th scope="col">전자문서 인덱스 번호</th>
-                    <th scope="col">업무유형</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colspan="8" class="emp">조회결과가 없습니다.</td>
-                  </tr>
-                  <tr>
-                    <td>202404030653036ED094159902068</td>
-                    <td>2024-04-03</td>
-                    <td>09:35:12</td>
-                    <td>(0653)반월공단</td>
-                    <td>(A80087)이기업</td>
-                    <td>11925</td>
-                    <td>0377910653A8008720240403ED199898</td>
-                    <td>DP</td>
-                  </tr>
-                  <tr>
-                    <td>202404030653036ED094159902068</td>
-                    <td>2024-04-03</td>
-                    <td>09:35:12</td>
-                    <td>(0653)반월공단</td>
-                    <td>(A80087)이기업</td>
-                    <td>11925</td>
-                    <td>0377910653A8008720240403ED199898</td>
-                    <td>DP</td>
-                  </tr>
-                  <tr>
-                    <td>202404030653036ED094159902068</td>
-                    <td>2024-04-03</td>
-                    <td>09:35:12</td>
-                    <td>(0653)반월공단</td>
-                    <td>(A80087)이기업</td>
-                    <td>11925</td>
-                    <td>0377910653A8008720240403ED199898</td>
-                    <td>DP</td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-            <!-- // 테이블 종료 -->
-          </div>
-
-          <!-- content : 테이블2 : 전자문서 수신업무 상세내역 -->
-          <div class="content">
-            <h3 class="title mt40">전자문서 수신업무 상세내역</h3>
-            <div class="cont_box">
-              <div class="board_search">전체 {0} 건</div>
-              <div class="cont_btn">
-                <button type="button" class="btn3" title="매칭">매칭</a>
-              </div>
-            </div>
-
-            <!-- 테이블 시작 -->
-            <div class="board_ty colgroup">
-              <table>
-                <caption>
-                  전자문서 업무기본 내역
-                </caption>
-                <colgroup>
-                  <col span="1" style="width: 275px;">
-                  <col span="1" style="width: 100px;">
-                  <col span="1" style="width: 80px;">
-                  <col span="1">
-                  <col span="1" style="width: 120px;">
-                  <col span="1" style="width: 140px;">
-                  <col span="1">
-                  <col span="1" style="width: 60px;">
-                </colgroup>
-                <thead>
-                  <tr>
-                    <th scope="col">표준글로벌ID</th>
-                    <th scope="col">거래년월일</th>
-                    <th scope="col">거래시간</th>
-                    <th scope="col">거래부점</th>
-                    <th scope="col">거래직원</th>
-                    <th scope="col">거래코드</th>
-                    <th scope="col">거래명</th>
-                    <th scope="col">고객명</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colspan="8" class="emp">조회결과가 없습니다.</td>
-                  </tr>
-                  <tr>
-                    <td>202404030653036ED094159902068</td>
-                    <td>2024-04-03</td>
-                    <td>09:35:12</td>
-                    <td>(0653)반월공단</td>
-                    <td>(A80087)이기업</td>
-                    <td>CBKARR118211600</td>
-                    <td>신규양식재인자(개설신청서, 증서 등)</td>
-                    <td>이기업</td>
-                  </tr>
-
-                </tbody>
-              </table>
-            </div>
-            <!-- // 테이블 종료 -->
-          </div>
-
-          <div class="paginate">
-            <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
-            <a href="#" class="on">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">7</a>
-            <a href="#">8</a>
-            <a href="#">9</a>
-            <a href="#">10</a>
-            <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
-          </div>
-
-        </div><!--// TAB 컨텐츠 1 종료  -->
-
-        <!-- TAB 컨텐츠 2 -->
-        <div id="tab-2" class="tab-content">
-
-          <div class="content">
-            <div class="board_box">
-              <table>
-                <caption>
                   전자문서 서류정보 미존재 조회 조건
                 </caption>
                 <colgroup>
@@ -364,9 +118,6 @@
             </div>
             <div class="cont_btn ty_new">
               <div class="right">
-                <select title="보기선택">
-                  <option>20개씩 보기</option>
-                </select>
                 <button class="btn2">조회</button>
               </div>
             </div>
@@ -380,6 +131,12 @@
               <div class="cont_btn">
                 <a class="btn3 xl" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
               </div>
+              <!-- [D] 이동 -->
+              <select title="보기선택">
+                <option>10개씩 보기</option>
+                <option>15개씩 보기</option>
+                <option>20개씩 보기</option>
+              </select>
             </div>
             <div class="board_ty colgroup">
               <table>
@@ -470,6 +227,252 @@
             <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
           </div>
 
+        </div><!--// TAB 컨텐츠 1 종료  -->
+
+        <!-- TAB 컨텐츠 2 -->
+        <div id="tab-2" class="tab-content">
+
+          <div class="content">
+            <div class="board_box">
+              <table>
+                <caption>
+                  전자문서 서류정보 미매칭 조회 조건
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 6%">
+                  <col span="1" style="width: 37%;">
+                  <col span="1" style="width: 6%">
+                  <col span="1" style="width: 30%;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <label for="inp1_01">거래일자</label>
+                    </th>
+                    <td>
+                      <span class="date">
+                        <input type="text" class="select_date input_ty" id="inp1_01" autocomplete="off" />
+                        ~
+                        <input type="text" class="select_date input_ty second" id="inp1_02" autocomplete="off" />
+                      </span>
+                    </td>
+                    <th scope="row">
+                      <label for="inp_02">업무구분</label>
+                    </th>
+                    <td>
+                      <select id="inp_02">
+                        <option>수신</option>
+                        <option>가계여신</option>
+                        <option>기업여신</option>
+                        <option>외환</option>
+                        <option>카드</option>
+                        <option>방카</option>
+                        <option>전표(지원)</option>
+                        <option>기타</option>
+                        <option>본부서류</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <label for="inp_03">부점코드</label>
+                    </th>
+                    <td>
+                      <span class="sel_inp">
+                        <span class="search_int">
+                          <input type="search" id="inp_03" placeholder="">
+                        </span>
+                        <span class="search_int">
+                          <input type="search" id="inp_03_1" placeholder="">
+                        </span>
+                        <span class="board_btn">
+                          <button class="btn2 btn_half">검색</button>
+                        </span>
+                      </span>
+                    </td>
+                    <th scope="row">
+                      <label for="inp_04">취급자</label>
+                    </th>
+                    <td>
+                      <span class="sel_inp">
+                        <span class="search_int">
+                          <input type="search" id="inp_04" placeholder="">
+                        </span>
+                        <span class="search_int">
+                          <input type="search" id="inp_04_1" placeholder="">
+                        </span>
+                        <span class="board_btn">
+                          <button class="btn2 btn_half">검색</button>
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="cont_btn ty_new">
+              <div class="right">
+                <button class="btn2">조회</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- content : 테이블1 : 전자문서 업무기본 내역 -->
+          <div class="content">
+            <h3 class="title">전자문서 업무기본 내역</h3>
+            <div class="cont_box">
+              <div class="board_search">전체 {0} 건</div>
+              <div class="cont_btn">
+                <button type="button" class="btn3" title="매칭">매칭</button>
+                <a class="btn3 xl" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
+              </div>
+              <!-- [D] 이동 -->
+              <select title="보기선택">
+                <option>10개씩 보기</option>
+                <option>15개씩 보기</option>
+                <option>20개씩 보기</option>
+              </select>
+            </div>
+  
+            <!-- 테이블 시작 -->
+            <div class="board_ty colgroup">
+              <table>
+                <caption>
+                  전자문서 업무기본 내역
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 275px;">
+                  <col span="1" style="width: 100px;">
+                  <col span="1" style="width: 80px;">
+                  <col span="1">
+                  <col span="1" style="width: 125px;">
+                  <col span="1" style="width: 85px;">
+                  <col span="1" style="width: 295px;">
+                  <col span="1" style="width: 65px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">표준글로벌ID</th>
+                    <th scope="col">거래년월일</th>
+                    <th scope="col">거래시간</th>
+                    <th scope="col">거래부점</th>
+                    <th scope="col">거래직원</th>
+                    <th scope="col">화면번호</th>
+                    <th scope="col">전자문서 인덱스 번호</th>
+                    <th scope="col">업무유형</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="8" class="emp">조회결과가 없습니다.</td>
+                  </tr>
+                  <tr>
+                    <td>202404030653036ED094159902068</td>
+                    <td>2024-04-03</td>
+                    <td>09:35:12</td>
+                    <td>(0653)반월공단</td>
+                    <td>(A80087)이기업</td>
+                    <td>11925</td>
+                    <td>0377910653A8008720240403ED199898</td>
+                    <td>DP</td>
+                  </tr>
+                  <tr>
+                    <td>202404030653036ED094159902068</td>
+                    <td>2024-04-03</td>
+                    <td>09:35:12</td>
+                    <td>(0653)반월공단</td>
+                    <td>(A80087)이기업</td>
+                    <td>11925</td>
+                    <td>0377910653A8008720240403ED199898</td>
+                    <td>DP</td>
+                  </tr>
+                  <tr>
+                    <td>202404030653036ED094159902068</td>
+                    <td>2024-04-03</td>
+                    <td>09:35:12</td>
+                    <td>(0653)반월공단</td>
+                    <td>(A80087)이기업</td>
+                    <td>11925</td>
+                    <td>0377910653A8008720240403ED199898</td>
+                    <td>DP</td>
+                  </tr>
+  
+                </tbody>
+              </table>
+            </div>
+            <!-- // 테이블 종료 -->
+          </div>
+  
+          <!-- content : 테이블2 : 전자문서 수신업무 상세내역 -->
+          <div class="content">
+            <h3 class="title mt40">전자문서 수신업무 상세내역</h3>
+            <div class="cont_box">
+              <div class="board_search">전체 {0} 건</div>
+            </div>
+  
+            <!-- 테이블 시작 -->
+            <div class="board_ty colgroup">
+              <table>
+                <caption>
+                  전자문서 업무기본 내역
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 275px;">
+                  <col span="1" style="width: 100px;">
+                  <col span="1" style="width: 80px;">
+                  <col span="1">
+                  <col span="1" style="width: 120px;">
+                  <col span="1" style="width: 140px;">
+                  <col span="1">
+                  <col span="1" style="width: 60px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">표준글로벌ID</th>
+                    <th scope="col">거래년월일</th>
+                    <th scope="col">거래시간</th>
+                    <th scope="col">거래부점</th>
+                    <th scope="col">거래직원</th>
+                    <th scope="col">거래코드</th>
+                    <th scope="col">거래명</th>
+                    <th scope="col">고객명</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="8" class="emp">조회결과가 없습니다.</td>
+                  </tr>
+                  <tr>
+                    <td>202404030653036ED094159902068</td>
+                    <td>2024-04-03</td>
+                    <td>09:35:12</td>
+                    <td>(0653)반월공단</td>
+                    <td>(A80087)이기업</td>
+                    <td>CBKARR118211600</td>
+                    <td>신규양식재인자(개설신청서, 증서 등)</td>
+                    <td>이기업</td>
+                  </tr>
+  
+                </tbody>
+              </table>
+            </div>
+            <!-- // 테이블 종료 -->
+          </div>
+  
+          <div class="paginate">
+            <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+            <a href="#" class="on">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+            <a href="#">9</a>
+            <a href="#">10</a>
+            <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+          </div>
         </div><!--// TAB 컨텐츠 2 종료  -->
 
 

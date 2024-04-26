@@ -22,6 +22,7 @@ body::-webkit-scrollbar{
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 10px;
 }
 /* flex-end; */
 .flex_right{
@@ -647,6 +648,9 @@ textarea{
   text-align: center;
   /* overflow: hidden; */
 }
+.paginate+.content{
+  margin-top: 30px;
+}
 .paginate .prev,
 .paginate .next{
   font-size: 0;
@@ -868,6 +872,9 @@ input.select_date{
 .board_ty .input_ty{
   margin-right: 0;
 }
+.board_ty.colgroup .input_ty{
+  width: 100%;
+}
 .btn_half{
   margin-left: 8px !important;
 }
@@ -992,6 +999,10 @@ select{
 }
 
 /* cp-20240400 */
+select[title=보기선택] {
+  margin-right: 0;
+  margin-bottom: 8px;
+}
 select:disabled {
   background-color: #f6fafc !important;
 }

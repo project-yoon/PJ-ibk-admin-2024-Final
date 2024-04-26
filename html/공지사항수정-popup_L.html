@@ -86,11 +86,27 @@
                   <th class="row" rowspan="3">
                     <label for="inp_06">첨부파일</label>
                   </th>
+                  <style>
+                    .file-delete{
+                      display: flex;
+  width: 24px;
+  color: initial;
+  background-color: #6eb4ff00;
+  font-size: large;
+  justify-content: center;
+  margin-right: 3px;
+  cursor: pointer;
+                    }.file-delete > span {
+  transform: rotate(45deg);
+}
+                  </style>
                   <td colspan="3">
                     <span class="board_btn">
                     <label for="file_txt" class="file_label btn2">파일변경</label>
                     <input type="file" accept=".txt" id="file_txt" />
                     <span class="file_name">일임형 ISA 반송체크리스트.hwp</span>
+                    <!-- [D] delete -->
+                    <span class="file-delete" onclick="fileremoves();"><span>+</span></span>
                   </td>
                 </tr>
                 <tr>

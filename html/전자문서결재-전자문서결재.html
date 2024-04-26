@@ -171,9 +171,6 @@
           </div>
           <div class="cont_btn ty_new">
             <div class="right">
-              <select title="보기선택">
-                <option>10건씩 보기</option>
-              </select>
               <button class="btn3 ">초기화</button>
               <button class="btn2">조회</button>
             </div>
@@ -188,7 +185,13 @@
         <!-- content 검색영역 -->
         <div class="content">
           <div class="cont_box">
-            <div class="board_search">총 99 건</div>
+            <div class="board_search">전체 {0} 건</div>
+            <!-- [D] 이동 -->
+            <select title="보기선택">
+              <option>10개씩 보기</option>
+              <option>15개씩 보기</option>
+              <option>20개씩 보기</option>
+            </select>
           </div>
           <div class="board_ty colgroup">
             <table>

@@ -385,73 +385,18 @@
               <a class="btn3 xl" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
             </div>
           </div>
+          <!-- [D] 변경 -->
           <div class="board_fixed">
-            <div class="fixed">
-              <div class="board_ty colgroup">
-                <table>
-                  <caption>전자문서경영평가 조회 결과 목록</caption>
-                  <colgroup>
-                    <col span="1" style="width:100px;">
-                    <col span="1" style="width: 70px;">
-                    <col span="1" style="width:90px;">
-                    <col span="1" style="width: 70px;">
-                    <col span="1" style="width: 120px;">
-                  </colgroup>
-                  <thead>
-                    <tr>
-                      <th scope="col"colspan="5"></th>
-                    </tr>
-                    <tr>
-                      <th scope="col" rowspan="2">거래년월</th>
-                      <th scope="col" rowspan="2">부점코드</th>
-                      <th scope="col" rowspan="2">부점명</th>
-                      <th scope="col" rowspan="2">지역본부</th>
-                      <th scope="col" rowspan="2">지역본부명</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>2024-01-01</td>
-                      <td>0001</td>
-                      <td class="bg1">영업부</td>
-                      <td class="bg1">0001</td>
-                      <td class="bg1">중부지역본부</td>
-                    </tr>
-                    <tr>
-                      <td>2024-01-01</td>
-                      <td>0001</td>
-                      <td class="bg1">영업부</td>
-                      <td class="bg1">0001</td>
-                      <td class="bg1">강북지역본부</td>
-                    </tr>
-                    <tr>
-                      <td>2024-01-01</td>
-                      <td>0001</td>
-                      <td class="bg1">영업부</td>
-                      <td class="bg1">0001</td>
-                      <td class="bg1">강서제주지역본부</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td class="bg1"></td>
-                      <td class="bg1"></td>
-                      <td class="bg1">강서제주지역본부</td>
-                    </tr>
-                  </tbody>
-                  <tfoot>
-                    <tr>
-                      <td colspan="5">합계</td>
-                    </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
             <div class="scroll_body vertical">
               <div class="board_ty colgroup">
                 <table>
                   <caption>전자문서경영평가 조회 결과 내용</caption>
                   <colgroup>
+                    <col span="1" style="width:100px;">
+                    <col span="1" style="width:70px;">
+                    <col span="1" style="width:90px;">
+                    <col span="1" style="width:70px;">
+                    <col span="1" style="width:120px;">
                     <col span="1" style="width:80px;">
                     <col span="1" style="width:80px;">
                     <col span="1" style="width:80px;">
@@ -469,11 +414,17 @@
                   </colgroup>
                   <thead>
                     <tr>
+                      <th scope="col"colspan="5"></th> <!-- [D] 이동 -->
                       <th scope="col" colspan="10">거래건수</th>
                       <th scope="col" rowspan="2">사용률</th>
                       <th scope="col" colspan="3" >경영평가 점수</th>
                     </tr>
                     <tr>
+                      <th scope="col" rowspan="2">거래년월</th> <!-- [D] 이동~~ -->
+                      <th scope="col" rowspan="2">부점코드</th>
+                      <th scope="col" rowspan="2">부점명</th>
+                      <th scope="col" rowspan="2">지역본부</th>
+                      <th scope="col" rowspan="2">지역본부명</th> <!-- // [D] ~~이동 -->
                       <th scope="col">전자문서</th>
                       <th scope="col">전자전표</th>
                       <th scope="col">기업고객팀</th>
@@ -491,6 +442,11 @@
                   </thead>
                   <tbody>
                     <tr>
+                      <td>2024-01-01</td> <!-- [D] 이동~~ -->
+                      <td>0001</td>
+                      <td class="bg1">영업부</td>
+                      <td class="bg1">0001</td>
+                      <td class="bg1">중부지역본부</td> <!-- // [D] ~~이동 -->
                       <td>1</td>
                       <td></td>
                       <td></td>
@@ -507,6 +463,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>2</td>
                       <td></td>
                       <td></td>
@@ -523,6 +484,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>3</td>
                       <td></td>
                       <td></td>
@@ -539,6 +505,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>4</td>
                       <td></td>
                       <td></td>
@@ -555,6 +526,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>5</td>
                       <td></td>
                       <td></td>
@@ -571,6 +547,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>6</td>
                       <td></td>
                       <td></td>
@@ -587,6 +568,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>7</td>
                       <td></td>
                       <td></td>
@@ -603,6 +589,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>8</td>
                       <td></td>
                       <td></td>
@@ -619,6 +610,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>9</td>
                       <td></td>
                       <td></td>
@@ -635,6 +631,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>10</td>
                       <td></td>
                       <td></td>
@@ -651,6 +652,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>11</td>
                       <td></td>
                       <td></td>
@@ -667,6 +673,11 @@
                       <td></td>
                     </tr>
                     <tr>
+                      <td></td>
+                      <td></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
+                      <td class="bg1"></td>
                       <td>12</td>
                       <td></td>
                       <td></td>
@@ -685,6 +696,7 @@
                   </tbody>
                   <tfoot>
                     <tr>
+                      <td colspan="5">합계</td> <!-- [D] 이동 -->
                       <td></td>
                       <td></td>
                       <td></td>
