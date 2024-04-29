@@ -189,7 +189,7 @@
 }
 .gnb > ul > li > a{
   display: block;
-  width: calc(100% - 4px);
+  width: 100%;
   margin: 0px;
   height: 100%;
   color: #ffffff;

@@ -851,12 +851,12 @@ input.select_date{
 .select_date_day::-ms-clear,
 .ui-datepicker select.ui-datepicker-month::-ms-expand,
 .ui-datepicker select.ui-datepicker-year::-ms-expand{
-  display:none;
+  /* display:none; */
   /* appearance: none; */
 }
 .ui-datepicker select.ui-datepicker-month:focus, 
 .ui-datepicker select.ui-datepicker-year:focus{
-  border: none !important;
+  /* border: none !important; */
 }
 
 .ui-state-highlight,
