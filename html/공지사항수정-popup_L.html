@@ -37,7 +37,7 @@
               <tbody>
                 <tr>
                   <th class="row">
-                    <label for="inp_01">작성자</label>
+                    <label>작성자</label>
                     </th>
                   <td colspan="3">김기업</td>
                 </tr>
@@ -52,7 +52,7 @@
                     </select>
                   </td>
                   <th class="row">
-                    <label for="inp_05">노출여부</label>
+                    <label>노출여부</label>
                   </th>
                   <td>
                     <span class="flex_box radio_box">
@@ -84,54 +84,37 @@
                 <tr>
                 <tr>
                   <th class="row" rowspan="3">
-                    <label for="inp_06">첨부파일</label>
+                    <label>첨부파일</label>
                   </th>
-                  <style>
-                    .file-delete{
-                      display: flex;
-  width: 24px;
-  color: initial;
-  background-color: #6eb4ff00;
-  font-size: large;
-  justify-content: center;
-  margin-right: 3px;
-  cursor: pointer;
-                    }.file-delete > span {
-  transform: rotate(45deg);
-}
-                  </style>
                   <td colspan="3">
                     <span class="board_btn">
-                    <label for="file_txt" class="file_label btn2">파일변경</label>
-                    <input type="file" accept=".txt" id="file_txt" />
-                    <span class="file_name">일임형 ISA 반송체크리스트.hwp</span>
-                    <!-- [D] delete -->
-                    <span class="file-delete" onclick="fileremoves();"><span>+</span></span>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="3">
-                    <span class="board_btn">
-                    <label for="file_txt" class="file_label btn2">파일변경</label>
-                    <input type="file" accept=".txt" id="file_txt" />
-                    <span class="file_name">일임형 ISA 반송체크리스트(재신고용) VER4_FN.hwp</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="3">
-                    <span class="board_btn">
-                      <label for="file_HwPd" class="file_label btn2">파일선택</label>
-                      <input type="file" accept=".Hwp, .pdf" id="file_HwPd" />
+                      <!-- [D] file 개선 -->
+                      <label for="file_txt" class="file_label btn2">파일변경</label>
+                      <input type="file" accept=".txt" id="file_txt" onchange="FILEdisplay(event)" />
                     </span>
-                    <!-- <span class="board_btn">
-                      <label for="file_HwPd" class="file_label btn2">파일변경</label>
-                      <input type="file" accept=".hwp" id="file_HwPd" />
-                      <span class="file_name">서식파일(서식명).hwp</span>
-                    </span> --> 
                   </td>
                 </tr>
 
-                
+                <tr>
+                  <td colspan="3">
+                    <span class="board_btn">
+                      <!-- [D] file 개선 --> <!-- 전체형태를보여주기위함으로노출 -->
+                      <label for="file_txt" class="file_label btn2">파일변경</label>
+                      <span class="file_name">일임형 ISA 반송체크리스트(재신고용) VER4_FN.hwp</span>
+                      <button class="remove_file">파일 지우기</button>
+                      <input type="file" accept=".txt" id="file_txt" onchange="FILEdisplay(event)">
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="3">
+                    <span class="board_btn">
+                      <!-- [D] file 개선 -->
+                      <label for="file_txt" class="file_label btn2">파일선택</label>
+                      <input type="file" accept=".Hwp, .pdf" id="file_HwPd" onchange="FILEdisplay(event)" />
+                    </span>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

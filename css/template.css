@@ -851,12 +851,12 @@ input.select_date{
 .select_date_day::-ms-clear,
 .ui-datepicker select.ui-datepicker-month::-ms-expand,
 .ui-datepicker select.ui-datepicker-year::-ms-expand{
-  /* display:none; */
+  display:none;
   /* appearance: none; */
 }
 .ui-datepicker select.ui-datepicker-month:focus, 
 .ui-datepicker select.ui-datepicker-year:focus{
-  /* border: none !important; */
+  border: none !important;
 }
 
 .ui-state-highlight,
@@ -1041,6 +1041,29 @@ button.contxt{
   vertical-align: middle;
   background: none;
   cursor: pointer;
+}
+/* button.remove_file : cp-20240400 */
+button.remove_file {
+  /* width: 18px !important;
+  height: 18px !important;
+  font-size: 0 !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../img/close_file.png');
+  background-size: 9px;
+  background-color: #f6fafc !important;
+  border: 1px solid #b3cbe0 !important;
+  border-radius: 4px !important; */
+  width: 18px ;
+  height: 18px ;
+  font-size: 0 ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../img/close_file.png');
+  background-size: 9px;
+  background-color: #f6fafc ;
+  border: 1px solid #b3cbe0 ;
+  border-radius: 4px ;
 }
 
 /* .rule : cp-20240400 */

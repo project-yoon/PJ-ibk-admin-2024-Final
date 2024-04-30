@@ -181,19 +181,7 @@ $(document).ready(function(){
   });
 });
 
-$(document).ready(function(){
-  /* randing notice popup(js) *//* cp-20240400 */
-  var ntTble = document.getElementById("lndng_notice");
-  var ntItems = ntTble ? ntTble.getElementsByTagName("tr") : [];
-  for (var i = 1; i < ntItems.length; i++) { // 헤더 제외
-    ntItems[i].addEventListener("click", function() {
-      var popPath = this.getAttribute("data-popup");
-      window.open(popPath,'','width=700,height=635,scrollbars=yes,resizable=yes'); return false;
-    });
-  }
-});
-
-/* accordion, accordion FAQ */
+/* accordion, accordion FAQ *//* cp-20240400 */
 function ACRD() {
   $('.accordion .cnt').hide();
   $('.accordion .item').on("click", function() {
@@ -213,6 +201,27 @@ function ACRD() {
   if (lndngCardNbr >= 2) {lndngAcrd.css("height", acrdHeight)}
 }
 
+/* randing notice popup(js) *//* cp-20240400 */
+function openPopup(path) {
+  window.open(path, '', 'width=700,height=635,scrollbars=yes,resizable=yes');
+  return false;
+}
+function handleNoticePopup() {
+  var ntTble = document.getElementById("lndng_notice");
+  var ntItems = ntTble ? ntTble.getElementsByTagName("tr") : [];
+  for (var i = 1; i < ntItems.length; i++) {
+    ntItems[i].addEventListener("click", function() {
+      var popPath = this.getAttribute("data-popup");
+      openPopup(popPath);
+    });
+  }
+}
+// 페이지 로드 후 처리
+document.addEventListener("DOMContentLoaded", function() {
+  handleNoticePopup();
+});
+
+/* TABS *//* cp-20240400 */
 function TABS(link){
   var tab_id = $(link).attr('data-tab');  
   $('.cont_tab li a').removeClass('active');
@@ -221,6 +230,7 @@ function TABS(link){
   $("#"+tab_id).addClass('active');
 }
 
+/* ALLCHK *//* cp-20240400 */
 function ALLCHK(){
   const chkTbls = document.querySelectorAll('table[data-check="check-group"]');
   chkTbls.forEach(chkGroups => {
@@ -237,4 +247,35 @@ function ALLCHK(){
         });
     });
   });
+}
+
+/* FILEdisplay *//* cp-20240400 */
+function FILEdisplay(event) {
+  const fileInput = event.target;
+  const file = fileInput.files[0];
+  
+  if (file) {
+    const fileNameplate = document.createElement('span');
+    fileNameplate.className = 'file_name';
+    fileNameplate.textContent = file.name;
+    
+    const fileLabel = fileInput.previousElementSibling;
+    fileLabel.parentNode.insertBefore(fileNameplate, fileLabel.nextSibling);
+
+    const fileRemove = document.createElement('button');
+    fileRemove.className = 'remove_file';
+    fileRemove.textContent = '파일 지우기';
+    fileRemove.onclick = () => FILEremove(fileRemove);
+    
+    fileNameplate.parentNode.insertBefore(fileRemove, fileNameplate.nextSibling);
+  }
+}
+function FILEremove(button) {
+  var filename = button.previousElementSibling;
+  if (filename && filename.classList.contains('file_name')) {
+    filename.remove();
+    button.remove();
+  // } else {
+  //   console.error("이전 형제 'file_name' 없음");
+  }
 }
