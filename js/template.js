@@ -80,26 +80,21 @@ $(document).ready(function () {
 /* datepicker */
 $(function(){
 	$('.select_date').datepicker({
-		// showOn: "both", // 버튼과 텍스트 필드 모두 캘린더를 보여준다.
-		showOn: "button",
+		//showOn: "both", // 버튼과 텍스트 필드 모두 캘린더를 보여준다.
+		//showOn: "button",
 		buttonImage:false, // 버튼 이미지
 		buttonImageOnly: false, // 버튼에 있는 이미지만 표시한다.
-		// dateFormat: 'yy-mm',
+		dateFormat: 'yy-mm',
 		prevText: '이전 달',
 		nextText: '다음 달',
 		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
 		dayNames: ['(일)','(월)','(화)','(수)','(목)','(금)','(토)'],
-		// dayNamesShort: ['일','월','화','수','목','금','토'],
-		// dayNamesMin: ['일','월','화','수','목','금','토'],
+		dayNamesShort: ['일','월','화','수','목','금','토'],
+		dayNamesMin: ['일','월','화','수','목','금','토'],
 		showMonthAfterYear: true,
-		changeMonth : false,
-		changeYear : false,
-    yearRange: 'c-2:c+2',
-    dateFormat: 'yy-mm',
-    minViewMode: 'months',
-    dateFormat: 'yy-mm', // 월별로 선택하도록 설정
-    minViewMode: 'months', // 최소 보기 모드를 월로 설정
+		changeMonth : true,
+		changeYear : true,
 		yearSuffix: '년',
 		buttonText: "달력보기",
 		maxDate: new Date(),
@@ -201,19 +196,23 @@ function ACRD() {
   if (lndngCardNbr >= 2) {lndngAcrd.css("height", acrdHeight)}
 }
 
-/* randing notice popup(js) *//* cp-20240400 */
-function openPopup(path) {
-  window.open(path, '', 'width=700,height=635,scrollbars=yes,resizable=yes');
+/* randing notice popup(js) *//* cp-20240400 *//* width,height추가 */
+function openPopup(path, width, height) {
+  var popupWidth = width || 700; // 기본 값 설정
+  var popupHeight = height || 635; // 기본 값 설정
+  window.open(path, '', 'width=' + popupWidth + ',height=' + popupHeight + ',scrollbars=yes,resizable=yes');
   return false;
 }
 function handleNoticePopup() {
   var ntTble = document.getElementById("lndng_notice");
   var ntItems = ntTble ? ntTble.getElementsByTagName("tr") : [];
-  for (var i = 1; i < ntItems.length; i++) {
-    ntItems[i].addEventListener("click", function() {
-      var popPath = this.getAttribute("data-popup");
-      openPopup(popPath);
-    });
+  for (var i = 0; i < ntItems.length; i++) { // 시작 인덱스 변경
+      ntItems[i].addEventListener("click", function() {
+          var popPath = this.getAttribute("data-popup");
+          var popWidth = parseInt(this.getAttribute("data-width"), 10); // parseInt를 이용하여 문자열을 숫자로 변환
+          var popHeight = parseInt(this.getAttribute("data-height"), 10); // parseInt를 이용하여 문자열을 숫자로 변환
+          openPopup(popPath, popWidth, popHeight);
+      });
   }
 }
 // 페이지 로드 후 처리

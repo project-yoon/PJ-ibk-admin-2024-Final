@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>사용자정보관리 목록::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>시스템관리 &gt;</span>
+              <span>사용자정보관리</span>
+            </div>
+            <h2>사용자정보관리</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>
+                사용자정보관리 조회 조건
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 10%">
+                <col span="1" style="width: auto">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_01">직원번호</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_01" placeholder="" value="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_01_1" placeholder="" value="" disabled="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- 22.11.28 보기 선택 추가 -->
+          <div class="cont_btn ty_new">
+            <div class="right">
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+        <!-- // content 검색영역 -->
+
+        <div class="content">
+          <div class="cont_box">
+            <div class="board_search">전체 {0} 건</div>
+            <div class="cont_btn">
+              <a class="btn3" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
+            </div>
+            <!-- [D] 이동 -->
+            <select title="보기선택">
+              <option>10개씩 보기</option>
+              <option>15개씩 보기</option>
+              <option>20개씩 보기</option>
+            </select>
+          </div>
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
+              <div class="board_ty colgroup">
+                <table id="lndng_notice"> <!-- [D] randing notice popup (js) : 20240400 -->
+                  <caption>
+                    사용자정보관리 조회 결과
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 105px;">
+                    <col span="1" style="width: 145px;">
+                    <col span="1" style="width: 95px;">
+                    <col span="1" style="width: 200px;">
+                    <col span="1" style="width: 95px;">
+                    <col span="1" style="width: 95px;">
+                    <col span="1" style="width: 95px;">
+                    <col span="1" style="width: 145px;">
+                    <col span="1" style="width: 120px;">
+                    <col span="1" style="width: 120px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">직원번호</th>
+                      <th scope="col">성명</th>
+                      <th scope="col">부점코드</th>
+                      <th scope="col">부점명</th>
+                      <th scope="col">팀코드</th>
+                      <th scope="col">직급코드</th>
+                      <th scope="col">부재상태</th>
+                      <th scope="col">대직자</th>
+                      <th scope="col">물류업무유형</th>
+                      <th scope="col">보안적용여부</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="10" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <!-- [D] randing notice popup (js) : 20240400 -->
+                    <!-- [D] data-width, data-height 를 추가하여 창크기 지정 가능 -->
+                    <tr data-popup="사용자정보-수정-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td>000051</td>
+                      <td>TEST</td>
+                      <td>0818</td>
+                      <td>부점명노출</td>
+                      <td>0000</td>
+                      <td>0</td>
+                      <td>재석</td>
+                      <td>대직자노출</td>
+                      <td>가계여신</td>
+                      <td>미적용</td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업 경로.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- // content 결과영역 -->
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>사용자 등록</caption>
+              <colgroup>
+                
+                <col span="1" style="width: auto;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                      <input type="search" id="inp_01" placeholder="거래기능코드" value="001">
+                    </span>
+                      
+                      <span class="board_btn">
+                        <button class="btn2">사용자등록</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 class="title mt50">※ 경영정보 시스템 사용 신청서에 의한 사용자 추가(A-Z만 추가 가능)</h3>
+          <div class="cont_box flex_right">
+            <div class="cont_btn">
+              <button type="button" class="btn4" title="포스트">포스트</button>
+              <button type="button" class="btn4" title="갱신">갱신</button>
+            </div>
+          </div>
+
+          <!-- 테이블 시작 -->
+          <div class="board_ty colgroup">
+            <table>
+              <caption>
+                계정계의 정보 호출 - 소속부점코드, 소속팀코드, 현소속일, 실제근무점코드, 사용자등록일, 사용자등록부점코드, 퇴직일, 최종변경일, 직원번호, 변화부점
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 120px;">
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 125px;">
+                <col span="1" style="width: 160px;">
+                <col span="1" style="width: 125px;">
+                <col span="1" style="width: 140px;">
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 125px;">
+                <col span="1" style="width: 120px;">
+                <col span="1" style="width: 120px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">소속부점코드</th>
+                  <th scope="col">소속팀코드</th>
+                  <th scope="col">현소속일</th>
+                  <th scope="col">실제근무점코드</th>
+                  <th scope="col">사용자등록일</th>
+                  <th scope="col">사용자등록부점코드</th>
+                  <th scope="col">퇴직일</th>
+                  <th scope="col">최종변경일</th>
+                  <th scope="col">직원번호</th>
+                  <th scope="col">변화부점</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="10" class="emp">조회결과가 없습니다.</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>0818</td>
+                  <td>0818</td>
+                  <td>20240319</td>
+                  <td>0818</td>
+                  <td>11110101</td>
+                  <td>0</td>
+                  <td>재석</td>
+                  <td></td>
+                  <td>가계여신</td>
+                  <td>미적용</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- // 테이블 종료 -->
+        </div>
+        <!-- content 계정계의 정보 호출 테이블 -->
+
+      </section>
+      <!-- // container  -->
+
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>

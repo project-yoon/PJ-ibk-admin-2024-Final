@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>배치담당자관리::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 800px; width: 640px;">
+      <div class="modal_header">
+        <h1>배치담당자관리</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <h3 class="title mt10 mb10">배치업무 별 담당자 관리</h3>
+        <div class="board_box">
+          <table>
+            <caption>
+              배치담당자관리 조회 조건
+            </caption>
+            <colgroup>
+              <col span="1" style="width: 8%;">
+              <col span="1" style="width: 65%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>
+                  <label for="inp_01">업무명</label>
+                </th>
+                <td>
+                  <select id="inp_01">
+                    <option>전체</option>
+                    <option>공통</option>
+                    <option>전자문서</option>
+                  </select>
+                </td>
+            </tbody>
+          </table>
+        </div>
+        <div class="cont_btn ty_new">
+          <div class="center">
+            <button class="btn2">조회</button>
+          </div>
+        </div>
+        <div class="cont_box">
+          <div class="board_search">총 0 건</div>
+        </div>
+        <div class="modal_board scroll">
+          <div class="board_ty">
+            <table>
+              <caption>
+                배치담당자관리 조회결과
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 18%;"> <!-- 부점코드 -->
+                <col span="1" style="width: 20%;"> <!-- 부점명 -->
+                <col span="1" style="width: 18%;"> <!-- 직원번호 -->
+                <col span="1" style="width: 37%;"> <!-- 직원명 -->
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="row">
+                    일련번호
+                  </th>
+                  <th class="row">
+                    담당자직원번호*
+                  </th>
+                  <th class="row">
+                    담당자명
+                  </th>
+                  <th class="row">
+                    휴대폰 번호
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>A12345</td>
+                  <td>홍길동</td>
+                  <td>010-1234-5678</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input type="text" class="input_ty input_full" id="inp_tb1_01" value=""></td>
+                  <td></td>
+                  <td><input type="text" class="input_ty input_full" id="inp_tb1_02" value=""></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input type="text" class="input_ty input_full" id="inp_tb2_01" value=""></td>
+                  <td></td>
+                  <td><input type="text" class="input_ty input_full" id="inp_tb2_02" value=""></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button type="button" class="btn2 xl">등록/ 갱신/ 삭제</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>

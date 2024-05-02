@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>배치정보관리 목록::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>시스템관리 &gt;</span>
+              <span>배치수행정보관리</span>
+            </div>
+            <h2>배치수행정보관리</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <div class="cont_tab">
+          <ul> <!-- [D] tab개선 -->
+            <li><a href='javascript:void(0);' onclick="TABS(this);" data-tab="tab-1" class="active">배치수행정보조회</a></li>
+            <li><a href='javascript:void(0);' onclick="TABS(this);" data-tab="tab-2" class="">배치수행정보관리</a></li>
+          </ul>
+        </div>
+
+        <!-- TAB 컨텐츠 1 -->
+        <div id="tab-1" class="tab-content active">
+
+          <div class="content">
+            <div class="board_box">
+              <table>
+                <caption>
+                  배치수행정보조회 - 조회 조건
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 6%">
+                  <col span="1" style="width: 37%;">
+                  <col span="1" style="width: 6%">
+                  <col span="1" style="width: 30%;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <label for="inp1_01">수행일자</label>
+                    </th>
+                    <td>
+                      <span class="date">
+                        <input type="text" class="select_date_day input_ty" id="inp1_01" autocomplete="off" />
+                        ~
+                        <input type="text" class="select_date_day input_ty second" id="inp1_02" autocomplete="off" />
+                      </span>
+                    </td>
+                    <th scope="row">
+                      <label for="inp_02">업무명</label>
+                    </th>
+                    <td>
+                      <select id="inp_02">
+                        <option>전체</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <label for="inp_03">결과</label>
+                    </th>
+                    <td>
+                      <select id="inp_03">
+                        <option>전체</option>
+                        <option>성공</option>
+                        <option>실패</option>
+                        <option>진행중</option>
+                      </select>
+                    </td>
+                    </td>
+                    <th scope="row">
+                      <label for="inp_04">배치명</label>
+                    </th>
+                    <td>
+                      <select id="inp_04" class="input_full">
+                        <option>전체</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="cont_btn ty_new">
+              <div class="right">
+                <button class="btn2">조회</button>
+              </div>
+            </div>
+          </div>
+          <!-- // content 검색영역 -->
+  
+          <div class="content">
+            <div class="cont_box">
+              <div class="board_search">전체 {0} 건</div>
+              <div class="cont_btn">
+                <a class="btn3 xl" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
+              </div>
+              <!-- [D] 이동 -->
+              <select title="보기선택">
+                <option>10개씩 보기</option>
+                <option>15개씩 보기</option>
+                <option>20개씩 보기</option>
+              </select>
+            </div>
+            <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+              <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
+                <div class="board_ty colgroup">
+                  <table id="lndng_notice"> <!-- [D] randing notice popup (js) : 20240400 -->
+                    <caption>
+                      배치수행정보조회 - 조회 결과
+                    </caption>
+                    <colgroup>
+                      <col span="1" style="width: 125px;">
+                      <col span="1" style="width: 90px;">
+                      <col span="1" style="width: 125px;">
+                      <col span="1" style="width: 300px;">
+                      <col span="1" style="width: 90px;">
+                      <col span="1" style="width: 90px;">
+                      <col span="1" style="width: 70px;">
+                      <col span="1" style="width: 325px;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">수행일자</th>
+                        <th scope="col">업무구분</th>
+                        <th scope="col">프로그램ID</th>
+                        <th scope="col">프로그램명</th>
+                        <th scope="col">시작시간</th>
+                        <th scope="col">종료시간</th>
+                        <th scope="col">결과</th>
+                        <th scope="col">비고</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td colspan="8" class="emp">조회결과가 없습니다.</td>
+                      </tr>
+                      <!-- [D] randing notice popup (js) : 20240400 -->
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td>2024-03-28</td>
+                        <td>가계여신</td>
+                        <td>Dp_info_0065b</td>
+                        <td class="left">DM통보대상 서류관리 진행상태 확인</td>
+                        <td>03:10:04</td>
+                        <td>03:10:06</td>
+                        <td>성공</td>
+                        <td class="left">요청건수:42, 회수건수:42, skip : 0</td>
+                      </tr>
+                      <!-- tr, 이하 테이블 스크롤 확인 -->
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+                      <tr data-popup="팝업 경로-popup_W.html" data-width="500" data-height="350"> <!-- [D] 팝업 경로 -->
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="left"></td>
+                      </tr>
+      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // content 결과영역 -->
+  
+          <div class="paginate">
+            <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+            <a href="#" class="on">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#">8</a>
+            <a href="#">9</a>
+            <a href="#">10</a>
+            <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+          </div>
+
+        </div><!--// TAB 컨텐츠 1 종료  -->
+
+        <!-- TAB 컨텐츠 2 -->
+        <div id="tab-2" class="tab-content ">
+
+          <div class="content">
+            <div class="board_box">
+              <table>
+                <caption>
+                  배치수행정보관리 - 조회 조건
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 6%;">
+                  <col span="1" style="width: 28%;">
+                  <col span="1" style="width: 6%;">
+                  <col span="1" style="width: 28%;">
+                  <col span="1" style="width: 9%;">
+                  <col span="1" style="width: auto;">
+                </colgroup>
+                <tbody>
+                    <th scope="row">
+                      <label for="inp_01">업무명</label>
+                    </th>
+                    <td>
+                      <select id="inp_01">
+                        <option>전체</option>
+                        <option>공통</option>
+                        <option>전자문서</option>
+                      </select>
+                    </td>
+                    <th scope="row">
+                      <label for="inp_02">배치ID</label>
+                    </th>
+                    <td>
+                      <span class="search_int">
+                        <input type="search" id="inp_02" placeholder="배치ID" value="">
+                      </span>
+                    </td>
+                    <th scope="row">
+                      <label for="inp_03">SMS전송 대상</label>
+                    </th>
+                    <td>
+                      <select id="inp_03">
+                        <option>Y</option>
+                        <option>N</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="cont_btn ty_new">
+              <div class="right">
+                <button class="btn2">조회</button>
+              </div>
+            </div>
+          </div>
+  
+          <!-- content : 테이블1 : 배치수행정보관리 - 조회 결과 -->
+          <div class="content">
+            <div class="cont_box">
+              <div class="board_search">전체 {0} 건</div>
+              <div class="cont_btn">
+                <button type="button" class="btn3" title="담당자관리">담당자관리</button>
+                <a class="btn3 xl" href="#" title="결과목록 다운로드" download>엑셀 다운</a>
+              </div>
+              <!-- [D] 이동 -->
+              <select title="보기선택">
+                <option>10개씩 보기</option>
+                <option>15개씩 보기</option>
+                <option>20개씩 보기</option>
+              </select>
+            </div>
+  
+
+            <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+              <div class="scroll_body vertical trow7"><!--[D] 스크롤 타입 정의 -->
+                <!-- 테이블 시작 -->
+                <div class="board_ty colgroup">
+                  <table>
+                    <caption>
+                      배치수행정보관리 - 조회 결과
+                    </caption>
+                    <colgroup>
+                      <col span="1" style="width: 175px;">
+                      <col span="1">
+                      <col span="1" style="width: 100px;">
+                      <col span="1" style="width: 100px;">
+                      <col span="1" style="width: 145px;">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">배치ID</th>
+                        <th scope="col">배치명</th>
+                        <th scope="col">업무코드</th>
+                        <th scope="col">업무명</th>
+                        <th scope="col">SMS발송대상여부</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td colspan="5" class="emp">조회결과가 없습니다.</td>
+                      </tr>
+                      <tr>
+                        <td>In_intro_0021b</td>
+                        <td>보건복지부(N411)_DM시스템_전송 확인</td>
+                        <td>DP</td>
+                        <td>수신</td>
+                        <td>Y</td>
+                      </tr>
+                      <!-- tr, 이하 테이블 스크롤 확인 -->
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+      
+                    </tbody>
+                  </table>
+                </div>
+                <!-- // 테이블 종료 -->
+              </div>
+            </div>
+
+            <div class="paginate">
+              <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+              <a href="#" class="on">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#">7</a>
+              <a href="#">8</a>
+              <a href="#">9</a>
+              <a href="#">10</a>
+              <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+            </div>
+          </div>
+          
+          <!-- content : 테이블2 : 전자문서 수신업무 상세내역 -->
+          <div class="content">
+            <h3 class="title mt40">※ 수정, 삭제 시 배치ID 수정금지(PK)</h3>
+            <div class="cont_box flex_right">
+              <div class="cont_btn">
+                <button type="button" class="btn4" title="삭제">삭제</button>
+                <button type="button" class="btn4" title="갱신">갱신</button>
+                <button type="button" class="btn4" title="초기화">초기화</button>
+                <button type="button" class="btn4" title="등록">등록</button>
+              </div>
+            </div>
+
+            <!-- 테이블 시작 -->
+            <div class="board_ty colgroup">
+              <table>
+                <caption>
+                  배치ID, 배치명, 업무코드, SMS발송대상여부
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 175px;">
+                  <col span="1">
+                  <col span="1" style="width: 185px;">
+                  <col span="1" style="width: 185px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">배치ID*</th>
+                    <th scope="col">배치명*</th>
+                    <th scope="col">업무코드*</th>
+                    <th scope="col">SMS발송대상여부*</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="4" class="emp">조회결과가 없습니다.</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" id="inp_tb2_01_1" class="input_ty" value="Dp_intro_0041" disabled="">
+                    </td>
+                    <td>
+                      <input type="text" id="inp_tb2_01_2" class="input_ty" value="금융정보제공 후 5년 초과 데이터 삭제">
+                    </td>
+                    <td>
+                      <input type="text" id="inp_tb2_01_3" class="input_ty" value="DP">
+                    </td>
+                    <td>
+                      <input type="text" id="inp_tb2_01_4" class="input_ty" value="Y">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" id="inp_tb2_02_1" class="input_ty" value="" disabled="">
+                    </td>
+                    <td>
+                      <input type="text" id="inp_tb2_02_2" class="input_ty" value="">
+                    </td>
+                    <td>
+                      <input type="text" id="inp_tb2_02_3" class="input_ty" value="">
+                    </td>
+                    <td>
+                      <input type="text" id="inp_tb2_02_4" class="input_ty" value="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" id="inp_tb2_03_1" class="input_ty" value="" disabled="">
+                    </td>
+                    <td>
+                      <input type="text" id="inp_tb2_03_2" class="input_ty" value="">
+                    </td>
+                    <td>
+                      <input type="text" id="inp_tb2_03_3" class="input_ty" value="">
+                    </td>
+                    <td>
+                      <input type="text" id="inp_tb2_03_4" class="input_ty" value="">
+                    </td>
+                  </tr>
+  
+                </tbody>
+              </table>
+            </div>
+            <!-- // 테이블 종료 -->
+          </div>
+  
+          
+        </div><!--// TAB 컨텐츠 2 종료  -->
+
+
+      </section>
+      <!-- // container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>배치로그조회::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body class="win_pop">
+
+  <div class="wrap">
+    <!-- <div class="modal_inner"> -->
+      <div class="modal_header" >
+        <h1>배치로그조회</h1>
+        <!-- <a href="#"><img src="../img/close.png" alt="닫기"></a> -->
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <div class="cont_box flex_right">
+          <div class="cont_btn">
+            <!-- [D] .btn1 : 선택 불가일 경우, 버튼 스타일 클래스 -->
+            <button type="button" class="btn2">다시조회</button>
+          </div>
+        </div>
+        <div class="board_box mb10">
+          <table>
+            <caption>
+              배치로그 파일명
+            </caption>
+            <colgroup>
+              <col span="1">
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="left">
+                  파일명 : 
+                  <span>
+                    /data/kbpbat/vatlog/20240328/in_elrt_0010b.20240328.010300
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal_text">
+          <!-- [D] XML 또는 JSON 소스코드를 'textarea'안에 삽입
+                  ※ 주의: 의미없는 줄내림도 모두 인식됨.
+          -->
+          <textarea id="rqsCnt" class="modal_rqsCnt" rows="24" style="overflow-y: scroll;" disabled>
+
+
+            ==================== load() information ============================
+
+            LOG_FILE [/data/kbpbat/batlog/20240328/ln_elrt_0010b.20240328.010300]
+            DATA_FILE []
+            DATA_DEF_XML []
+            DATA_BACKUP_DIR [/data/kbpbat/batdata/mmsdir/backup]
+            EAI_DATA_FILE []
+            EAI_TRI_FILE [null]
+            EAI_BACKUP_DIR [/data/kbpbat/batdata/mmsdir/ea_backup]
+            EAI_SHELL_CMD [/home3/ftpeai/dev_batch_agent/bin/batch.sh]
+            INF_DIR [null]
+            IMG_SRV_IP [172.18.121.145]
+            IMG_SRV_PORT [18931]
+            database connection test is ok
+            JOB_ID [202403280000022826654100399688]
+            
+            ==================== load() information ============================
+            
+            *****************************************************
+            [   PROGRAM ID   ] ln_elrt_0010b
+            [   PROGRAM NM   ] 인터넷전자등기이미지전송
+            [   START TIME   ] 2024-03-28 01:03:03
+            *****************************************************
+            ktnet_send_dir >>> /data/kbpbat/batdata/imgsend/ktnet
+            ktnet_back_dir >>> /data/kbpbat/batdata/imgsend/ktnet_backup
+            
+            
+            database connection is commited
+            no sending target image
+            
+  ...
+
+
+          </textarea>
+        </div>
+
+
+      </div>
+    <!-- </div> -->
+  </div> 
+
+</body>
+</html>
