@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전자문서등록관리::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서 관리 &gt;</span>
+              <span>전자문서등록관리</span>
+            </div>
+            <h2>전자문서등록관리</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+        
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>
+                전자문서등록관리 조회 조건
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 9%;">
+                <col span="1" style="width: 35%;">
+                <col span="1" style="width: 8%;">
+                <col span="1" style="width: 22%;">
+                <col span="1" style="width: 8%;">
+                <col span="1" style="width: auto;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp1_01">등록일</label>
+                  </th>
+                  <td>
+                    <span class="date">
+                      <input type="text" class="select_date_day input_ty" id="inp1_01" autocomplete="off" />
+                      ~
+                      <input type="text" class="select_date_day input_ty second" id="inp1_02" autocomplete="off" />
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_02">업무구분</label>
+                  </th>
+                  <td>
+                    <select id="inp_02">
+                      <option>전체</option>
+                      <option>수신</option>
+                      <option>카드</option>
+                      <option>여신</option>
+                      <option>외환</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <label for="inp_03">서식코드</label>
+                  </th>
+                  <td>
+                    <span class="search_int">
+                      <input type="search" id="inp_03" placeholder="서식코드" value="">
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_04">서식명</label>
+                  </th>
+                  <td>
+                    <span class="search_int">
+                      <input type="search" id="inp_04" placeholder="서식명" value="">
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp_05">사용여부</label>
+                  </th>
+                  <td>
+                    <select id="inp_05">
+                      <option>전체</option>
+                      <option>사용</option>
+                      <option>사용안함</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cont_btn ty_new">
+            <div class="right">
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="content">
+          <div class="cont_box">
+            <div class="board_search">전체 {0} 건</div>
+            <div class="cont_btn">
+              <button type="button" class="btn3 xl" title="등록">등록</a>
+            </div>
+            <!-- [D] 이동 -->
+            <select title="보기선택">
+              <option>10개씩 보기</option>
+              <option>15개씩 보기</option>
+              <option>20개씩 보기</option>
+            </select>
+          </div>
+
+          <!-- 테이블 시작 -->
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+          <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
+          <div class="board_ty colgroup">
+            <table>
+              <caption>
+                전자문서등록관리 조회 결과
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 90px;">
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 580px;">
+                <col span="1" style="width: 121px;">
+                <col span="1" style="width: 150px;">
+                <col span="1" style="width: 80px;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col">번호</th>
+                  <th scope="col">업무구분</th>
+                  <th scope="col">서식코드</th>
+                  <th scope="col">서식명</th>
+                  <th scope="col">사용여부</th>
+                  <th scope="col">등록날짜</th>
+                  <th scope="col">삭제</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="7" class="emp">조회결과가 없습니다.</td>
+                </tr>
+                <!-- tr10개, 이하 테이블 스크롤 확인 -->
+                <tr>
+                  <td>1</td>
+                  <td>여신</td>
+                  <td>CL0014</td>
+                  <td>부동산 거래계약서 기본</td>
+                  <td>
+                    <span class="radio_btn rsize"> <!-- [D] 리사이징 rsize -->
+                      <input type="radio" id="radio1_on" name="radio_btn" value="" checked="">
+                      <label for="radio1_on">Y</label>
+                      <input type="radio" id="radio1_off" name="radio_btn" value="">
+                      <label for="radio1_off">N</label>
+                    </span>
+                  </td>
+                  <td>YYYY-MM-DD</td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+                <!-- tr, 이하 테이블 스크롤 확인 -->
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio2_on" name="radio2_btn" value="" checked="">
+                      <label for="radio2_on">Y</label>
+                      <input type="radio" id="radio2_off" name="radio2_btn" value="">
+                      <label for="radio2_off">N</label>
+                    </span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio3_on" name="radio3_btn" value="" checked="">
+                      <label for="radio3_on">Y</label>
+                      <input type="radio" id="radio3_off" name="radio3_btn" value="">
+                      <label for="radio3_off">N</label>
+                    </span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio4_on" name="radio4_btn" value="" checked="">
+                      <label for="radio4_on">Y</label>
+                      <input type="radio" id="radio4_off" name="radio4_btn" value="">
+                      <label for="radio4_off">N</label>
+                    </span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio5_on" name="radio5_btn" value="" checked="">
+                      <label for="radio5_on">Y</label>
+                      <input type="radio" id="radio5_off" name="radio5_btn" value="">
+                      <label for="radio5_off">N</label>
+                    </span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio6_on" name="radio6_btn" value="" checked="">
+                      <label for="radio6_on">Y</label>
+                      <input type="radio" id="radio6_off" name="radio6_btn" value="">
+                      <label for="radio6_off">N</label>
+                    </span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio7_on" name="radio7_btn" value="" checked="">
+                      <label for="radio7_on">Y</label>
+                      <input type="radio" id="radio7_off" name="radio7_btn" value="">
+                      <label for="radio7_off">N</label>
+                    </span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio8_on" name="radio8_btn" value="" checked="">
+                      <label for="radio8_on">Y</label>
+                      <input type="radio" id="radio8_off" name="radio8_btn" value="">
+                      <label for="radio8_off">N</label>
+                    </span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio9_on" name="radio9_btn" value="" checked="">
+                      <label for="radio9_on">Y</label>
+                      <input type="radio" id="radio9_off" name="radio9_btn" value="">
+                      <label for="radio9_off">N</label>
+                    </span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio10_on" name="radio10_btn" value="" checked="">
+                      <label for="radio10_on">Y</label>
+                      <input type="radio" id="radio10_off" name="radio10_btn" value="">
+                      <label for="radio10_off">N</label>
+                    </span>
+                  </td>
+                  <td></td>
+                  <td>
+                    <div class="cont_btn"><button type="button" class="btn4">삭제</button></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+          </div>
+          <!-- // 테이블 종료 -->
+        </div>
+
+
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+      </section>
+      <!-- // container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>

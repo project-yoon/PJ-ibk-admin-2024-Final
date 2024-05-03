@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>전자문서 서식코드 관리::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 400px; width: 700px;">
+      <div class="modal_header">
+        <h1>전자문서 서식코드 관리</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <div class="modal_board ">
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                전자문서 서식코드 관리
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 210px;">
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 210px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">
+                    <label for="inp_01">서식코드*</label>
+                    </th>
+                  <td colspan="3">
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="text" id="inp_01" class="input_ty" placeholder="">
+                      </span>
+                      <span class="board_btn">
+                        <button type="button" class="btn3 btn_half">중복확인</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_02">업무구분</label>
+                  </th>
+                  <td colspan="3">
+                    <select id="inp_02">
+                      <option>전체</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_03">전자서식명*</label>
+                  </th>
+                  <td colspan="3">
+                    <input type="text" id="inp_03" class="input_ty input_full" placeholder="전자서식명을 입력해주세요" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_04">전자서식 설명</label>
+                  </th>
+                  <td colspan="3">
+                    <input type="text" id="inp_04" class="input_ty input_full" placeholder="전자서식 설명을 입력해주세요" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label>사용여부</label>
+                  </th>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio1_on" name="radio1_btn" value="" checked="">
+                      <label for="radio1_on">Y</label>
+                      <input type="radio" id="radio1_off" name="radio1_btn" value="">
+                      <label for="radio1_off">N</label>
+                    </span>
+                  </td>
+                  <th class="row">
+                    <label>승인여부</label>
+                  </th>
+                  <td>
+                    <span class="radio_btn rsize">
+                      <input type="radio" id="radio2_on" name="radio2_btn" value="" checked="">
+                      <label for="radio2_on">Y</label>
+                      <input type="radio" id="radio2_off" name="radio2_btn" value="">
+                      <label for="radio2_off">N</label>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button class="btn2">등록</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>
