@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>전자문서전결권관리 상세::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body class="win_pop">
+
+  <div class="wrap">
+    <!-- <div class="modal_inner"> -->
+      <div class="modal_header" >
+        <h1>전자문서전결권관리 상세</h1>
+        <!-- <a href="#"><img src="../img/close.png" alt="닫기"></a> -->
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <div class="modal_board">
+          <h3 class="title_head mb10"><span>전자문서전결권관리 상세</span></h3>
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                전자문서전결권관리 등록
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 130px;">
+                <col span="1">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">
+                    <label for="inp_01">통합단말화면번호</label>
+                  </th>
+                  <td>
+                    <input type="search" id="inp_01" class="input_ty" placeholder="" value="">
+                    <br>
+                    <span class="inst"> * 단말연동 그룹 ID는 한번 생성 되면 수정할 수 없습니다.</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_02">전결종류</label>
+                  </th>
+                  <td>
+                    <select id="inp_02">
+                      <option>선택하세요</option>
+                    </select>
+                    <br>
+                    <span class="inst"> * 전자문서 결재요청 시 해당 전결권 이상으로 결재가 제한됩니다.</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    전결권차등적용여부</label>
+                  </th>
+                  <td>
+                    <span class="flex_box radio_box">
+                      <span class="radio_btn">
+                        <input type="radio" id="radio_on" name="radio_btn" value="">
+                        <label for="radio_on">Y</label>
+                        <input type="radio" id="radio_off" name="radio_btn" value="" checked="">
+                        <label for="radio_off">N</label>
+                      </span>
+                    </span>
+                    <span class="inst"> * 전결권이 상황별로 차등적용 되는 경우는 Y로 선택해주세요</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_04">차등적용알림내용</label>
+                  </th>
+                  <td>
+                    <textarea name="textarea" id="inp_04" class="input_full textarea_fixed" style="height: 80px;" rows="4"></textarea>
+                    <span class="inst"> * 전결권 차등적용여부가 Y인 경우 [전결상세] 버튼 클릭 시 알림 내용을 확인 할 수 있습니다.</span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_05">차등적용알림내용</label>
+                  </th>
+                  <td>
+                    <textarea name="textarea" id="inp_05" class="input_full textarea_fixed" style="height: 80px;" rows="4"></textarea>
+                    <span class="inst"> * 상기 전결권  등록내역의 근기를 등록해주세요. 예) 부점장권한재위임기준 ~ </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_06">비고</label>
+                  </th>
+                  <td>
+                    <textarea name="textarea" id="inp_06" class="input_full textarea_fixed" style="height: 60px;" rows="3"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_07">등록직원/등록부점</label>
+                  </th>
+                  <td>
+                    <!-- 검색 -->
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_07" class="input_ty" style="width: 70px;" placeholder="직원코드" value="" disabled="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_07_1" class="input_ty" style="width: 115px;" placeholder="직원명" value="" disabled="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn4 btn_half">검색</button>
+                      </span>
+                      <span class="inst ml20"> * 해당 전결권을 <b>신규/변경</b>한 직원정보를 <br>입력해주세요.</span><br>
+                    </span>
+                    <!-- // 검색 -->
+                    <!-- 결과 -->
+                    <span class="flex_box gap4">
+                      <input type="search" id="inp_07_2" class="input_ty" style="width: 70px;" placeholder="직원코드" value="" disabled="">
+                      <input type="search" id="inp_07_3" class="input_ty" style="width: 115px;" placeholder="직원명" value="" disabled="">
+                    </span>
+                    <!-- // 결과 -->
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_08">등록직원/등록부점</label>
+                  </th>
+                  <td>
+                    <!-- 검색 -->
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_08" class="input_ty" style="width: 70px;" placeholder="직원코드" value="" disabled="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_08_1" class="input_ty" style="width: 115px;" placeholder="직원명" value="" disabled="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn4 btn_half">검색</button>
+                      </span>
+                      <span class="inst ml20"> * 해당 전결권을 <b>검토/확인</b>한 주무부서 직원정보를 <br>입력해주세요.</span><br>
+                    </span>
+                    <!-- // 검색 -->
+                    <!-- 결과 -->
+                    <span class="flex_box gap4">
+                      <input type="search" id="inp_08_2" class="input_ty" style="width: 70px;" placeholder="직원코드" value="" disabled="">
+                      <input type="search" id="inp_08_3" class="input_ty" style="width: 115px;" placeholder="직원명" value="" disabled="">
+                    </span>
+                    <!-- // 결과 -->
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button class="btn2">등록</button>
+        </div>
+
+
+      </div>
+    <!-- </div> -->
+  </div> 
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>전자문서전결권변경이력::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+  <div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 730px; width: 1000px;">
+      <div class="modal_header">
+        <h1>전자문서전결권변경이력</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <div class="board_box">
+          <table>
+            <caption>
+              전자문서전결권변경이력 조회 조건
+            </caption>
+            <colgroup>
+              <col span="1" style="width: 13%;">
+              <col span="1" style="width: 70%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="inp_01">통합단말화면번호</label>
+                </th>
+                <td>
+                  <input type="text" id="inp_01" class="input_ty" value="">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cont_btn ty_new">
+          <div class="center">
+            <button class="btn2">조회</button>
+          </div>
+        </div>
+        <div class="cont_box">
+          <div class="board_search">총 0 건</div>
+          <select title="보기선택">
+            <option>10개씩 보기</option>
+            <option>15개씩 보기</option>
+            <option>20개씩 보기</option>
+          </select>
+        </div>
+        <div class="modal_board scroll">
+          <div class="board_ty">
+            <table>
+              <caption>
+                전자문서전결권변경이력 조회결과
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 8%;">
+                <col span="1" style="width: 26%;">
+                <col span="1" style="width: 10%;">
+                <col span="1" style="width: 10%;">
+                <col span="1" style="width: 10%;">
+                <col span="1" style="width: 8%;">
+                <col span="1" style="width: 10%;">
+                <col span="1" style="width: 8%;">
+                <col span="1" style="width: 10%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="row">
+                    통합단말화면번호
+                  </th>
+                  <th class="row">
+                    통합단말화면명
+                  </th>
+                  <th class="row">
+                    전결종류
+                  </th>
+                  <th class="row">
+                    차등적용여부
+                  </th>
+                  <th class="row">
+                    등록일시
+                  </th>
+                  <th class="row">
+                    등록부점
+                  </th>
+                  <th class="row">
+                    등록직원
+                  </th>
+                  <th class="row">
+                    확인부점
+                  </th>
+                  <th class="row">
+                    확인직원
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>07090</td>
+                  <td>은퇴설계 동의서 조회/등</td>
+                  <td>팀원</td>
+                  <td>N</td>
+                  <td>2017-02-21 10:08:11</td>
+                  <td>012345</td>
+                  <td>홍길동</td>
+                  <td>012345</td>
+                  <td>장덕출</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>

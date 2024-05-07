@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>프로그램 배포 결재 상세 (본인이 결재책임자가 아닌경우)::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 635px; width: 770px;">
+      <div class="modal_header">
+        <h1>프로그램 배포 결재 상세</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <div class="modal_board">
+          <div class="cont_box mt30">
+            <h3 class="title mt10 mb10">프로그램 배포 결재 상세</h3>
+            <div class="cont_btn">
+              <button type="button" class="btn4 auto" title="업무이력조회">업무이력조회</button>
+            </div>
+          </div>
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                프로그램 배포 결재 상세
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 110px;">
+                <col span="1" style="width: 240px;">
+                <col span="1" style="width: 100px;">
+                <col span="1">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">
+                    <label for="inp_01">프로그램 구분</label>
+                  </th>
+                  <td colspan="3">
+                    <select id="inp_01" disabled="">
+                      <option>전자문서 ANDROID앱</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_02">프로그램버전</label>
+                  </th>
+                  <td colspan="3">
+                    <input type="search" id="inp_02" class="input_ty" placeholder="버전노출" value="" disabled="">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_03">배포파일 명</label>
+                  </th>
+                  <td colspan="3">
+                    <input type="search" id="inp_03" class="input_ty input_full" placeholder="파일명 노출" value="" disabled="">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_04">배포대상여부</label>
+                  </th>
+                  <td>
+                    <select id="inp_04" disabled="">
+                      <option>Y</option>
+                    </select>
+                  </td>
+                  <th class="row">
+                    <label for="inp_05">배포대상구분</label>
+                  </th>
+                  <td>
+                    <select id="inp_05" disabled="">
+                      <option>선택하세요</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_06">배포내용</label>
+                  </th>
+                  <td colspan="3">
+                    <textarea name="textarea" id="inp_06" class="input_full textarea_fixed" style="height: 135px;" rows="8" disabled="">결재요청시 입력한 내용 노출</textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    첨부문서1
+                  </th>
+                  <td colspan="3">
+                    <span class="board_btn">
+                      <!-- [D] file 개선 -->
+                      <!-- 1. 전체형태를보여주기위함으로노출 -->
+                      <!-- <label for="file_txt" class="file_label btn2">파일변경</label> -->
+                      <span class="file_name">일임형 ISA 반송체크리스트(재신고용) VER4_FN.hwp</span>
+                      <button class="remove_file">파일 지우기</button>
+                      <input type="file" accept=".txt" id="file_txt" onchange="FILEdisplay(event)">
+                    </span>
+                    <!-- 2. 첨부 기본형태
+                    <span class="board_btn">
+                      <label for="file_txt" class="file_label btn2">파일변경</label>
+                      <input type="file" accept=".txt" id="file_txt" onchange="FILEdisplay(event)" />
+                    </span>
+                    -->
+                  </td>
+                </tr>
+                <tr>
+                  <tr>
+                    <th class="row">
+                      <label for="inp_08">결재요청일시</label>
+                    </th>
+                    <td>
+                      <input type="text" class="input_ty" id="inp_08" value="yyyy-mm-dd hh:mm:ss" disabled="">
+                    </td>
+                    <th class="row">
+                      <label for="inp_09">결재일시</label>
+                    </th>
+                    <td>
+                      <input type="text" class="input_ty" id="inp_09" value="yyyy-mm-dd hh:mm:ss" disabled="">
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="row">
+                      <label for="inp_10">결재요청직원</label>
+                    </th>
+                    <td>
+                      <span class="flex_box gap10">
+                        <input type="search" id="inp_10" class="input_ty" style="width: 80px;" placeholder="직원코드" value="A90639" disabled="">
+                        <input type="search" id="inp_10_1" class="input_ty" style="width: 110px;" placeholder="직원명" value="TEST" disabled="">
+                      </span>
+                    </td>
+                    <th class="row">
+                      <label for="inp_11">결재책임자</label>
+                    </th>
+                    <td>
+                      <select id="inp_11" disabled="">
+                        <option>이기업(012345)</option>
+                      </select>
+                    </td>
+                  </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- [D] 본인이 결재책임자가 아닌 경우 버튼 미노출
+        <div class="cont_btn modal_btn">
+          <button class="btn3">반려</button>
+          <button class="btn2">결재</button>
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>
