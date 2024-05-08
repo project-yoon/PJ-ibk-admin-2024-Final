@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>프로그램배포결재목록::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서 시스템 관리 &gt;</span>
+              <span>프로그램배포결재</span>
+            </div>
+            <h2>프로그램배포결재</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <!-- 컨텐츠  -->
+        <div class="content">
+          <div class="content">
+            <div class="board_box">
+              <table>
+                <caption>
+                  프로그램배포결재 - 조회 조건
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 9%;">
+                  <col span="1" style="width: 35%;">
+                  <col span="1" style="width: 8%;">
+                  <col span="1" style="width: auto;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <label for="inp_01">업무 구분</label>
+                    </th>
+                    <td>
+                      <span class="radio_btn">
+                        <input type="radio" id="radio_on" name="radio_btn" value="" checked>
+                        <label for="radio_on">내업무</label>
+                        <input type="radio" id="radio_off" name="radio_btn" value="">
+                        <label for="radio_off">전체업무</label>
+                      </span>
+                    </td>
+                    <th scope="row">
+                      <label for="inp_02">프로그램 구분</label>
+                    </th>
+                    <td>
+                      <select id="inp_02">
+                        <option>선택하세요</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">
+                      <label for="inp_03">요청직원</label>
+                    </th>
+                    <td colspan="3">
+                      <span class="sel_inp">
+                        <span class="search_int">
+                          <input type="search" id="inp_03" placeholder="" value="0818">
+                        </span>
+                        <span class="search_int">
+                          <input type="search" id="inp_03_1" placeholder="" value="디지털기획부" disabled="">
+                        </span>
+                        <span class="board_btn">
+                          <button class="btn2 btn_half">검색</button>
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="cont_btn ty_new">
+              <div class="right">
+                <button class="btn2">조회</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- content : 테이블 -->
+        <div class="content">
+          <div class="cont_box">
+            <div class="board_search">전체 {0} 건</div>
+            <!-- [D] 이동 -->
+            <select title="보기선택">
+              <option>10개씩 보기</option>
+              <option>15개씩 보기</option>
+              <option>20개씩 보기</option>
+            </select>
+          </div>
+
+          <!-- 테이블 시작 -->
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical trow7"><!--[D] 스크롤 타입 정의 -->
+              <div class="board_ty colgroup">
+                <table id="lndng_notice"> <!-- [D] randing notice popup (js) : 20240400 -->
+                  <caption>
+                    프로그램배포결재 조회 결과
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 180px;">
+                    <col span="1" style="width: 100px;">
+                    <col span="1" style="width: 220px;">
+                    <col span="1" style="width: 70px;">
+                    <col span="1" style="width: 170px;">
+                    <col span="1" style="width: 155px;">
+                    <col span="1" style="width: 170px;">
+                    <col span="1" style="width: 155px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">프로그램구분</th>
+                      <th scope="col">프로그램버전</th>
+                      <th scope="col">배포대상구분</th>
+                      <th scope="col">결재상태</th>
+                      <th scope="col">요청직원</th>
+                      <th scope="col">요청일시</th>
+                      <th scope="col">결재책임자</th>
+                      <th scope="col">결재일시</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="8" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <!-- [D] randing notice popup (js) : 20240400 -->
+                    <tr data-popup="전결권관리상세-popup_W.html"> <!-- [D] 팝업 경로 -->
+                      <td>전자문서 ANDROID앱</td>
+                      <td>20191205</td>
+                      <td>특정부점</td>
+                      <td>결재요청</td>
+                      <td>홍길동(A90529)</td>
+                      <td>2024-03-20 15:00:41</td>
+                      <td>홍길동(A90529)</td>
+                      <td>2024-03-20 15:00:41</td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr data-popup="팝업경로-popup_W.html"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업경로-popup_W.html"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업경로-popup_W.html"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업경로-popup_W.html"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업경로-popup_W.html"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr data-popup="팝업경로-popup_W.html"> <!-- [D] 팝업 경로 -->
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- // 테이블 종료 -->
+        </div>
+
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+
+
+      </section>
+      <!-- // container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>
