@@ -63,17 +63,17 @@ $(document).ready(function () {
     menuBg.hide();
   });
 
-  /* radio guide */
-  const radioBtn = $('input[type="radio"]'),
-    radioGuide = $('.radio_guide');
+  /* radio guide *//*페기20240400 */
+  // const radioBtn = $('input[type="radio"]'),
+  //   radioGuide = $('.radio_guide');
 
-  $(radioBtn).change(function(){
-    if ($('input:radio[class=guide]').is(':checked')) {
-      $(radioGuide).show();
-    } else {
-      $(radioGuide).hide();
-    }
-  });
+  // $(radioBtn).change(function(){
+  //   if ($('input:radio[class=guide]').is(':checked')) {
+  //     $(radioGuide).show();
+  //   } else {
+  //     $(radioGuide).hide();
+  //   }
+  // });
 
 });
 
@@ -277,4 +277,17 @@ function FILEremove(button) {
   // } else {
   //   console.error("이전 형제 'file_name' 없음");
   }
+}
+/* radio Toggle *//* cp-20240400 */
+function radioTgl() {
+  const radioBtn = $('input[type="radio"]'),
+        radioGuide = $('.radio_guide');
+
+  $(radioBtn).change(function(){
+    if ($('input:radio[class=guide]').is(':checked')) {
+      $(radioGuide).show();
+    } else {
+      $(radioGuide).hide();
+    }
+  });
 }

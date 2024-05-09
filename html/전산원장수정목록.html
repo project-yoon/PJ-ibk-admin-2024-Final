@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전산원장 수정 목록::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서 시스템관리 &gt;</span>
+              <span>전산원장 수정</span>
+            </div>
+            <h2>전산원장 수정</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+        
+        <div class="content">
+          <div class="board_box">
+            <table>
+              <caption>
+                전산원장 수정 조회 조건
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 7%;">
+                <col span="1" style="width: 38%;">
+                <col span="1" style="width: 7%;">
+                <col span="1" style="width: auto;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <label for="inp1_01">변경일자</label>
+                  </th>
+                  <td>
+                    <span class="date">
+                      <input type="text" class="select_date_day input_ty hasDatepicker" id="inp1_01" autocomplete="off">
+                      ~
+                      <input type="text" class="select_date_day input_ty second hasDatepicker" id="inp1_02" autocomplete="off">
+                    </span>
+                  </td>
+                  <th scope="row">
+                    <label for="inp2_01">처리직원</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp2_01" placeholder="" value="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp2_02" placeholder="" value="" disabled="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cont_btn ty_new">
+            <div class="right">
+              <button class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="content">
+          <div class="cont_box">
+            <div class="board_search">전체 {0} 건</div>
+            <div class="cont_btn">
+              <button type="button" class="btn4">원장수정요청</button>
+            </div>
+            <!-- [D] 이동 -->
+            <select title="보기선택">
+              <option>10개씩 보기</option>
+              <option>15개씩 보기</option>
+              <option>20개씩 보기</option>
+            </select>
+          </div>
+
+          <!-- 테이블 시작 -->
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
+            <div class="board_ty colgroup">
+              <table>
+                <caption>
+                  전산원장 수정 조회 결과
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 100px;">
+                  <col span="1" style="width: 95px;">
+                  <col span="1" style="width: 120px;">
+                  <col span="1" style="width: auto;">
+                  <col span="1" style="width: 100px;">
+                  <col span="1" style="width: 120px;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">요청부점</th>
+                    <th scope="col">요청직원</th>
+                    <th scope="col">요청일자</th>
+                    <th scope="col">사유</th>
+                    <th scope="col">처리직원</th>
+                    <th scope="col">처리일자</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td colspan="6" class="emp">조회결과가 없습니다.</td>
+                  </tr>
+                  <tr>
+                    <td>0711</td>
+                    <td>A12345</td>
+                    <td>2024-01-19</td>
+                    <td class="left">[고잔중앙/수정의뢰] 법인임감카드 인수도부 정보변경</td>
+                    <td>A12345</td>
+                    <td>YYYY-MM-DD</td>
+                  </tr>
+                  <!-- tr, 이하 테이블 스크롤 확인 -->
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="left"></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+            </div>
+          <!-- // 테이블 종료 -->
+        </div>
+
+
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+      </section>
+      <!-- // container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>

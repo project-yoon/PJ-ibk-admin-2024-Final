@@ -247,8 +247,9 @@ h2.login_box_title{
 .cont_btn button.xl{
   width: 100%;
 }
-.cont_btn .auto{
-  width: auto;
+.cont_btn .auto,
+.board_btn .auto{
+  width: auto !important;
   padding: 0 4px;
 }
 .cont_btn a:first-child,
@@ -256,6 +257,7 @@ h2.login_box_title{
 .board_btn button:first-child,
 .file_label{
   margin: 0;
+  padding: 0 4px;
 }
 .cont_btn a,
 .file_label{
@@ -567,6 +569,9 @@ input[type=file]{
 }
 .radio_btn input:disabled + label{
   cursor: default;
+}
+label + label {
+  margin-left: 10px;
 }
 .board_ty .select_date,
 .board_ty .select_date_day,
@@ -923,8 +928,17 @@ input.select_date{
   width: 70px;
   margin-right: 3px;
 }
+.sel_inp .search_int:first-child:nth-last-child(2) {
+    /* width: 750px; */
+    max-width: 750px;
+    width: auto;
+    width: -webkit-fill-available;
+}
 .sel_inp .search_int + .search_int {
   margin-left: 4px;
+}
+div.board_box .sel_inp .search_int + .search_int {
+  margin-left: 0px;
 }
 .first_margin{
   margin-right: 8px;

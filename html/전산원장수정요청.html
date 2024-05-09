@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전산원장 수정 요청::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서 시스템관리 &gt;</span>
+              <span>전산원장 수정</span>
+            </div>
+            <h2>전산원장 수정 (요청)</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <div class="content">
+          <div class="cont_box flex_right">
+            <div class="cont_btn">
+              <button type="button" class="btn2">이력 저장/갱신</button>
+              <button type="button" class="btn2">전산원장수정</button>
+            </div>
+          </div>
+
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                전산원장 수정 요청 테이블
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 170px;">
+                <col span="1" style="width: 245px;">
+                <col span="1" style="width: 170px;">
+                <col span="1" style="width: 245px;">
+                <col span="1" style="width: 170px;">
+                <col span="1" style="width: 240px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">변경이력 일련번호</th>
+                  <td colspan="5">
+                    <span class="sel_inp">
+                      
+                      <span class="search_int">
+                        <input type="search" id="inp_07_1" class="input_ty" style="width: 500px;" placeholder="" value="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn4 btn_half auto">신규채번/가져오기</button>
+                      </span>
+                      <br>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_3">변경신청부점</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_07" class="input_ty" style="width: 70px;" placeholder="부점코드" value="0326" disabled="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_07_1" class="input_ty" style="width: 115px;" placeholder="부점명" value="고잔중앙" disabled="">
+                      </span>
+                      
+                      <br>
+                    </span>
+                    
+                  </td>
+                  <th class="row">
+                    <label for="inp_3">변경신청직원</label>
+                  </th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_07" class="input_ty" style="width: 70px;" placeholder="직원코드" value="A90639" disabled="">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_07_1" class="input_ty" style="width: 115px;" placeholder="직원명" value="홍길동" disabled="">
+                      </span>
+                      
+                      <br>
+                    </span>
+                  </td>
+                  <th class="row">
+                    <label for="inp_3">변경신청일자</label>
+                  </th>
+                  <td>
+                    <span class="date">
+                      <input type="text" class="select_date_day input_ty" id="now_date" autocomplete="off">
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_3">변경사유내용</label>
+                  </th>
+                  <td colspan="5">
+                    <textarea name="textarea" id="inp_3" class="input_full textarea_fixed" rows="12">
+요청사유 : 법인카드 인수도시 변경거래로 처리해야 하나 신규 등록으로처리
+요청직원 : 고산중앙 이진아 차장(22441)
+요청근거 : 전산원장수정의뢰 (기안일자 2023-07-13)
+오류내용 : 일련번호 8번 상태, 폐기일자
+정당내용 : 일련번호 8번 상태, 폐기일자 일련번호 9번 변경일자 추가
+                    </textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="sub_txt">
+            ※ 전산원장수정방법 :: 이력일련번호(인덱스키)신규채번>이력저장 및 갱신 > 통합원장변경<br>
+            ※ 전산원장 수정은 자점감사자 단말에서만 가능
+          </p>
+        </div>
+
+      </section>
+      <!-- // container -->
+      <footer class="footer">
+        <address>copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>

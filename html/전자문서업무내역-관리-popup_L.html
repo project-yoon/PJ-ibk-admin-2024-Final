@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>전자문서업무 기본내역 관리 - 등록::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 650px; width: 1000px;">
+      <div class="modal_header">
+        <h1>전자문서업무 기본내역 관리</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <h3 class="title mt10 mb10">전자문서업무 기본내역 관리</h3>
+        <p class="mt10 mb10">
+          * 붙여넣기 버튼 클릭 시, 기존 정보의 표준글로벌ID를 변경정보의 표준글로벌ID에 입력<br>
+          * 재처리 버튼 클릭 시, 변경정보의 전자문서처리상태 메시지코드에'AAAAAA'로 입력
+        </p>
+        <div class="board_box mb20">
+          <table>
+            <caption>
+              전자문서업무 기본내역 관리 - 인덱스번호
+            </caption>
+            <colgroup>
+              <col span="1" style="width: 150px;">
+              <col span="1" style="width: 700px;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="row">
+                  <label for="inp_01">전자문서 인덱스번호</label>
+                </th>
+                <td>
+                  0377910810804407620240314ED198472
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="board_ty">
+          <table>
+            <caption>
+              전자문서업무 기본내역 관리 - 기존정보, 변경정보
+            </caption>
+            <colgroup>
+              <col span="1" style="width: auto"> <!-- 구분 -->
+              <col span="1" style="width: 365px;"> <!-- 기존정보 -->
+              <col span="1" style="width: 365px;"> <!-- 변경정보 -->
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="row"></th>
+                <th class="row">
+                  기존정보
+                </th>
+                <th class="row">
+                  변경정보
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>거래년월일</th>
+                <td class="left">20240314</td>
+                <td class="left">20240314</td>
+              </tr>
+              <tr>
+                <th>표준글로벌ID</th>
+                <td class="left">12345678901234567890123456789012</td>
+                <td>
+                  <input type="text" id="" class="input_ty input_full" value="">
+                </td>
+              <tr>
+                <th>표준글로벌ID</th>
+                <td class="left">거래완료(N)</td>
+                <td class="left">
+                  <label>
+                    <input type="radio" id="tbl_inp_02_1" name="tbl_radio" checked=""><span>거래완료</span>
+                  </label>
+                  <label>
+                    <input type="radio" id="tbl_inp_02_2" name="tbl_radio"><span>거래취소</span>
+                  </label>
+                </td>
+              <tr>
+                <th>전자문서처리단계 구분코드</th>
+                <td class="left"></td>
+                <td>
+                  <input type="text" id="" class="input_ty input_full" value="">
+                </td>
+              <tr>
+                <th>전자문서처리상태 구분코드</th>
+                <td class="left"></td>
+                <td>
+                  <input type="text" id="" class="input_ty input_full" value="">
+                </td>
+              <tr>
+                <th>전자문서처리상태 메시지코드</th>
+                <td class="left"></td>
+                <td>
+                  <span class="sel_inp">
+                    <span class="search_int">
+                      <input type="search" id="" class="input_ty input_full" placeholder=""  value="AAAAAA" readonly="">
+                    </span>
+                    <span class="board_btn">
+                      <button class="btn4 btn_half">재처리</button>
+                    </span>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button type="button" class="btn2">변경</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>

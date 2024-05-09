@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>태블릿 기기관리 목록::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <!-- nav 22.11.28 수정 -->
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <div class="path">
+              <span>홈 &gt;</span>
+              <span>전자문서 시스템 관리 &gt;</span>
+              <span>태블릿 기기관리 목록</span>
+            </div>
+            <h2>태블릿 기기관리</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <!-- 컨텐츠  -->
+        <div class="content">
+          <div class="content">
+            <div class="board_box">
+              <table>
+                <caption>
+                  태블릿 기기관리 - 조회 조건
+                </caption>
+                <colgroup>
+                  <col span="1" style="width: 11%;">
+                  <col span="1" style="width: 23%;">
+                  <col span="1" style="width: 11%;">
+                  <col span="1" style="width: 23%;">
+                  <col span="1" style="width: 9%;">
+                  <col span="1" style="width: auto;">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      <label for="inp_01">태블릿관리유형*</label>
+                    </th>
+                    <td>
+                      <span class="search_int">
+                        <input type="search" id="inp_01" placeholder="태블릿관리 유형" value="">
+                      </span>
+                    </td>
+                    <th scope="row">
+                        <label for="inp_02">태블릿관리유형명</label>
+                    </th>
+                    <td>
+                      <span class="search_int">
+                        <input type="search" id="inp_02" placeholder="태블릿관리 유형명" value="">
+                      </span>
+                    </td>
+                    <th scope="row">
+                      <label>최신등록조회</label>
+                    </th>
+                    <td>
+                      <span class="radio_btn">
+                        <input type="radio" id="radio_on" name="radio_btn" value="" checked>
+                        <label for="radio_on">Y</label>
+                        <input type="radio" id="radio_off" name="radio_btn" value="">
+                        <label for="radio_off">N</label>
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="cont_btn ty_new">
+              <div class="left">
+                <p class="sub_txt mb10">* 태블릿 기기관리는 담당자와 사전협의 후 진행해주세요.</p>
+              </div>
+              <div class="right">
+                <button type="button" class="btn2">조회</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- content : 테이블 -->
+        <div class="content">
+          <div class="cont_box">
+            <div class="board_search">전체 {0} 건</div>
+            <div class="cont_btn">
+              <button type="button" class="btn3" title="등록">등록</button>
+              <a class="btn3 xl" href="#" title="결과목록 다운로드" download="">엑셀 다운</a>
+            </div>
+            <!-- [D] 이동 -->
+            <select title="보기선택">
+              <option>10개씩 보기</option>
+              <option>15개씩 보기</option>
+              <option>20개씩 보기</option>
+            </select>
+          </div>
+
+          <!-- 테이블 시작 -->
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical trow7"><!--[D] 스크롤 타입 정의 -->
+              <div class="board_ty colgroup">
+                <table>
+                  <caption>
+                    프로그램배포설치내역 조회 결과
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 80px;">
+                    <col span="1" style="width: 75px;">
+                    <col span="1" style="width: 100px;">
+                    <col span="1" style="width: 80px;">
+                    <col span="1" style="width: 200px;">
+                    <col span="1" style="width: 350px;">
+                    <col span="1" style="width: 120px;">
+                    <col span="1" style="width: 170px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">관리유형ID</th>
+                      <th scope="col">등록순번</th>
+                      <th scope="col">관리유형명</th>
+                      <th scope="col">실행여부</th>
+                      <th scope="col">관리내용</th>
+                      <th scope="col">비고내용</th>
+                      <th scope="col">최종변경ID</th>
+                      <th scope="col">최종변경일시</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td colspan="8" class="emp">조회결과가 없습니다.</td>
+                    </tr>
+                    <tr>
+                      <td>1001</td>
+                      <td>7</td>
+                      <td>
+                        <a href="화면이동경로">배경화면변경</a>
+                      </td>
+                      <td>Y</td>
+                      <td></td>
+                      <td>태블릿 내용 복사 붙여넣기 가능 여부 제어</td>
+                      <td>(A90641) TEST</td>
+                      <td>2024-03-20 15:00:41</td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td><a href="화면이동경로">배경화면변경</a></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- // 테이블 종료 -->
+        </div>
+
+        <div class="paginate">
+          <a href="#" class="prev"><img src="../img/prev.png" alt="" />이전</a>
+          <a href="#" class="on">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">7</a>
+          <a href="#">8</a>
+          <a href="#">9</a>
+          <a href="#">10</a>
+          <a href="#" class="next"><img src="../img/next.png" alt="" />다음</a>
+        </div>
+
+
+      </section>
+      <!-- // container  -->
+      <footer class="footer">
+        <address class="max_width">copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>

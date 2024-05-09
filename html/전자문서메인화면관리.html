@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전자문서 메인화면 관리::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <h2>전자문서 메인화면 관리</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <div class="content">
+          <h3 class="title mt10 mb10">PC뷰어 메인이미지 조회</h3>
+          <div class="cont_box">
+            <p class="sub_txt mb10">※ PC뷰어 초기메인이미지 (전자문서 PC뷰어 메인화면 로드 시 새로고침)</p>
+            <div class="cont_btn">
+              <button type="button" class="btn2">메인화면 보기</button>
+            </div>
+          </div>
+
+          <!-- 테이블 시작 -->
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical trow5"><!--[D] 스크롤 타입 정의 -->
+              <div class="board_ty colgroup">
+                <table>
+                  <caption>
+                    PC뷰어 메인이미지 조회
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 70px;">
+                    <col span="1" style="width: 120px;">
+                    <col span="1" style="width: 355px;">
+                    <col span="1" style="width: 675px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">순번</th>
+                      <th scope="col">이미지 보기</th>
+                      <th scope="col">문구</th>
+                      <th scope="col">URL 링크</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                      <td>(통합단말 화면 담당자용) 개발매뉴얼 링크</td>
+                      <td>http://</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- 테이블 종료 -->
+        </div>
+
+        <!-- content -->
+        <div class="content">
+          <h3 class="title mt50">PC뷰어 메인이미지 등록 / 수정 / 삭제</h3>
+          <div class="cont_box mb20">
+            <p class="sub_txt">
+              * 최대 5개의 페이지만 등록이 가능합니다.<br>
+              * 수정/삭제 시 위에 표에서 한 행을 선택 후 수정/삭제 처리 해주세요.
+            </p>
+          </div>
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                PC뷰어 메인이미지 등록 / 수정 / 삭제
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 200px">
+                <col span="1">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">거래구분*</th>
+                  <td>
+                    <label>
+                      <input type="radio" id="tbl_inp_01_1" name="tbl_radio" checked=""><span>등록</span>
+                    </label>
+                    <label>
+                      <input type="radio" id="tbl_inp_01_2" name="tbl_radio"><span>수정</span>
+                    </label>
+                    <label>
+                      <input type="radio" id="tbl_inp_01_3" name="tbl_radio"><span>삭제</span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">순번</th>
+                  <td>
+                    <input type="text" id="inp_02" class="input_ty" value="1">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">이미지</th>
+                  <td>
+                    <span class="board_btn">
+                      <!-- [D] file 개선 -->
+                      <label for="file_txt" class="file_label btn2">파일첨부</label>
+                      <input type="file" accept=".jpg, .png, .gif" id="file_txt" onchange="FILEdisplay(event)" />
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">문구</th>
+                  <td>
+                    <input type="text" id="inp_02" class="input_ty input_full" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">URL</th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_04_1" placeholder="" class="input_ty input_full">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn4 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- // content -->
+
+        <div class="cont_btn ty_new mt30">
+          <div class="right">
+            <button class="btn3">삭제</button>
+            <button class="btn2">등록</button>
+            <button class="btn3">수정</button>
+          </div>
+        </div>
+
+
+      </section>
+      <!-- // container -->
+      <footer class="footer">
+        <address>copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>
