@@ -425,6 +425,16 @@ input.select_time:last-child{
   color: #4f6f89;
   /* color: #1378ca; */
 }
+.modal_board .inst2,
+.radio_btn + .inst2,
+.board_box .inst2,
+.board_ty .inst2{
+  margin: 3px 5px 5px 5px;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #216ead;
+  /* color: #1378ca; */
+}
 select.text_center option{
   text-align: center;
 }
@@ -628,6 +638,10 @@ textarea::Placeholder{
 }
 .cont_box .board_search{
   margin-right: auto;
+}
+.cont_box .board_search+.board_search{
+  flex-grow: 1;
+  text-align: right;
 }
 .cont_box .board_nav{
   color: #8c8c8c;
@@ -1043,8 +1057,14 @@ select[title=보기선택] {
 select:disabled {
   background-color: #f6fafc !important;
 }
+.cont-w400{
+  width: 320px;
+}
 .cont-w320{
   width: 320px;
+}
+.cont-w250{
+  width: 250px;
 }
 .cp-gd .content .tit_subtex span{
   background: rgba(0, 81, 153, 0.08);
@@ -1188,6 +1208,12 @@ button.remove_file {
   float: right;
   width: 45%;
 }
+.appendbox .w3 {
+  width: 37%;
+}
+.appendbox .w7 {
+  width: 53%;
+}
 .appendbox .app_btn {
   margin: auto 0;
   flex-direction: column;
@@ -1219,6 +1245,55 @@ button.remove_file {
 .appendbox .app_btn button#right::before {
   transform: rotate(-90deg);
 }
+.appendbox .app_btn button#top::before {
+  transform: rotate(180deg);
+}
+.appendbox .app_btn button#down::before {
+  transform: rotate(0deg);
+}
+.modal_body .appendbox .app_btn div {
+  margin: 10px 15px 10px 10px;
+}
+.modal_body .appendbox .app_btn button{
+  width: 55px;
+  height: 30px;
+}
+.modal_body .appendbox .app_btn button::before{
+  width: 30px;
+  height: 55px;
+  top: -13px;
+  left: 20%;
+  background-size: 13px auto;
+}
+.appendbox .app_btn.row {
+  margin: auto 0;
+  align-items: flex-end;
+  flex-direction: row;
+}
+.appendbox .app_btn.row div {
+  margin: 0 5px 5px;
+}
+.appendbox .app_btn.row button {
+  width: 40px;
+  height: 25px;
+}
+.appendbox .app_btn.row button::before {
+  top: 0px;
+  width: 25px;
+  height: 25px;
+  background-size: 12px auto;
+}
+.appendbox .app_btn button.label-on {
+  font-size: 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #005199;
+}
+.appendbox .app_btn button.label-on::before {
+  left: auto !important;
+  right: 0%;
+}
+
 
 
 /* .contextmenu : cp-20240400 */

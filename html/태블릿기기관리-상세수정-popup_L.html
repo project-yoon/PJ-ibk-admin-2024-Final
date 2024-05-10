@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>태블릿 기기관리 상세/수정::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 435px; width: 600px;">
+      <div class="modal_header">
+        <h1>태블릿 기기관리 상세/수정</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <div class="modal_board ">
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                태블릿 기기관리 상세/수정
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 100px;">
+                <col span="1" style="width: 200px;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">
+                    관리유형ID
+                  </th>
+                  <td>
+                    1002
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_02">관리유형명</label>
+                  </th>
+                  <td>
+                    <input type="text" id="inp_02" class="input_ty input_full" value="O/S upgrade">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_03">등록순번</label>
+                  </th>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_04">관리실행여부</label>
+                  </th>
+                  <td>
+                    <select id="inp_04">
+                      <option selected="">Y</option>
+                      <option>N</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_05">관리내용</label>
+                  </th>
+                  <td>
+                    <input type="text" id="inp_05" class="input_ty input_full" value="">
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">
+                    <label for="inp_06">비고내용</label>
+                  </th>
+                  <td>
+                    <input type="text" id="inp_06" class="input_ty input_full" value="태블릿 O/S 업그레이드 가능여부 제어">
+                  </td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="cont_btn modal_btn">
+          <button type="button" class="btn2">등록</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>

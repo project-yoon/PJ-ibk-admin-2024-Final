@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>전산원장 수정::IBK 신전자문서 시스템 관리자</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <script src="../js/jquery-3.6.1.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/template.js"></script>
+</head>
+<body>
+
+  <div class="wrap">
+  <div class="modal">
+    <div class="modal_inner" style="height: 650px;width: 1024px;">
+      <div class="modal_header">
+        <h1>전산원장 수정</h1>
+        <a href="#"><img src="../img/close.png" alt="닫기"></a>
+      </div>
+      <div class="modal_body" style="margin-top: 27px;">
+
+        <div class="board_box">
+          <table>
+            <caption>
+              전산원장 수정 조회 조건
+            </caption>
+            <colgroup>
+              <col span="1" style="width: 130px;">
+              <col span="1" style="width: 320px;">
+              <col span="1" style="width: 80px;">
+              <col span="1" style="width: 340px;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <label for="inp_01">변경이력일련번호</label>
+                </th>
+                <td>
+                  <input type="search" id="inp_01" class="input_ty" placeholder="변경이력일련번호" value="03091071A819872023071300168355" disabled="">
+                </td>
+                <th scope="row">
+                  <label for="inp_02">테이블ID</label>
+                </th>
+                <td>
+                  <input type="search" id="inp_02" class="input_ty" placeholder="테이블ID" value="TB_SP151" disabled="">
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cont_btn ty_new">
+          <div class="center">
+            <button class="btn2">조회</button>
+          </div>
+        </div>
+        <div class="flex_box gap10 mt30"> 
+          <!-- 좌측 시작 -->
+          <div>
+            <div class="modal_board board_fixed" style="height: 265px;"> 
+              <div class="board_ty colgroup scroll_body vertical">
+                <table>
+                  <caption>
+                  물리명, 논리명, 데이터타입, PK여부, 컬럼내용
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 110px;"> <!-- 물리명 -->
+                    <col span="1" style="width: 80px;"> <!-- 논리명 -->
+                    <col span="1" style="width: 100px;"> <!-- 데이터타입 -->
+                    <col span="1" style="width: 70px;"> <!-- PK여부 -->
+                    <col span="1" style="width: 90px;"> <!-- 컬럼내용 -->
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="row">
+                        물리명
+                      </th>
+                      <th class="row">
+                        논리명
+                      </th>
+                      <th class="row">
+                        데이터타입
+                      </th>
+                      <th class="row">
+                        PK여부*
+                      </th>
+                      <th class="row">
+                        컬럼내용
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        EDOC_IDX_NO
+                      </td>
+                      <td>
+                        전자문서<br>인덱스번호
+                      </td>
+                      <td>
+                        VARCHAR2
+                      </td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="Y">
+                      </td>
+                      <td>
+                        0377904433sa335
+                      </td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="cont_btn modal_btn">
+              <button type="button" class="btn4">원장조회</button>
+            </div>
+          </div><!-- // 좌측 종료 -->
+          <!-- 우측 시작 -->
+          <div>
+            <div class="modal_board board_fixed" style="height: 265px;"> 
+              <div class="board_ty colgroup scroll_body vertical">
+                <table>
+                  <caption>
+                    물리명, 변경전값, 변경후값
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 160px;"> <!-- 물리명 -->
+                    <col span="1" style="width: 140px;"> <!-- 변경전값 -->
+                    <col span="1" style="width: 150px;"> <!-- 변경후값 -->
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th class="row">
+                        물리명
+                      </th>
+                      <th class="row">
+                        변경 전 값
+                      </th>
+                      <th class="row">
+                        변경 후 값
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        EDOC_BRMN_SN
+                      </td>
+                      <td>
+                        사용책임자변
+                      </td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="12345">
+                      </td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td>
+                        <input type="text" id="" class="input_ty" value="">
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="cont_btn modal_btn">
+              <button type="button" class="btn2">원장등록</button>
+              <button type="button" class="btn4">원장수정</button>
+              <button type="button" class="btn4">원장삭제</button>
+            </div>
+          </div><!-- // 우측 종료 -->
+        </div>
+        <div class="modal_board">
+          <div class="right mt30">
+            <p class="attn">
+              ※ 데이터 타입이 DATA형일경우 YYYYMMDDHH24MISS 형식으로<br>
+              ※ 값을 지울 경우 NULL 입력
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+</body>
+</html>

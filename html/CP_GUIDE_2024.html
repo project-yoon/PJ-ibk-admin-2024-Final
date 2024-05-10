@@ -189,11 +189,13 @@
 
 
         <div class="content mt50">
-          <h3>[2] 테이블 - 컨텍스트 메뉴 (우클릭)<br>
-            <p class="tit_subtex">
-              <span>관련 주석 키워드 : table context menu(js) : cp-20240400</span><br>
-              <span><i>(p.17) 전자문서현황 > 전자문서경영평가(완전판매유도)</i></span>
-            </p>
+          <h3>기능제거 
+            <del>[2] 테이블 - 컨텍스트 메뉴 (우클릭)<br>
+              <p class="tit_subtex">
+                <span>관련 주석 키워드 : table context menu(js) : cp-20240400</span><br>
+                <span><i>(p.17) 전자문서현황 > 전자문서경영평가(완전판매유도)</i></span>
+              </p>
+            </del>
           </h3><br>
 
           <div class="cont_box">
@@ -858,6 +860,376 @@
         <template><!-- *********************************************************** --></template>
 
 
+
+        <div class="content mt50">
+          <h3>[6] column<br>
+          </h3><br>
+
+          <div class="cont_box">
+            <div class="board_search">
+              <p class="tit_subtex">
+                <span>[ <b>.flex_box.gap4</b> ] </span><br>
+                <span>[ <b>.flex_box.gap10</b> ] </span>
+              </p>
+              참고화면: /전자문서결재-필수서식확인-popup_L.html, /전자문서현황-전자문서처리현황.html
+              <br>
+             * 분할 스타일 종류<br>
+             1) flex_box 만 사용할 경우 5:5<br>
+             2) .w8 = 좌8:우2<br>
+             3) .w3 = 좌3:우7<br>
+            </div>
+          </div>
+          <!-- 컨텐츠예시 -->
+          <div class="flex_box gap10" style="background-color: #eee"> 
+            <!-- 좌측 시작 -->
+            <div class="modal_board" style="border:1px solid #005199"> 
+              <div class="cont-w320">
+                좌측 컨텐츠, 
+                <b>.cont-w320 또는 .cont-w250로 컨텐츠 사이즈 커스텀</b><br> 
+                실 반영시 inline-style 제거
+              </div>
+            </div><!-- // 좌측 종료 -->
+            <!-- 우측 시작 -->
+            <div class="modal_board" style="border:1px solid #005199"> 
+              우측 컨텐츠<br> 
+              실 반영시 inline-style 제거
+            </div><!-- // 우측 종료 -->
+          </div>
+          <!-- // 컨텐츠예시 -->
+
+          <div class="cont_box mt30">
+            <div class="board_search">
+              <p class="tit_subtex">
+                <span>[ <b>.doc_content</b> ] </span><br>
+              </p>
+              참고화면: /전자문서결재-메모조회-popup_L.html , /전자문서결재-필수서식확인-popup_L.html
+            </div>
+          </div>
+          <!-- 컨텐츠예시 -->
+          <div class="doc_content" style="background-color: #eee">
+            <!-- left -->
+            <div class="doc_left" style="border:1px solid #005199">
+              좌측 컨텐츠<br> 
+              실 반영시 inline-style 제거
+            </div><!-- // left -->
+            <!-- right -->
+            <div class="doc_right" style="border:1px solid #005199">
+              우측 컨텐츠<br> 
+              실 반영시 inline-style 제거
+            </div><!-- // right -->
+          </div>
+          <!-- // 컨텐츠예시 -->
+
+          <div class="cont_box mt30">
+            <div class="board_search">
+              <p class="tit_subtex">
+                <span>[ <b>.pdf_content</b> ] </span><br>
+              </p>
+              .pdf_content > .pdf_view<br>
+              .pdf_content > .pdf_info<br>
+              참고화면: /메뉴관리-(tab)정보_권한_차단.html, /메뉴관리-메뉴별권한관리.html
+            </div>
+          </div>
+          <!-- 컨텐츠예시 -->
+          <div class="pdf_content" style="background-color: #eee">
+            <!-- left -->
+            <div class="pdf_view" style="border:1px solid #005199">
+              좌측 컨텐츠<br> 
+              실 반영시 inline-style 제거
+            </div><!-- // left -->
+            <!-- right -->
+            <div class="pdf_info" style="border:1px solid #005199">
+              우측 컨텐츠<br> 
+              실 반영시 inline-style 제거
+            </div><!-- // right -->
+          </div>
+          <!-- // 컨텐츠예시 -->
+
+
+          <div class="cont_box mt30">
+            <div class="board_search">
+              <p class="tit_subtex">
+                <span>[ <b>.appendbox</b> ] </span><br>
+              </p>
+              .appendbox > .app_left<br>
+              .appendbox > .ty_new cont_btn app_btn<br>
+              .appendbox > .app_right<br>
+              참고화면: /전자문서결재-필수서식확인-popup_L.html, /전자문서리플릿그룹관리-설정-popup_L.html
+            </div>
+          </div>
+          <!-- 컨텐츠예시 -->
+          <div style="background-color: #eee">
+            <div class="appendbox"><!-- appendbox 시작 -->
+              <div class="app_left"> <!-- app_left 시작 -->
+
+                <div class="cont_box">
+                  <div class="board_search">전체 {0} 건</div>
+                </div>
+                <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+                  <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
+                    <div class="board_ty colgroup">
+                      <!-- [D] table all check(js) : 
+                          [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                      -->
+                      <table data-check="check-group">
+                        <caption>
+                          좌측 테이블
+                        </caption>
+                        <colgroup>
+                          <col span="1" style="width: 35px;">
+                          <col span="1" style="width: auto;">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col">
+                              <div class="checkbox_inner">
+                                <!-- [D] table all check(js) : 
+                                    [2] 전체선택 될 라벨에, data-check="check-all" 추가 필수
+                                -->
+                                <label for="checkappAll" data-check="check-all">
+                                  <input type="checkbox" id="checkappAll">
+                                </label>
+                              </div>
+                            </th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp1">
+                                  <input type="checkbox" id="checkapp1">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <!-- tr, 이하 테이블 스크롤 확인 -->
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp2">
+                                  <input type="checkbox" id="checkapp2">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp3">
+                                  <input type="checkbox" id="checkapp3">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp4">
+                                  <input type="checkbox" id="checkapp4">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp5">
+                                  <input type="checkbox" id="checkapp5">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp6">
+                                  <input type="checkbox" id="checkapp6">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp7">
+                                  <input type="checkbox" id="checkapp7">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp8">
+                                  <input type="checkbox" id="checkapp8">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp9">
+                                  <input type="checkbox" id="checkapp9">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp10">
+                                  <input type="checkbox" id="checkapp10">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp11">
+                                  <input type="checkbox" id="checkapp11">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp12">
+                                  <input type="checkbox" id="checkapp12">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!-- // app_left 종료 -->
+
+              <div class="ty_new cont_btn app_btn">
+                <div><button type="button" id="right" class="btn3">우측으로이동</button></div>
+                <div><button type="button" id="left" class="btn3">좌측으로이동</button></div>
+              </div>
+
+              <div class="app_right"><!-- app_right 시작 -->
+                
+                <div class="cont_box">
+                  <div class="board_search">전체 {0} 건</div>
+                  <div class="cont_btn app_btn row">
+                    <div><button type="button" id="top" class="btn4">상단으로이동</button></div>
+                    <div><button type="button" id="down" class="btn4">하단으로이동</button></div>
+                  </div>
+                </div>
+                <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+                  <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
+                    <div class="board_ty colgroup">
+                      <!-- [D] table all check(js) : 
+                          [1] 테이블에서 선택 기능 추가 시, data-check="check-group" 추가 필수
+                      -->
+                      <table data-check="check-group">
+                        <caption>
+                          우측 테이블
+                        </caption>
+                        <colgroup>
+                          <col span="1" style="width: 35px;">
+                          <col span="1" style="width: auto;">
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col">
+                              <div class="checkbox_inner">
+                                <!-- [D] table all check(js) : 
+                                    [2] 전체선택 될 라벨에, data-check="check-all" 추가 필수
+                                -->
+                                <label for="checkappAllR" data-check="check-all">
+                                  <input type="checkbox" id="checkappAllR">
+                                </label>
+                              </div>
+                            </th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp1R">
+                                  <input type="checkbox" id="checkapp1R">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <!-- tr, 이하 테이블 스크롤 확인 -->
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp2R">
+                                  <input type="checkbox" id="checkapp2R">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp3R">
+                                  <input type="checkbox" id="checkapp3R">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp4R">
+                                  <input type="checkbox" id="checkapp4R">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="checkbox_inner">
+                                <label for="checkapp5R">
+                                  <input type="checkbox" id="checkapp5R">
+                                </label>
+                              </div>
+                            </td>
+                            <td></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                
+              </div><!-- // app_right 종료 -->
+            </div>
+          </div>
+          <!-- // 컨텐츠예시 -->
+
         </section>
 
       
@@ -866,5 +1238,9 @@
       </footer>
       <!-- footer -->
     </div>
+    <!-- [D] ALLCHK개선 -->
+    <script>
+      ALLCHK();
+    </script>
   </body>
 </html>

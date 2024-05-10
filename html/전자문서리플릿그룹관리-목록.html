@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>전자문서리플릿 그룹 관리::IBK 신전자문서 시스템 관리자</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script src="../js/template.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- 23.01.13 header nav 공통 load -->
+      <header class="header heder_include"></header>
+      <nav class="nav nav_include"></nav>
+      <section class="container max_width min_width">
+        <div class="cont_header">
+          <div class="main_title">
+            <h2>전자문서리플릿 그룹 관리</h2>
+          </div>
+        </div>
+        <!-- // cont_header -->
+
+        <!-- content 1 -->
+        <div class="content">
+          <h3 class="title mt10 mb10">추천 리플릿</h3>
+          <div class="cont_box">
+            <p class="sub_txt mb10">* 진행 추천 리플릿으로 별도 설정이 없는 경우 추천 리플릿의 항목이 순차적으로 재생됩니다.</p>
+            <div class="cont_btn ty_new">
+              <button type="button" class="btn2">설정</button>
+            </div>
+          </div>
+
+          <!-- 테이블 시작 -->
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical trow4"><!--[D] 스크롤 타입 정의 -->
+              <div class="board_ty colgroup">
+                <table>
+                  <caption>
+                    전자문서 추천리플릿 목록
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 80px;">
+                    <col span="1" style="width: 165px;">
+                    <col span="1" style="width: 75px;">
+                    <col span="1" style="width: 650px;">
+                    <col span="1" style="width: 125px;">
+                    <col span="1" style="width: 120px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">순번</th>
+                      <th scope="col">리플릿등록일시</th>
+                      <th scope="col">리플릿명</th>
+                      <th scope="col">리플릿명</th>
+                      <th scope="col">만료일</th>
+                      <th scope="col">다운로드</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>2023-03-17 16:50:50</td>
+                      <td>수신</td>
+                      <td class="left">[전자리플릿] 가계우대 정기적금인줄 알았지만 전자문서</td>
+                      <td>9999-12-31</td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>2023-03-17 17:50:50</td>
+                      <td>기타</td>
+                      <td class="left"> [홍보영상] IBK 피싱스톱</td>
+                      <td>9999-12-31</td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="left"></td>
+                      <td></td>
+                      <td>
+                        <div class="cont_btn"><button type="button" class="btn4">이미지확인</button></div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- 테이블 종료 -->
+        </div>
+        <!-- // content 1 -->
+
+        <!-- content 2 -->
+        <div class="content">
+          <h3 class="title mt50">리플릿 그룹</h3>
+          <div class="board_ty">
+            <table class="table_col">
+              <caption>
+                리플릿 그룹 테이블
+              </caption>
+              <colgroup>
+                <col span="1" style="width: 150px;">
+                <col span="1" style="width: 400px;">
+                <col span="1" style="width: 150px;">
+                <col span="1">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th class="row">영업점*</th>
+                  <td>
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_07" class="input_ty" style="width: 80px;" placeholder="" value="0818">
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_07_1" class="input_ty" style="width: 115px;" placeholder="" value="디지털기획부" disabled="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                  <th class="row">리플릿 그룹</th>
+                  <td>
+                    <select id="inp_02">
+                      <option>선택하세요</option>
+                      <option>개인고객팀</option>
+                      <option>기업고객팀</option>
+                      <option>통합고객팀</option>
+                      <option>VM팀</option>
+                      <option>소형출장소</option>
+                      <option>기타</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="row">직원번호</th>
+                  <td colspan="3">
+                    <span class="sel_inp">
+                      <span class="search_int">
+                        <input type="search" id="inp_03" class="input_ty" style="width: 80px;" placeholder="" value="Y00143" >
+                      </span>
+                      <span class="search_int">
+                        <input type="search" id="inp_03_1" class="input_ty" style="width: 115px;" placeholder="" value="TEST" disabled="">
+                      </span>
+                      <span class="board_btn">
+                        <button class="btn2 btn_half">검색</button>
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="cont_btn ty_new">
+            <div class="right mb20">
+              <button type="button" class="btn2">조회</button>
+            </div>
+          </div>
+        </div>
+        <!-- // content 2 -->
+
+        <!-- content 3 -->
+        <div class="content">
+          <div class="cont_box">
+            <p class="sub_txt mb10">
+              * 개인설정이 'Y'인 직원의 경우 개인설정으로 등록된 리플릿이 순차적으로 재생됩니다. (우선순위 : 개인설정 > 리플릿그룹 > 추천리플릿)
+            </p>
+            <div class="cont_btn ty_new">
+              <button type="button" class="btn3 auto">리플릿그룹 설정</button>
+              <button type="button" class="btn3">개인설정</button>
+            </div>
+          </div>
+
+          <!-- 테이블 시작 -->
+          <div class="board_fixed"> <!-- [D] 스크롤 영역 고정 -->
+            <div class="scroll_body vertical"><!--[D] 스크롤 타입 정의 -->
+              <div class="board_ty colgroup">
+                <table>
+                  <caption>
+                    전자문서리플릿 그룹 관리 목록
+                  </caption>
+                  <colgroup>
+                    <col span="1" style="width: 80px;">
+                    <col span="1" style="width: 75px;">
+                    <col span="1" style="width: 165px;">
+                    <col span="1" style="width: 100px;">
+                    <col span="1" style="width: 95px;">
+                    <col span="1" style="width: 348px;">
+                    <col span="1" style="width: 75px;">
+                    <col span="1" style="width: 175px;">
+                    <col span="1" style="width: 110px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">순번</th>
+                      <th scope="col">부점코드</th>
+                      <th scope="col">부점명</th>
+                      <th scope="col">직원번호</th>
+                      <th scope="col">직원명</th>
+                      <th scope="col">리플릿그룹</th>
+                      <th scope="col">개인설정</th>
+                      <th scope="col">등록일시</th>
+                      <th scope="col">등록직원</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>0428</td>
+                      <td>프로세스혁신부</td>
+                      <td>020472</td>
+                      <td>홍길동</td>
+                      <td></td>
+                      <td>N</td>
+                      <td>2023-03-17 16:50:50</td>
+                      <td></td>
+                    </tr>
+                    <!-- tr, 이하 테이블 스크롤 확인 -->
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- 테이블 종료 -->
+        </div>
+        <!-- // content 3 -->
+
+      </section>
+      <!-- // container -->
+      <footer class="footer">
+        <address>copyright(C) 2021 INDUSTRIAL BANG OF KOREA. All Rights Reserved.</address>
+      </footer>
+      <!-- // footer -->
+    </div>
+  </body>
+</html>
